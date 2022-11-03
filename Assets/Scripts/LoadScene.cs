@@ -6,7 +6,6 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour
 {
-    [SerializeField]
     public string debugButtonTarget, armButtonTarget, reprogramButtonTarget, chargeButtonTarget;
 
     public void debugButtonCallback() {
