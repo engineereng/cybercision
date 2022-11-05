@@ -16,10 +16,24 @@ public class moveBug : MonoBehaviour
     bool switc = true;
 
     private SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void OnMouseDown() {
+        gameObject.transform.position = new Vector3(0, 0, 10);
+
+        timearg(3);
+    }
+
+    IEnumerator timearg(int secs)
+    {
+        yield return new WaitForSeconds(secs);
+        gameObject.transform.position = new Vector3(0, 0, 0);
+
     }
 
     // Update is called once per frame
@@ -53,6 +67,7 @@ public class moveBug : MonoBehaviour
             }
         }
     }
+
 
     void moveright() {
         transform.Translate(speed*Time.deltaTime,0,0);
