@@ -12,6 +12,7 @@ public class moveBug : MonoBehaviour
     public double constraintDown;
 
     public int seconds;
+    public bool isShootable;
 
     public bool isVertical;
 
@@ -22,6 +23,7 @@ public class moveBug : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isShootable = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -41,31 +43,33 @@ public class moveBug : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isVertical) {
-            if (switc) {
-                moveright();
-            }
-            if (!switc) {
-                moveleft();
-            }
-            if (transform.position.x >= constraintRight) {
-                switc = false;
-            }
-            if (transform.position.x <= constraintLeft) {
-                switc = true;
-            }
-        } else {
-            if (switc) {
-                movedown();
-            }
-            if (!switc) {
-                moveup();
-            }
-            if (transform.position.y >= constraintUp) {
-                switc = true;
-            }
-            if (transform.position.y <= constraintDown) {
-                switc = false;
+        if (isShootable) {
+            if (!isVertical) {
+                if (switc) {
+                    moveright();
+                }
+                if (!switc) {
+                    moveleft();
+                }
+                if (transform.position.x >= constraintRight) {
+                    switc = false;
+                }
+                if (transform.position.x <= constraintLeft) {
+                    switc = true;
+                }
+            } else {
+                if (switc) {
+                    movedown();
+                }
+                if (!switc) {
+                    moveup();
+                }
+                if (transform.position.y >= constraintUp) {
+                    switc = true;
+                }
+                if (transform.position.y <= constraintDown) {
+                    switc = false;
+                }
             }
         }
     }
