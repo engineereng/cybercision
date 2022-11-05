@@ -5,6 +5,8 @@ using UnityEngine;
 public class ShotController : MonoBehaviour
 {
     SpriteRenderer[] shots;
+    public moveBug[] bugScripts;
+    public GameObject bugParentObject;
     private int curr = 0;
     public int seconds;
 
@@ -12,6 +14,7 @@ public class ShotController : MonoBehaviour
     void Start()
     {
         shots = GetComponentsInChildren<SpriteRenderer>();
+        bugScripts = bugParentObject.GetComponentsInChildren<moveBug>();
     }
 
     // Update is called once per frame
@@ -19,8 +22,12 @@ public class ShotController : MonoBehaviour
     {
         if (curr == shots.Length) {
             Debug.Log("Clicked, test = " + curr);
+            Debug.Log(bugScripts.Length);
+            foreach (moveBug bug in bugScripts) {
+                bug.isShootable = false;
+                Debug.Log("Clisdfsdfsdfsdfsdfsdfsdfsdfsdcked, test = " + curr);
+            }
             StartCoroutine(timearg(seconds));
-            curr = 0;
         }
         else if (Input.GetMouseButtonDown(0)) {
             shots[curr++].color = Color.red;
@@ -30,11 +37,15 @@ public class ShotController : MonoBehaviour
     }
 
     IEnumerator timearg(int secs)
-    {
+    {   
         yield return new WaitForSeconds(secs);
+
         Debug.Log("Clicked, trtdgd = " + curr);
         foreach (SpriteRenderer child in shots) {
             child.color = Color.yellow;
+        }
+        foreach (moveBug bug in bugScripts) {
+            bug.isShootable = true;
         }
         curr = 0;
     }

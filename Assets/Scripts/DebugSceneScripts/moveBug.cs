@@ -5,11 +5,9 @@ using UnityEngine;
 public class moveBug : MonoBehaviour
 {
     public float speed = 5f;
-    public double constraintLeft;
-    public double constraintRight;
-
-    public double constraintUp;
-    public double constraintDown;
+    public double constraintLeftDown;
+    public double constraintRightUp;
+    public moveBug bugScript;
 
     public int seconds;
     public bool isShootable;
@@ -20,6 +18,9 @@ public class moveBug : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    void Awake() {
+        bugScript = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -28,9 +29,14 @@ public class moveBug : MonoBehaviour
     }
 
     private void OnMouseDown() {
-        gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 10);
+        if (isShootable) {
+            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 10);
 
-        StartCoroutine(timearg(seconds));
+            StartCoroutine(timearg(seconds));
+        } else {
+            Debug.Log("NOT SHOOTA");
+        }
+        
     }
 
     IEnumerator timearg(int secs)
@@ -43,35 +49,33 @@ public class moveBug : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isShootable) {
-            if (!isVertical) {
-                if (switc) {
-                    moveright();
-                }
-                if (!switc) {
-                    moveleft();
-                }
-                if (transform.position.x >= constraintRight) {
-                    switc = false;
-                }
-                if (transform.position.x <= constraintLeft) {
-                    switc = true;
-                }
-            } else {
-                if (switc) {
-                    movedown();
-                }
-                if (!switc) {
-                    moveup();
-                }
-                if (transform.position.y >= constraintUp) {
-                    switc = true;
-                }
-                if (transform.position.y <= constraintDown) {
-                    switc = false;
-                }
+        if (!isVertical) {
+            if (switc) {
+                moveright();
             }
-        }
+            if (!switc) {
+                moveleft();
+            }
+            if (transform.position.x >= constraintRightUp) {
+                switc = false;
+            }
+            if (transform.position.x <= constraintLeftDown) {
+                switc = true;
+            }
+        } else {
+            if (switc) {
+                movedown();
+            }
+            if (!switc) {
+                moveup();
+            }
+            if (transform.position.y >= constraintRightUp) {
+                switc = true;
+            }
+            if (transform.position.y <= constraintLeftDown) {
+                switc = false;
+            }
+            }
     }
 
 
