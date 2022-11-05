@@ -11,6 +11,8 @@ public class moveBug : MonoBehaviour
     public double constraintUp;
     public double constraintDown;
 
+    public int seconds;
+
     public bool isVertical;
 
     bool switc = true;
@@ -24,15 +26,15 @@ public class moveBug : MonoBehaviour
     }
 
     private void OnMouseDown() {
-        gameObject.transform.position = new Vector3(0, 0, 10);
+        gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 10);
 
-        timearg(3);
+        StartCoroutine(timearg(seconds));
     }
 
     IEnumerator timearg(int secs)
     {
         yield return new WaitForSeconds(secs);
-        gameObject.transform.position = new Vector3(0, 0, 0);
+        gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
 
     }
 
