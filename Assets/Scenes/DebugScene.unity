@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05349e2417e4bcc4eb0ed6580706db9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bugScripts: []
+  bugParentObject: {fileID: 1093235607}
   seconds: 5
 --- !u!1 &321357379
 GameObject:
@@ -502,7 +504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792662985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4, y: 0.41, z: 0}
+  m_LocalPosition: {x: 2.64, y: 0.38, z: 0}
   m_LocalScale: {x: 0.63062, y: 0.61056, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -522,10 +524,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  constraintLeft: 0
-  constraintRight: 0
-  constraintUp: 2.6
-  constraintDown: 0.41
+  constraintLeftDown: 0.25
+  constraintRightUp: 2.67
+  bugScript: {fileID: 0}
   seconds: 3
   isShootable: 0
   isVertical: 1
@@ -708,7 +709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972911411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.17, y: -2.51, z: 0}
+  m_LocalPosition: {x: -0.2, y: -2.35, z: 0}
   m_LocalScale: {x: 0.63062, y: 0.61056, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -728,10 +729,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  constraintLeft: -0.17
-  constraintRight: 2.69
-  constraintUp: 0
-  constraintDown: 0
+  constraintLeftDown: -0.17
+  constraintRightUp: 2.85
+  bugScript: {fileID: 0}
   seconds: 3
   isShootable: 0
   isVertical: 0
@@ -982,7 +982,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412868274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.93, y: 1.78, z: 0}
+  m_LocalPosition: {x: -1.9, y: 1.7, z: 0}
   m_LocalScale: {x: 0.63063174, y: 0.61056, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1002,10 +1002,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  constraintLeft: -2
-  constraintRight: 1
-  constraintUp: 0
-  constraintDown: 0
+  constraintLeftDown: -2
+  constraintRightUp: 1.7
+  bugScript: {fileID: 0}
   seconds: 3
   isShootable: 0
   isVertical: 0
