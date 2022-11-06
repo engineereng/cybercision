@@ -6,10 +6,14 @@ using System.Linq;
 
 public class TetrisBlock : MonoBehaviour{
     public Camera cam;
-    private float gridSize = 1.7f;
     public Grid grid;
+    public GridSprite gridSprite;
     public SpriteRenderer spriteRenderer;
+    private float cellSize;
 
+    void Awake(){
+        cellSize = 1.0f;
+    }
     void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -17,13 +21,13 @@ public class TetrisBlock : MonoBehaviour{
     void OnMouseDrag(){
         spriteRenderer.sortingOrder = 1;
         transform.position = (Vector2)cam.ScreenToWorldPoint(Input.mousePosition);
-        transform.localScale = new Vector2(gridSize + 0.2f, gridSize+ 0.2f);
+        transform.localScale = new Vector2(cellSize + 0.2f, cellSize+ 0.2f);
     }
 
     void OnMouseUpAsButton(){
         spriteRenderer.sortingOrder = 0;
-        transform.localScale = new Vector2(gridSize, gridSize);
-        PlaceBlock(grid.mouseOverGrid);
+        transform.localScale = new Vector2(cellSize, cellSize);
+        PlaceBlock(gridSprite.mouseOverGrid);
     }
 
 
@@ -31,9 +35,8 @@ public class TetrisBlock : MonoBehaviour{
         if(!onGrid){
             transform.position = (Vector2)cam.ScreenToWorldPoint(Input.mousePosition);
         }else{
-            transform.position = (Vector2)cam.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector2(Mathf.RoundToInt(transform.position.x/gridSize)*gridSize,
-                Mathf.RoundToInt(transform.position.y/gridSize)*gridSize);
+            Vector3Int cellPosition =  grid.WorldToCell(cam.ScreenToWorldPoint(Input.mousePosition));
+            transform.position = grid.CellToWorld(cellPosition) + new Vector3(cellSize/2,cellSize/2,cellSize/2);
         }
     }
 }
