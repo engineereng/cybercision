@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ShotController : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class ShotController : MonoBehaviour
     public GameObject bugParentObject;
     private int curr = 0;
     public int seconds;
+
+    public TextMeshProUGUI shootableText;
 
     // Start is called before the first frame update
     void Start()
@@ -20,18 +24,18 @@ public class ShotController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if the iterator reaches 3 shots, bugs should not be shootable
         if (curr == shots.Length) {
-            Debug.Log("Clicked, test = " + curr);
-            Debug.Log(bugScripts.Length);
             foreach (moveBug bug in bugScripts) {
                 bug.isShootable = false;
-                Debug.Log("Clisdfsdfsdfsdfsdfsdfsdfsdfsdcked, test = " + curr);
+                shootableText.text = "false";
             }
             StartCoroutine(timearg(seconds));
         }
         else if (Input.GetMouseButtonDown(0)) {
-            shots[curr++].color = Color.red;
-            Debug.Log("Clicked, curr = " + curr);
+            shots[curr].color = Color.red;
+            // increment curr
+            curr++;
         }
         
     }
@@ -40,12 +44,12 @@ public class ShotController : MonoBehaviour
     {   
         yield return new WaitForSeconds(secs);
 
-        Debug.Log("Clicked, trtdgd = " + curr);
         foreach (SpriteRenderer child in shots) {
             child.color = Color.yellow;
         }
         foreach (moveBug bug in bugScripts) {
             bug.isShootable = true;
+            shootableText.text = "true";
         }
         curr = 0;
     }

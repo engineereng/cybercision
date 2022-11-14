@@ -21,6 +21,7 @@ public class moveBug : MonoBehaviour
     void Awake() {
         bugScript = this;
     }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +35,7 @@ public class moveBug : MonoBehaviour
 
             StartCoroutine(timearg(seconds));
         } else {
-            Debug.Log("NOT SHOOTA");
+            Debug.Log("NOT SHOOTABLE");
         }
         
     }
