@@ -30,6 +30,7 @@ public class ShotController : MonoBehaviour
                 bug.isShootable = false;
                 shootableText.text = "false";
             }
+
             StartCoroutine(timearg(seconds));
         }
         else if (Input.GetMouseButtonDown(0)) {
@@ -42,15 +43,24 @@ public class ShotController : MonoBehaviour
 
     IEnumerator timearg(int secs)
     {   
-        yield return new WaitForSeconds(secs);
+        yield return new WaitForSecondsRealtime(secs);  
 
+        setYellow();
+        setUnshootable();
+
+        curr = 0;
+    }
+
+    void setYellow() {
         foreach (SpriteRenderer child in shots) {
             child.color = Color.yellow;
         }
+    }
+
+    void setUnshootable() {
         foreach (moveBug bug in bugScripts) {
             bug.isShootable = true;
             shootableText.text = "true";
-        }
-        curr = 0;
+        } 
     }
 }
