@@ -1,0 +1,25 @@
+dialogue This is some sample dialogue I guess.
+
+choice This is the first choice
+choice This is the second choice
+choice This is the third and final choice
+makechoice Pick one of my choices and see what happends!
+
+dialogue Unfortunately this is all that works right now! You can't even make choices properly!
+
+branch one;two;three
+
+one:
+dialogue Oh well I'm glad to hear that!
+goto finish
+
+two:
+dialogue Oh ok...
+goto finish
+
+three:
+dialogue Oh really? Well I hope you're ok!
+goto finish
+
+finish:
+dialogue Anyways, would you like to see around the new lab?

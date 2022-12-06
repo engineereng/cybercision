@@ -7,8 +7,10 @@ public class DialogueBoxController : MonoBehaviour
     
     private DialogueBoxSettings settings;
 
+    //TODO: Rename this
     private TypedText CurrentDialogueText;
 
+    //And this...
     private TypedText[] CurrentOptionTexts;
     
     [SerializeField]
@@ -16,6 +18,8 @@ public class DialogueBoxController : MonoBehaviour
 
     [SerializeField]
     public string[] CurrentOptions;
+
+    private bool WaitingForInput;
 
     // Start is called before the first frame update
     void Start()
@@ -48,11 +52,32 @@ public class DialogueBoxController : MonoBehaviour
         CurrentOptions = new string[settings.OptionTexts.Length];
 
         Reset();
+
+        WaitingForInput = false;
+    }
+
+    public void ShowDialogue(string Dialogue, bool AwaitInput = true)
+    {
+        WaitingForInput = AwaitInput;
+        CurrentText = Dialogue;
+    }
+
+    public bool IsWaitingForInput()
+    {
+        return WaitingForInput;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (IsWaitingForInput())
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                WaitingForInput = false;
+            }
+        }
 
         CurrentDialogueText.SetText(CurrentText);
 
