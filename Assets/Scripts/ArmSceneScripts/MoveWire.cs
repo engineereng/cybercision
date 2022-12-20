@@ -13,7 +13,7 @@ public class MoveWire : MonoBehaviour
     [SerializeField] float power = 5f;
     bool nextSave = true;
 
-    [SerializeField] private bool following;
+    [SerializeField] public bool following;
     Rigidbody2D rb;
     Vector2 dir;
     bool canBePushed;

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class FingerController : MonoBehaviour
 {
-    [SerializeField] private GameObject finger1, finger2, finger3, finger4, finger5;
-    public int NUM_FINGERS = 5;
+    [SerializeField] private GameObject finger1, finger2, finger3, finger4;
+    [SerializeField] private int NUM_FINGERS = 4;
     HashSet<int> alreadyChosen = new HashSet<int>();
+    [SerializeField] private int currentChosen;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +22,22 @@ public class FingerController : MonoBehaviour
         int indexNewWiggler = Random.Range(0, NUM_FINGERS);
         while (alreadyChosen.Contains(indexNewWiggler))
             indexNewWiggler = Random.Range(0, NUM_FINGERS);
+        currentChosen = indexNewWiggler;
         alreadyChosen.Add(indexNewWiggler);
         Transform randomChild = transform.GetChild(indexNewWiggler);
+        randomChild.GetChild(1).GetComponent<SnapToGoal>().goalEnabled = true;
         SpriteRenderer renderer = randomChild.GetComponent<SpriteRenderer>();
         renderer.color = newColor;
     }
 
-    public void setDone(int index)
+    public void setDone()
     {
-        
+        // stop wiggling the current wiggler
+        transform.GetChild(currentChosen).GetComponent<SpriteRenderer>().color = Color.black;
+        if (alreadyChosen.Count < NUM_FINGERS)
+            WiggleRandom();
+        else {
+            // TODO set the game as done
+        }
     }
 }
