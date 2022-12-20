@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class FingerController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class FingerController : MonoBehaviour
     [SerializeField] private int NUM_FINGERS = 4;
     HashSet<int> alreadyChosen = new HashSet<int>();
     [SerializeField] private int currentChosen;
+    [SerializeField] TMP_Text text;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,7 @@ public class FingerController : MonoBehaviour
         if (alreadyChosen.Count < NUM_FINGERS)
             WiggleRandom();
         else {
-            // TODO set the game as done
+            text.enabled = true;
         }
     }
 }
