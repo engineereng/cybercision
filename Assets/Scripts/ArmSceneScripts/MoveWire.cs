@@ -30,11 +30,6 @@ public class MoveWire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (false) { // CHANGE THIS to look at t (transform.position.x > 2 || transform.position.x < -2 || transform.position.y > 1 || transform.position.y < -1) {
-            StartCoroutine(MoveBackToPosition());
-            return;
-        }
         if (Input.GetMouseButtonDown(0) && ((Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).magnitude <= offset))
         {
             following = true;
