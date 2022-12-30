@@ -1,7 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FingerController : MonoBehaviour
 {
@@ -40,6 +40,16 @@ public class FingerController : MonoBehaviour
             WiggleRandom();
         else {
             text.enabled = true;
+        }
+    }
+
+    // TODO remove this temporary scene reloader for this prototype
+    void OnGUI()
+    {
+        Event m_Event = Event.current;
+        if (Event.current.Equals(Event.KeyboardEvent(KeyCode.R.ToString()))) {
+            Debug.Log("Pressed R to reload");
+            SceneManager.LoadScene("ArmScene");
         }
     }
 }
