@@ -9,15 +9,15 @@ public class FingerController : MonoBehaviour
     [SerializeField] private int NUM_FINGERS = 4;
     HashSet<int> alreadyChosen = new HashSet<int>();
     [SerializeField] private int currentChosen;
-    [SerializeField] TMP_Text text;
+    [SerializeField] TMP_Text endText;
 
     // Start is called before the first frame update
     void Start()
     {
-        WiggleRandom();
+        wiggleRandom();
     }
 
-    void WiggleRandom()
+    void wiggleRandom()
     {
         Color newColor = Color.green; // the color is a placeholder for wiggling animation
         // choose new wiggler out of a random one
@@ -37,10 +37,16 @@ public class FingerController : MonoBehaviour
         // stop wiggling the current wiggler
         transform.GetChild(currentChosen).GetComponent<SpriteRenderer>().color = Color.black;
         if (alreadyChosen.Count < NUM_FINGERS)
-            WiggleRandom();
+            wiggleRandom();
         else {
-            text.enabled = true;
+            endText.enabled = true;
         }
+    }
+
+    public void setLost()
+    {
+        endText.text = "You lost. Press R to restart the demo.";
+        endText.enabled = true;
     }
 
     // TODO remove this temporary scene reloader for this prototype

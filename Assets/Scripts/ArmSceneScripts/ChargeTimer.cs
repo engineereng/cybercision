@@ -10,6 +10,7 @@ public class ChargeTimer : MonoBehaviour
     public float maximumTime = 20f;
     public Image sprite;
 
+
     void Start()
     {
         timeRemaining = maximumTime;
@@ -31,6 +32,8 @@ public class ChargeTimer : MonoBehaviour
             }
             sprite.fillAmount = Mathf.Lerp(0, 1, percent);
         } else {
+            FingerController controller = (FingerController) GetComponentInParent(typeof(FingerController));
+            controller.setLost();
             Debug.Log("Time has run out!");
         }
     }
