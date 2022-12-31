@@ -4,18 +4,36 @@ using UnityEngine;
 
 public class ChangeCursor : MonoBehaviour
 {
-    public Texture2D cursorTexture;
-    public CursorMode cursorMode = CursorMode.Auto;
-    public Vector2 hotSpot = Vector2.zero;
+    public Texture2D enterCursorTexture;
+    // public Texture2D exitCursorTexture;
+    public Texture2D dragCursorTexture;
 
-    // Update is called once per frame
     void OnMouseEnter()
     {
-        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+        centerCrosshair(enterCursorTexture);
     }
     
     void OnMouseExit()
     {
-        Cursor.SetCursor(null, Vector2.zero, cursorMode);
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
+
+    void OnMouseDrag()
+    {
+        centerCrosshair(dragCursorTexture);
+    }
+
+    void OnDestroy()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
+
+    void OnMouseUpAsButton()
+    {
+        centerCrosshair(enterCursorTexture);
+    }
+    private void centerCrosshair(Texture2D crosshairTexture) {
+        Vector2 cursorOffset = new Vector2(crosshairTexture.width / 2, crosshairTexture.height / 2); // for centered crosshairs
+        Cursor.SetCursor(crosshairTexture, cursorOffset, CursorMode.Auto);
     }
 }
