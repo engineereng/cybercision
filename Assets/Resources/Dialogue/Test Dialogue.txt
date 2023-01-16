@@ -3,23 +3,64 @@ dialogue This is some sample dialogue I guess.
 choice This is the first choice
 choice This is the second choice
 choice This is the third and final choice
-makechoice Pick one of my choices and see what happends!
+makechoice Pick one of my choices and see what happens!
+remember test-choice-one
 
-dialogue Unfortunately this is all that works right now! You can't even make choices properly!
+branch choiceOneA;choiceOneB;choiceOneC
 
-branch one;two;three
+choiceOneA:
+dialogue You selected my first choice!
+goto next
 
-one:
-dialogue Oh well I'm glad to hear that!
+choiceOneB:
+dialogue You selected my second choice!
+goto next
+
+choiceOneC:
+dialogue You selected my third choice!
+goto next
+
+next:
+
+choice One
+choice Two
+choice Three
+makechoice Make another choice and I'll show you I can remember stuff!
+
+branch choiceTwoA;choiceTwoB;choiceTwoC
+
+choiceTwoA:
+dialogue You selected my first choice!
+goto afterRemember
+
+choiceTwoB:
+dialogue You selected my second choice!
+goto afterRemember
+
+choiceTwoC:
+dialogue You selected my third choice!
+goto afterRemember
+
+afterRemember:
+dialogue For your first choice... let me remember it quickly...
+recall test-choice-one
+
+dialogue Ah yes, I remember now...
+
+branch recallA;recallB;recallC
+
+recallA:
+dialogue You selected my first choice!
 goto finish
 
-two:
-dialogue Oh ok...
+recallB:
+dialogue You selected my second choice!
 goto finish
 
-three:
-dialogue Oh really? Well I hope you're ok!
+recallC:
+dialogue You selected my third choice!
 goto finish
 
 finish:
-dialogue Anyways, would you like to see around the new lab?
+
+dialogue Anyways, I've got to go now! Bye!!

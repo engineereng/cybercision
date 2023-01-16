@@ -25,12 +25,15 @@ public class CyberDialogueScript : MonoBehaviour
 
     private List<string> choices;
 
+    private Dictionary<string, int> rememberedChoices;
+
     void Start()
     {
         commands = new List<string>();
         choices = new List<string>();
         labels = new Dictionary<string, int>();
         dialogueBoxController = GetComponent<DialogueBoxController>();
+        rememberedChoices = new Dictionary<string, int>();
 
         if (dialogueBoxController == null)
         {
@@ -84,7 +87,7 @@ public class CyberDialogueScript : MonoBehaviour
             {
                 if (sanitized.EndsWith(":"))//Label
                 {
-                    labels[sanitized] = index + 1;//When this label is jumped to it should go to the instruction below this line so add 1
+                    labels[sanitized.Substring(0, sanitized.Length - 1)] = commands.Count;//When this label is jumped to it should go to the instruction below this line so add 1
                 }
                 else
                 {
@@ -100,7 +103,7 @@ public class CyberDialogueScript : MonoBehaviour
     //Returns true if another command should be executed or if the dialogue script should pause until instructed to continue
     bool executeOneCommand()
     {
-        if(index < 0 || index >= commands.Count)
+        if (index < 0 || index >= commands.Count)
         {
             return false;
         }
@@ -127,12 +130,12 @@ public class CyberDialogueScript : MonoBehaviour
         {
 
             string choiceText = concat(parts, 1);
-            
+
             dialogueBoxController.ShowDialogue(choiceText, true);
 
             for (int i = 0; i < choices.Count; i++)
             {
-                if(i >= dialogueBoxController.CurrentOptions.Length)
+                if (i >= dialogueBoxController.CurrentOptions.Length)
                 {
                     Debug.LogWarning("Tried to show more dialogue options than we have room for...");
                     break;
@@ -146,9 +149,9 @@ public class CyberDialogueScript : MonoBehaviour
 
             return false;
         }
-        else if(parts[0].Equals("goto"))
+        else if (parts[0].Equals("goto"))
         {
-            string label = concat(parts, 1);
+            string label = parts[1];
 
             if (labels.ContainsKey(label))
             {
@@ -158,6 +161,59 @@ public class CyberDialogueScript : MonoBehaviour
             {
                 Debug.LogWarning("Tried to jump to a label called " + label + " but it doesnt exist!");
             }
+            return true;
+        }
+        else if (parts[0].Equals("remember"))
+        {
+            string saveName = parts[1];
+
+            int Selected = dialogueBoxController.SelectedOption;
+
+            rememberedChoices[saveName] = Selected;
+
+            Debug.Log("Saving choice " + saveName + " as " + Selected);
+            return true;
+        }
+        else if (parts[0].Equals("recall"))
+        {
+            string saveName = parts[1];
+
+            if (rememberedChoices.ContainsKey(saveName))
+            {
+                dialogueBoxController.SelectedOption = rememberedChoices[saveName];
+                Debug.Log("Recalled choice " + saveName + " as " + rememberedChoices[saveName]);
+            }
+            else
+            {
+                Debug.Log("Couldn't recall choice " + saveName + " as we don't have it saved!");
+            }
+            return true;
+        }
+        else if (parts[0].Equals("branch"))
+        {
+            string[] branchLabels = parts[1].Split(";");
+
+            int Selected = dialogueBoxController.SelectedOption;
+
+            if (Selected < 0 || Selected >= branchLabels.Length)
+            {
+                Debug.LogError("Branch had " + branchLabels.Length + " labels but selection was " + (Selected + 1));
+            }
+            else
+            {
+                string label = branchLabels[dialogueBoxController.SelectedOption];
+
+                if (labels.ContainsKey(label))
+                {
+                    index = labels[label];
+                }
+                else
+                {
+                    Debug.LogWarning("Tried to jump to a label called " + label + " but it doesnt exist!");
+                }
+
+            }
+
             return true;
         }
 

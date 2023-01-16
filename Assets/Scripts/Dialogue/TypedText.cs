@@ -9,6 +9,8 @@ public class TypedText
 
     static Random random = new Random();
 
+    TypedText Parent;
+
     string CurrentText;
     int CurrentIndex;
     float TypeSpeed;
@@ -17,10 +19,11 @@ public class TypedText
 
     char FlavourCharacter;
 
-    public TypedText()
+    public TypedText(TypedText Parent = null)
     {
+        this.Parent = Parent;
         CurrentText = "";
-        TypeSpeed = 0.05f;
+        TypeSpeed = 0.025f;
         CurrentIndex = 0;
     }
 
@@ -42,7 +45,7 @@ public class TypedText
         return CurrentIndex >= CurrentText.Length;
     }
 
-    public void SetText(string NewText, float NewSpeed = 0.05f)
+    public void SetText(string NewText, float NewSpeed = 0.025f)
     {
 
         if (NewText == null || NewText.Equals(CurrentText))
@@ -63,6 +66,12 @@ public class TypedText
 
     public void Update(float Delta)
     {
+
+        if(Parent != null && !Parent.IsFinished())
+        {
+            return;
+        }
+
         if (CurrentIndex < CurrentText.Length)
         {
             TimeAccumulator += Delta;
@@ -77,7 +86,7 @@ public class TypedText
 
     static char GetRandomFlavourCharacter()
     {
-        char[] FlavourCharacters = new char[] { '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '[', ']' };
+        char[] FlavourCharacters = new char[] { '!', '@', '#', '$', '%' };
 
         return FlavourCharacters[random.Next(0, FlavourCharacters.Length - 1)];
     }
