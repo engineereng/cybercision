@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ChipConstruction.unity
+    path: Assets/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/ArmScene.unity
+    guid: cb4d7776c48244ae98a1f638d6a67bcf
+  - enabled: 1
+    path: Assets/Scenes/ChargeScene.unity
+    guid: 05bbb13e33f364660a4464dfe9d2c541
+  - enabled: 1
+    path: Assets/Scenes/DebugScene.unity
+    guid: 92cbe85b426c9441ba885494d113661b
+  - enabled: 1
+    path: Assets/Scenes/ChipConstruction.unity
+    guid: d099d9610b0354b3eab7a08942bec98f
   m_configObjects: {}
