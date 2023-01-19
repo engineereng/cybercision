@@ -815,7 +815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugButtonTarget: DebugScene
   armButtonTarget: ArmScene
-  reprogramButtonTarget: ReprogramScene
+  reprogramButtonTarget: ChipConstruction
   chargeButtonTarget: ChargeScene
 --- !u!4 &1064882009
 Transform:
