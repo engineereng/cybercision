@@ -8,7 +8,7 @@ public class moveBug : MonoBehaviour
     public float speed = 5f;
     public double constraintLeftDown;
     public double constraintRightUp;
-    public moveBug bugScript;
+    private moveBug bugScript;
 
     public int seconds;
     public bool isShootable;
@@ -18,9 +18,14 @@ public class moveBug : MonoBehaviour
     bool switc = true;
 
     private SpriteRenderer spriteRenderer;
+    
+    public PlayerController game;
+
+    public int bugShotCount;
 
     void Awake() {
         bugScript = this;
+        bugShotCount = 0;
     }
 
     // Start is called before the first frame update
@@ -31,14 +36,17 @@ public class moveBug : MonoBehaviour
     }
 
     private void OnMouseDown() {
+        // game.count++;
+        // game.SetCountText();
         if (isShootable) {
             gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 10);
-
+            // bugShotCount++;
+            
+            // game.AddCount();
             StartCoroutine(timearg(seconds));
         } else {
-            Debug.Log("NOT SHOOTABLE");
+            // Debug.Log("NOT SHOOTABLE");
         }
-        
     }
 
     IEnumerator timearg(int secs)
@@ -79,7 +87,6 @@ public class moveBug : MonoBehaviour
             }
             }
     }
-
 
     void moveright() {
         transform.Translate(speed*Time.deltaTime,0,0);

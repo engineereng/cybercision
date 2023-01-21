@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bugScripts: []
   bugParentObject: {fileID: 1093235607}
-  seconds: 5
+  seconds: 3
   shootableText: {fileID: 2116957688}
 --- !u!1 &321357379
 GameObject:
@@ -1817,6 +1817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2097781240}
   - component: {fileID: 2097781239}
+  - component: {fileID: 2097781241}
   m_Layer: 0
   m_Name: ChargeGreen
   m_TagString: Untagged
@@ -1891,6 +1892,20 @@ Transform:
   m_Father: {fileID: 2041266689}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2097781241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097781238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73558c866147f245b4f55ec55ef0aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bugScripts: []
+  bugParentObject: {fileID: 1093235607}
 --- !u!1 &2116957687
 GameObject:
   m_ObjectHideFlags: 0

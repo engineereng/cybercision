@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ChargeController : MonoBehaviour
 {
@@ -24,9 +26,7 @@ public class ChargeController : MonoBehaviour
                 
             }
         }
-        gameObject.transform.localScale += new Vector3(0, -50f);
+        // gameObject.transform.localScale += new Vector3(10f, 0);
         
-
-
     }
 }
