@@ -15,7 +15,7 @@ public class FireCreator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fireposition = new Vector3(Random.Range(minx, maxx), Random.Range(miny, maxy),1f);
+        fireposition = new Vector3(Random.Range(minx, maxx), Random.Range(miny, maxy),0);
         cooldown = Random.Range(cooldownrange-1, cooldownrange+1);
     }
     void OnDrawGizmos()
@@ -32,7 +32,7 @@ public class FireCreator : MonoBehaviour
     {
         if(cooldown <= 0) {
             Instantiate(prefab, fireposition, new Quaternion(0,0,0,0));
-            fireposition = new Vector3(Random.Range(-3.5f, -0.5f), Random.Range(-1.5f, 0.8f),1f);
+            fireposition = new Vector3(Random.Range(minx, maxx), Random.Range(miny, maxy),0);
             cooldown = Random.Range(cooldownrange-1, cooldownrange+1);
         }
         cooldown -= Time.deltaTime;
