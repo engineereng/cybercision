@@ -6,54 +6,88 @@ using TMPro;
 
 public class CurrentController : MonoBehaviour
 {
-    private double distance;
-    public double chargeSpeed;
+
+    public float chargeSpeed;
     public float objectSpeed;
-    private double chargePercentage;
+
+    public float chargeDistance;
+
     public GameObject chargeIndicator; 
     public TextMeshProUGUI scoreText;
 
-    AudioSource electricHum;
+    private AudioSource electricHum;
+    
+    private float chargePercentage;
 
     // Start is called before the first frame update
     void Start()
     {
         electricHum = GetComponent<AudioSource>();
-        chargeSpeed *= 0.001;
+        chargeSpeed *= 0.001f;
         chargePercentage = 0;
+        chargeDistance = 3f;
+        
+        electricHum.Play();
+        electricHum.Pause();
+
+
+        RectTransform image = chargeIndicator.GetComponent<RectTransform>();
+
+        image.sizeDelta = new Vector2(0.0f, image.sizeDelta.y);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        distance = Vector3.Distance(Input.mousePosition, this.GetComponent<EdgeCollider2D>().ClosestPoint(Input.mousePosition));
-        chargeIndicator.transform.localScale = new Vector3((float) chargePercentage, chargeIndicator.transform.localScale.y, chargeIndicator.transform.localScale.z);
-        
-        if (distance < 3)
+
+        Vector2 closest = GetComponent<EdgeCollider2D>().ClosestPoint(Input.mousePosition);
+        Vector2 mousePosition = Input.mousePosition;
+
+        float distance = Vector2.Distance(mousePosition, closest);
+
+        if (distance < chargeDistance)
         {
-            ChargeBattery();
+
+            float chargeAmount = (chargeDistance - distance) * chargeSpeed;
+
+            //Speed up or slow down the charge sound depending on how close we are!
+            electricHum.pitch = 1.0f + chargeAmount;
+            electricHum.UnPause();
+
+            ChargeBattery(chargeAmount);
         }
-        else if (distance > 10) {
-            electricHum.Play();
+        else
+        {
+            electricHum.Pause();
         }
         
         MoveCurrent();
     }
 
-    void ChargeBattery() {
-        double amountToAdd = (30 - distance);
-        if (amountToAdd > 0)
-            chargePercentage += (amountToAdd * 0.001);
+    void ChargeBattery(float amount) {
+        chargePercentage += amount;
 
-        Debug.Log("Charge Percentage:" + chargePercentage);
-        scoreText.text = chargePercentage.ToString("#.00");
+        if(chargePercentage > 100.0f)
+        {
+            chargePercentage = 100.0f;
+        }
+
+        RectTransform image = chargeIndicator.GetComponent<RectTransform>();
+
+        //image.transform.localScale = new Vector3((float)chargePercentage, image.transform.localScale.y, image.transform.localScale.z);
+
+        image.sizeDelta = new Vector2(chargePercentage, image.sizeDelta.y);
+
+        scoreText.text = chargePercentage.ToString("#.00");   
     }
 
     void MoveCurrent() {
-        // 1233 is the point where the renderer is out of scene
-        if(this.transform.position.x < 1174)
+
+        if(transform.position.x < Camera.main.pixelWidth + 50)//Add 50 for leeway
         {
-          this.transform.Translate(Vector3.right * Time.deltaTime * objectSpeed, Space.World);
+            transform.Translate(Vector3.right * Time.deltaTime * objectSpeed, Space.World);
         }
+
     }
 }
