@@ -26,21 +26,19 @@ public class ShotController : MonoBehaviour
     {
         // if the iterator reaches 3 shots, bugs should not be shootable
         if (curr == shots.Length) {
-
             StartCoroutine(timearg(seconds));
-            
         }
         if (Input.GetMouseButtonDown(0)) {
-            shots[curr].color = Color.red;
-            // increment curr
-            curr++;
-            Debug.Log("Curr is currently " + curr);
+            if (shots[curr]) { // index out of range issue
+                shots[curr].color = Color.red;
+                curr++;
+            }
+            // Debug.Log("Curr is currently " + curr);
         }
     }
 
     IEnumerator timearg(int secs)
     {   
-        // Debug.Log("Started Coroutine at timestamp : " + Time.time);
         foreach (moveBug bug in bugScripts) {
             bug.isShootable = false;
             shootableText.text = "false";
@@ -52,7 +50,6 @@ public class ShotController : MonoBehaviour
         setIsShootable();
         
         curr = 0;
-        // Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 
     void setYellow() {

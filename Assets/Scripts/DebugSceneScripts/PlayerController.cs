@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI winText;
  
     public int count;
+    public int scoreToWin;
  
     public int timeLeft = 15;
     public TextMeshProUGUI countdownText;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         count = 0;
+        scoreToWin = 5;
         SetCountText();
         winText.text = "";
         bugScripts = bugParentObject.GetComponentsInChildren<moveBug>();
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour
             count += bug.bugShotCount;
             SetCountText();
         }
-        Debug.Log("shot count: " + count);
+        // Debug.Log("shot count: " + count);
     }
 
     public void AddCount() {
@@ -54,7 +56,7 @@ public class PlayerController : MonoBehaviour
     public void SetCountText()
     {
         countText.text = "Count: " + count.ToString ();
-        if (count >= 6)
+        if (count >= scoreToWin)
         {
             winText.text = "You Win!";
             EndGame();
@@ -75,5 +77,12 @@ public class PlayerController : MonoBehaviour
         foreach (moveBug bug in bugScripts) {
             bug.isShootable = false;
         }
+
+        #if UNITY_STANDALONE
+            Application.Quit();
+        #endif
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }
