@@ -10,7 +10,21 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     private int Health = 5;
+    private float timer = 5f;
+    private ChargeTimer charge;
     // Start is called before the first frame update
+    public void setHealth(int h)
+    {
+        Health = h;
+    }
+    public void setTime(float t)
+    {
+        timer = t;
+    }
+    public void setCharge(ChargeTimer c)
+    {
+        charge = c;
+    }
     void Start()
     {
         
@@ -26,6 +40,12 @@ public class Fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (timer <= 0)
+        {
+            charge.fireDamage();
+            Debug.Log("Fire damage!!!");
+            Destroy(gameObject);
+        }
+        timer -= Time.deltaTime;
     }
 }

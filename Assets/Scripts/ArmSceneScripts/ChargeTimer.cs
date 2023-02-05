@@ -7,13 +7,17 @@ public class ChargeTimer : MonoBehaviour
 {
     //https://answers.unity.com/questions/1206187/timer-progress-bar-1.html
     [SerializeField] private float timeRemaining = 0f;
-    public float maximumTime = 20f;
+    public float maximumTime = 10;
     public Image sprite;
-
 
     void Start()
     {
         timeRemaining = maximumTime;
+    }
+
+    public void fireDamage()
+    {
+        timeRemaining -= 5;
     }
 
     // Update is called once per frame
@@ -34,6 +38,8 @@ public class ChargeTimer : MonoBehaviour
         } else {
             FingerController controller = (FingerController) GetComponentInParent(typeof(FingerController));
             controller.setLost();
+            FireCreator fire = (FireCreator) GetComponentInParent(typeof(FireCreator));
+            fire.setLost();
             Debug.Log("Time has run out!");
         }
     }

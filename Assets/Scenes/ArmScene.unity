@@ -2767,56 +2767,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1373519060
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1373519062}
-  - component: {fileID: 1373519061}
-  m_Layer: 0
-  m_Name: FireCreator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1373519061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373519060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 667ce3e2023b1704bb7453bdc05b9e99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minx: -3.5
-  maxx: -0.5
-  miny: -1.5
-  maxy: 0.8
-  prefab: {fileID: 5750854345140351108, guid: d5a333d3013daba46920651681af5e47, type: 3}
-  cooldownrange: 5
---- !u!4 &1373519062
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373519060}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03103956, y: -0.98427546, z: -9.88478}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1445730702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3052,6 +3002,7 @@ GameObject:
   - component: {fileID: 1973163921}
   - component: {fileID: 1973163922}
   - component: {fileID: 1973163923}
+  - component: {fileID: 1973163924}
   m_Layer: 0
   m_Name: FingerHandler
   m_TagString: Untagged
@@ -3110,8 +3061,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRemaining: 0
-  maximumTime: 1
+  maximumTime: 30
   sprite: {fileID: 427474148}
+--- !u!114 &1973163924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973163919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667ce3e2023b1704bb7453bdc05b9e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minx: -3.5
+  maxx: -0.5
+  miny: -1.5
+  maxy: 0.8
+  fireHealth: 3
+  fireTimer: 5
+  prefab: {fileID: 5750854345140351108, guid: d5a333d3013daba46920651681af5e47, type: 3}
+  cooldownrange: 5
 --- !u!1 &2012809911
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,6 @@ public class FingerController : MonoBehaviour
     {
         wiggleRandom();
     }
-
     void wiggleRandom()
     {
         Color newColor = Color.green; // the color is a placeholder for wiggling animation
