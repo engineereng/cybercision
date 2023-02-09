@@ -8,7 +8,7 @@ public class SliderScript : MonoBehaviour
     public int SLIDER_SPEED;
     private int direction;
     private int time;
-
+    public bool alive;
     private int INCREMENT_ON_TIME = 30000;
     private int INCREMENT_SPEED = 1;
     bool canClick;
@@ -22,16 +22,20 @@ public class SliderScript : MonoBehaviour
         direction = 1;
         SLIDER_SPEED = 3;  
         canClick = false;
+        alive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        time++;
-        if(time % INCREMENT_ON_TIME == 0){
-            SLIDER_SPEED += INCREMENT_SPEED;
+        if(alive){
+            time++;
+            if(time % INCREMENT_ON_TIME == 0){
+                SLIDER_SPEED += INCREMENT_SPEED;
+            }
+            sliderBody.velocity = Vector2.right * SLIDER_SPEED * direction;
         }
-        sliderBody.velocity = Vector2.right * SLIDER_SPEED * direction;
+        else sliderBody.velocity *= 0;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -66,6 +70,9 @@ public class SliderScript : MonoBehaviour
     {
         if(canClick){
             logic.decreaseBPM();
+            if(logic.isGameOver()){
+                alive = false;
+            }
             canClick = false;
         }
         else {
