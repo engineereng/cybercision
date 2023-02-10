@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class SliderScript : MonoBehaviour
 {
     public Rigidbody2D sliderBody;
     public int SLIDER_SPEED;
     private int direction;
-    private int time;
+    private float time;
     public bool alive;
-    private int INCREMENT_ON_TIME = 30000;
+    private float INCREMENT_ON_TIME = 5;
     private int INCREMENT_SPEED = 1;
+
+    private bool missClick = false;
     bool canClick;
 
     public LogicScript logic;
@@ -28,10 +29,12 @@ public class SliderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(alive){
-            time++;
-            if(time % INCREMENT_ON_TIME == 0){
+        print(logic.isWin());
+        if(alive && !logic.isWin()){
+            time += Time.deltaTime;
+            if(time == INCREMENT_ON_TIME){
                 SLIDER_SPEED += INCREMENT_SPEED;
+                time = 0;
             }
             sliderBody.velocity = Vector2.right * SLIDER_SPEED * direction;
         }
@@ -51,24 +54,35 @@ public class SliderScript : MonoBehaviour
         }
         else {
             canClick = true;
+            missClick = false;
         }
     }
     private void OnTriggerStay2D(Collider2D Node)
     {
-        if(Node.gameObject.tag == "Square"){
+        if(canClick){
+            if(Node.gameObject.tag == "Square"){
                 if(Input.GetMouseButton(1)){
                     canClick = false;
+                }
+                else if (Input.GetMouseButton(0)) {
+                    canClick = false;
+                    missClick = true;
                 }
             }
             if(Node.gameObject.tag == "Circle"){
                 if(Input.GetMouseButton(0)){
                     canClick = false;
                 }
+                else if (Input.GetMouseButton(1)) {
+                    canClick = false;
+                    missClick = true;
+                }
             }
+        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(canClick){
+        if(canClick || missClick){
             logic.decreaseBPM();
             if(logic.isGameOver()){
                 alive = false;
