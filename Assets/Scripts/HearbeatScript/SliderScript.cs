@@ -4,12 +4,12 @@ using UnityEngine;
 public class SliderScript : MonoBehaviour
 {
     public Rigidbody2D sliderBody;
-    public int SLIDER_SPEED;
+    public float SLIDER_SPEED;
     private int direction;
     private float time;
     public bool alive;
-    private float INCREMENT_ON_TIME = 5;
-    private int INCREMENT_SPEED = 1;
+    private float INCREMENT_ON_TIME = 10;
+    private float INCREMENT_SPEED = 0.5f;
 
     private bool missClick = false;
     bool canClick;
@@ -33,8 +33,9 @@ public class SliderScript : MonoBehaviour
     void Update()
     {
         if(alive && !logic.isWin()){
+            print(SLIDER_SPEED);
             time += Time.deltaTime;
-            if(time == INCREMENT_ON_TIME){
+            if(time >= INCREMENT_ON_TIME){
                 SLIDER_SPEED += INCREMENT_SPEED;
                 time = 0;
             }

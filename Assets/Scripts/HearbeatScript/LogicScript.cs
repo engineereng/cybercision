@@ -17,7 +17,7 @@ public class LogicScript : MonoBehaviour
 
     void Start(){
         heartBPM = 60;
-        Timer = 10f;
+        Timer = 90f;
     }
 
     void Update(){
