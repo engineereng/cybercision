@@ -16,6 +16,9 @@ public class SliderScript : MonoBehaviour
 
     public LogicScript logic;
 
+    public NodeScript square;
+
+    public NodeScript circle;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +32,6 @@ public class SliderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(logic.isWin());
         if(alive && !logic.isWin()){
             time += Time.deltaTime;
             if(time == INCREMENT_ON_TIME){
@@ -63,6 +65,8 @@ public class SliderScript : MonoBehaviour
             if(Node.gameObject.tag == "Square"){
                 if(Input.GetMouseButton(1)){
                     canClick = false;
+                    square = Node.gameObject.GetComponent<NodeScript>();
+                    square.spawnResonance();
                 }
                 else if (Input.GetMouseButton(0)) {
                     canClick = false;
@@ -72,6 +76,8 @@ public class SliderScript : MonoBehaviour
             if(Node.gameObject.tag == "Circle"){
                 if(Input.GetMouseButton(0)){
                     canClick = false;
+                    circle = Node.gameObject.GetComponent<NodeScript>();
+                    circle.spawnResonance();
                 }
                 else if (Input.GetMouseButton(1)) {
                     canClick = false;
