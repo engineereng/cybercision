@@ -9,10 +9,9 @@ public class SliderScript : MonoBehaviour
     private float time;
     public bool alive;
     private float INCREMENT_ON_TIME = 10;
-    private float INCREMENT_SPEED = 0.5f;
-
+    private float INCREMENT_SPEED = 0.25f;
     private bool missClick = false;
-    bool canClick;
+    private bool canClick;
 
     public LogicScript logic;
 
@@ -32,21 +31,18 @@ public class SliderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(alive && !logic.isWin()){
-            print(SLIDER_SPEED);
-            time += Time.deltaTime;
-            if(time >= INCREMENT_ON_TIME){
-                SLIDER_SPEED += INCREMENT_SPEED;
-                time = 0;
+        if(logic.getStarted()){
+            if(alive && !logic.isWin()){
+                print(SLIDER_SPEED);
+                time += Time.deltaTime;
+                if(time >= INCREMENT_ON_TIME){
+                    SLIDER_SPEED += INCREMENT_SPEED;
+                    time = 0;
+                }
+                sliderBody.velocity = Vector2.right * SLIDER_SPEED * direction;
             }
-            sliderBody.velocity = Vector2.right * SLIDER_SPEED * direction;
+            else sliderBody.velocity *= 0;
         }
-        else sliderBody.velocity *= 0;
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        direction *= -1;
     }
     
     private void OnTriggerEnter2D(Collider2D Node)
@@ -54,6 +50,9 @@ public class SliderScript : MonoBehaviour
         if(Node.gameObject.tag == "Reverse"){
             int r = Random.Range(0, 4);
             if(r == 1)direction *= -1;   
+        }
+        else if (Node.gameObject.tag == "Edge"){
+            direction *= -1;
         }
         else {
             canClick = true;

@@ -7,42 +7,56 @@ public class LogicScript : MonoBehaviour
 {
     private int heartBPM ;
     public Text BPMText;
-
     public GameObject gameOverScreen;
-
     private float Timer;
     public Text TimerText;
-
+    public Text patientStatus;
     public GameObject winnerScreen;
+    private bool started;
+    public GameObject startScreen;
 
     void Start(){
         heartBPM = 60;
-        Timer = 90f;
+        Timer = 60f;
+        started = false;
     }
 
     void Update(){
-        if(isGameOver())gameOverScreen.SetActive(true);
-        else if(isWin()){
-            winnerScreen.SetActive(true);
-            TimerText.text = "TIME: " + Timer.ToString("0");
+        if(started){
+            if(isGameOver()){
+                gameOverScreen.SetActive(true);
+                patientStatus.text = "Patient is " + status();
+            }
+            else if(isWin()){
+                winnerScreen.SetActive(true);
+                patientStatus.text = "Patient is " + status();
+                TimerText.text = "TIME: " + Timer.ToString("0");
+            }
+            else {
+                Timer -= Time.deltaTime;
+                patientStatus.text = "Patient is " + status();
+                TimerText.text = "TIME: " + Timer.ToString("0");
+                BPMText.text = "Beat Per Minute: " + heartBPM.ToString("0");
+            }
         }
         else {
-            Timer -= Time.deltaTime;
-            TimerText.text = "TIME: " + Timer.ToString("0");
-            BPMText.text = "Beat Per Minute: " + heartBPM.ToString("0");
+            if(Input.GetMouseButton(0)){
+                started = true;
+                startScreen.SetActive(false);
+            }
         }
     }
 
 
     public void decreaseBPM(){
-        heartBPM -= 10;
+        heartBPM -= 9;
         if(heartBPM <= 0){
             heartBPM = 0;
         }
     }
 
     public void increaseBPM(){
-        heartBPM += 3;
+        heartBPM += 2;
         if(heartBPM > 100){
             heartBPM = 100;
         }
@@ -61,5 +75,27 @@ public class LogicScript : MonoBehaviour
     }
     public bool isWin(){
         return Timer <= 0;
+    }
+
+    public string status(){ 
+        if(heartBPM == 0){
+            return "Dead";
+        }
+        else if(heartBPM < 30){
+            return "Dying";
+        }
+        else if(heartBPM < 60){
+            return "Not Well";
+        }
+        else if(heartBPM < 80){
+            return "Okay";
+        }
+        else {
+            return "Healthy";
+        }
+    }
+
+    public bool getStarted(){
+        return started;
     }
 }
