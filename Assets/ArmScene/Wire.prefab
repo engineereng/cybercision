@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4551326307014883046}
   - component: {fileID: 4551326307014883047}
   - component: {fileID: 4551326307014883044}
-  - component: {fileID: 4551326307014883035}
+  - component: {fileID: 1776719080963666222}
   m_Layer: 0
   m_Name: Wire
   m_TagString: Untagged
@@ -152,7 +152,7 @@ MonoBehaviour:
   saveDelay: 0.2
   power: 5
   following: 0
---- !u!114 &4551326307014883035
+--- !u!114 &1776719080963666222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

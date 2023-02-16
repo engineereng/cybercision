@@ -3,7 +3,9 @@ guid: fd6ca55e890996e4c97f1fab68869df3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enterCursorTexture: {fileID: 2800000, guid: 216069ec665b87f449a7174966c3852c, type: 3}
+  - dragCursorTexture: {fileID: 2800000, guid: d02883677177cef4dab5b4c164dab9ce, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
