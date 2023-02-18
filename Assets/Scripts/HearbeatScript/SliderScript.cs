@@ -33,7 +33,6 @@ public class SliderScript : MonoBehaviour
     {
         if(logic.getStarted()){
             if(alive && !logic.isWin()){
-                print(SLIDER_SPEED);
                 time += Time.deltaTime;
                 if(time >= INCREMENT_ON_TIME){
                     SLIDER_SPEED += INCREMENT_SPEED;
@@ -52,6 +51,7 @@ public class SliderScript : MonoBehaviour
             if(r == 1)direction *= -1;   
         }
         else if (Node.gameObject.tag == "Edge"){
+            print("idk");
             direction *= -1;
         }
         else {
