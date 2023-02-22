@@ -15,10 +15,13 @@ public class LogicScript : MonoBehaviour
     private bool started;
     public GameObject startScreen;
 
+    public GameObject audioSounds;
+
     void Start(){
         heartBPM = 60;
         Timer = 60f;
         started = false;
+        FindObjectOfType<AudioManager>().Play("Theme");
     }
 
     void Update(){
@@ -51,6 +54,7 @@ public class LogicScript : MonoBehaviour
     public void decreaseBPM(){
         heartBPM -= 9;
         if(heartBPM <= 0){
+            FindObjectOfType<AudioManager>().Play("Flatline");
             heartBPM = 0;
         }
     }

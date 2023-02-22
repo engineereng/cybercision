@@ -66,6 +66,8 @@ public class SliderScript : MonoBehaviour
                 if(Input.GetMouseButton(1)){
                     canClick = false;
                     square = Node.gameObject.GetComponent<NodeScript>();
+                    logic.increaseBPM();
+                    FindObjectOfType<AudioManager>().Play("Square");
                     square.spawnResonance();
                 }
                 else if (Input.GetMouseButton(0)) {
@@ -77,6 +79,8 @@ public class SliderScript : MonoBehaviour
                 if(Input.GetMouseButton(0)){
                     canClick = false;
                     circle = Node.gameObject.GetComponent<NodeScript>();
+                    logic.increaseBPM();
+                    FindObjectOfType<AudioManager>().Play("Circle");
                     circle.spawnResonance();
                 }
                 else if (Input.GetMouseButton(1)) {
@@ -94,9 +98,6 @@ public class SliderScript : MonoBehaviour
                 alive = false;
             }
             canClick = false;
-        }
-        else {
-            if(other.gameObject.tag != "Reverse")logic.increaseBPM();
         }
     }
 }
