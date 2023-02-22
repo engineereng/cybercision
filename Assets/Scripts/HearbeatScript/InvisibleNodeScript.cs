@@ -4,9 +4,5 @@ using UnityEngine;
 
 public class InvisibleNodeScript : MonoBehaviour
 {
-    
-    void OnTriggerEnter2D(Collider2D sliderBody)
-    {
-        
-    }
+
 }

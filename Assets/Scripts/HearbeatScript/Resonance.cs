@@ -29,5 +29,8 @@ public class Resonance : MonoBehaviour
         color = resonance.color;
         color.a -= 3.5f*Time.deltaTime;
         resonance.color = color;
+        if(color.a <= 0){
+            Destroy(gameObject);
+        }
     }
 }

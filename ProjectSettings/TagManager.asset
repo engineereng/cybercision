@@ -9,6 +9,7 @@ TagManager:
   - Square
   - Logic
   - Edge
+  - Node
   layers:
   - Default
   - TransparentFX
