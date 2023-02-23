@@ -14,10 +14,10 @@ public class NodeSet : MonoBehaviour
         foreach(NodeScript node in nodes){
             node.init();
         }
-        for(int i = 0 ; i < 3 ; i++){
-            Node1 = nodes[i*3];
-            Node2 = nodes[i*3 + 1];
-            Node3 = nodes[i*3 + 2];
+        for(int i = 0 ; i < 7 ; i++){
+            Node1 = nodes[i];
+            Node2 = nodes[i + 1];
+            Node3 = nodes[i + 2];
             if(Node1.gameObject.tag == Node2.gameObject.tag && 
                     Node1.gameObject.tag == Node3.gameObject.tag){
                 if(Node3.gameObject.tag == "Circle"){
