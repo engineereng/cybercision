@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 public class LogicScript : MonoBehaviour
 {
     private int heartBPM ;
@@ -14,9 +15,7 @@ public class LogicScript : MonoBehaviour
     public GameObject winnerScreen;
     private bool started;
     public GameObject startScreen;
-
-    public GameObject audioSounds;
-
+    public GameObject VideoManager;
     void Start(){
         heartBPM = 60;
         Timer = 60f;
@@ -30,11 +29,13 @@ public class LogicScript : MonoBehaviour
                 gameOverScreen.SetActive(true);
                 patientStatus.text = "Patient is " + status();
                 FindObjectOfType<AudioManager>().Mute("Theme");
+                FindObjectOfType<VideoManager>().Flatline();
             }
             else if(isWin()){
                 winnerScreen.SetActive(true);
                 patientStatus.text = "Patient is " + status();
                 TimerText.text = "TIME: " + Timer.ToString("0");
+                FindObjectOfType<AudioManager>().Mute("Theme");
             }
             else {
                 Timer -= Time.deltaTime;
@@ -55,6 +56,7 @@ public class LogicScript : MonoBehaviour
     public void decreaseBPM(){
         heartBPM -= 9;
         if(heartBPM <= 0){
+            FindObjectOfType<AudioManager>().Play("GameOver");
             FindObjectOfType<AudioManager>().Play("Flatline");
             heartBPM = 0;
         }
