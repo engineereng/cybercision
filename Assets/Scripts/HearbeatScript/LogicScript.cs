@@ -29,6 +29,7 @@ public class LogicScript : MonoBehaviour
             if(isGameOver()){
                 gameOverScreen.SetActive(true);
                 patientStatus.text = "Patient is " + status();
+                FindObjectOfType<AudioManager>().Mute("Theme");
             }
             else if(isWin()){
                 winnerScreen.SetActive(true);

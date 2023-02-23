@@ -29,4 +29,13 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
     }
+
+    public void Mute(string name){
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if(s == null){
+            Debug.LogWarning("no sound found!");
+            return;
+        }
+        s.source.mute = true;
+    }
 }
