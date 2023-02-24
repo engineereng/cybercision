@@ -15,8 +15,9 @@ public class LogicScript : MonoBehaviour
     public GameObject winnerScreen;
     private bool started;
     public GameObject startScreen;
-    public GameObject VideoManager;
+    public VideoManager VideoManager;
     void Start(){
+        VideoManager = FindObjectOfType<VideoManager>();
         heartBPM = 60;
         Timer = 60f;
         started = false;
@@ -29,7 +30,7 @@ public class LogicScript : MonoBehaviour
                 gameOverScreen.SetActive(true);
                 patientStatus.text = "Patient is " + status();
                 FindObjectOfType<AudioManager>().Mute("Theme");
-                FindObjectOfType<VideoManager>().Flatline();
+                VideoManager.Flatline();
             }
             else if(isWin()){
                 winnerScreen.SetActive(true);
@@ -42,6 +43,17 @@ public class LogicScript : MonoBehaviour
                 patientStatus.text = "Patient is " + status();
                 TimerText.text = "TIME: " + Timer.ToString("0");
                 BPMText.text = "Beat Per Minute: " + heartBPM.ToString("0");
+            }
+            if(VideoManager.checkOver()){
+                if(status() == "Dying"){
+                    VideoManager.Dying();
+                }
+                else if(status() == "NotWell"){
+                    VideoManager.NotWell();
+                }
+                else{
+                    VideoManager.Healthy();
+                }
             }
         }
         else {
