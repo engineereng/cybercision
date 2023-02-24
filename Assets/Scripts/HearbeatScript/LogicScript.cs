@@ -48,7 +48,7 @@ public class LogicScript : MonoBehaviour
                 if(status() == "Dying"){
                     VideoManager.Dying();
                 }
-                else if(status() == "NotWell"){
+                else if(status() == "Not Well"){
                     VideoManager.NotWell();
                 }
                 else{

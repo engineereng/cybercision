@@ -1342,7 +1342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -172, y: 144}
+  m_AnchoredPosition: {x: -162, y: 123}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!328 &1057117600
@@ -1690,7 +1690,7 @@ RectTransform:
   m_GameObject: {fileID: 1299754345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.4814756, y: 2.0804336, z: 2.0804336}
+  m_LocalScale: {x: 2.835244, y: 1.6942635, z: 1.6942635}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 162873587}
@@ -1698,7 +1698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 213, y: -109}
+  m_AnchoredPosition: {x: 211, y: -105}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1299754347
@@ -2141,7 +2141,7 @@ MonoBehaviour:
   patientStatus: {fileID: 1306670411}
   winnerScreen: {fileID: 1308200703}
   startScreen: {fileID: 1616924901}
-  VideoManager: {fileID: 2084156185}
+  VideoManager: {fileID: 2084156186}
 --- !u!4 &1475941826
 Transform:
   m_ObjectHideFlags: 0

@@ -21,11 +21,9 @@ public class NodeSet : MonoBehaviour
             if(Node1.gameObject.tag == Node2.gameObject.tag && 
                     Node1.gameObject.tag == Node3.gameObject.tag){
                 if(Node3.gameObject.tag == "Circle"){
-                    print("A");
                     Node3.changeToSquare();
                 }
                 else{
-                    print("B");
                     Node3.changeToCircle();
                 }
             }
