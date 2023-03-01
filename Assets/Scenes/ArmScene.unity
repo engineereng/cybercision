@@ -2800,6 +2800,8 @@ MonoBehaviour:
   maxx: -0.5
   miny: -1.5
   maxy: 0.8
+  fireHealth: 5
+  fireTimer: 5
   prefab: {fileID: 5750854345140351108, guid: d5a333d3013daba46920651681af5e47, type: 3}
   cooldownrange: 5
 --- !u!4 &1373519062
@@ -2884,7 +2886,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wire 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1776719080963666222, guid: 2ec284910d3fad449a4199bf98fcbcad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ec284910d3fad449a4199bf98fcbcad, type: 3}
 --- !u!1 &1453783614 stripped
 GameObject:
