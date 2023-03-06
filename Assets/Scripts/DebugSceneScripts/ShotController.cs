@@ -37,31 +37,31 @@ public class ShotController : MonoBehaviour
         }
     }
 
-    IEnumerator timearg(int secs)
-    {   
-        foreach (moveBug bug in bugScripts) {
-            bug.isShootable = false;
-            shootableText.text = "false";
-        }
+    // IEnumerator timearg(int secs)
+    // {   
+    //     foreach (moveBug bug in bugScripts) {
+    //         bug.isShootable = false;
+    //         shootableText.text = "false";
+    //     }
         
-        yield return new WaitForSecondsRealtime(secs);
+    //     yield return new WaitForSecondsRealtime(secs);
 
-        setYellow();
-        setIsShootable();
+    //     setYellow();
+    //     setIsShootable();
         
-        curr = 0;
-    }
+    //     curr = 0;
+    // }
 
-    void setYellow() {
-        foreach (SpriteRenderer child in shots) {
-            child.color = Color.yellow;
-        }
-    }
+    // void setYellow() {
+    //     foreach (SpriteRenderer child in shots) {
+    //         child.color = Color.yellow;
+    //     }
+    // }
 
-    void setIsShootable() {
-        foreach (moveBug bug in bugScripts) {
-            bug.isShootable = true;
-            shootableText.text = "true";
-        } 
-    }
+    // void setIsShootable() {
+    //     foreach (moveBug bug in bugScripts) {
+    //         bug.isShootable = true;
+    //         shootableText.text = "true";
+    //     } 
+    // }
 }
