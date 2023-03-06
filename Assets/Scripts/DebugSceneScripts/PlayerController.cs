@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        countdownText.text = ("Time Left = " + timeLeft);
+        countdownText.text = ("Time Left: " + timeLeft);
  
         if (timeLeft <= 0)
         {
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
             count += bug.bugShotCount;
             SetCountText();
         }
-        // Debug.Log("shot count: " + count);
+
     }
 
     public void AddCount() {
@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour
             bug.isShootable = false;
         }
 
+        // closes application
         #if UNITY_STANDALONE
             Application.Quit();
         #endif

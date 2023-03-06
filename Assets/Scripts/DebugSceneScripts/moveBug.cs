@@ -11,7 +11,7 @@ public class moveBug : MonoBehaviour
     private moveBug bugScript;
     public PlayerController scoreObject; 
 
-    public int seconds;
+    public int respawnTime;
     public bool isShootable;
 
     public bool isSideways;
@@ -37,7 +37,7 @@ public class moveBug : MonoBehaviour
     private void OnMouseDown() {
         if (isShootable) {
             scoreObject.AddCount();
-            HideAndShow(seconds);
+            HideAndShow(respawnTime);
         }
     }
 
