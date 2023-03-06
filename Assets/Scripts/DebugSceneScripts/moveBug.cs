@@ -14,7 +14,7 @@ public class moveBug : MonoBehaviour
     public int seconds;
     public bool isShootable;
 
-    public bool isVertical;
+    public bool isSideways;
 
     bool switc = true;
 
@@ -36,10 +36,7 @@ public class moveBug : MonoBehaviour
 
     private void OnMouseDown() {
         if (isShootable) {
-            // gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 10);
-            
             scoreObject.AddCount();
-            // StartCoroutine(timearg(seconds));
             HideAndShow(seconds);
         }
     }
@@ -57,23 +54,16 @@ public class moveBug : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    IEnumerator timearg(int secs)
-    {
-        yield return new WaitForSeconds(secs);
-        gameObject.SetActive(true);
-        // gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if (!isVertical) {
+        // is sideways
+        if (isSideways) {
             if (switc) {
-                moveright();
+                moveup();
             }
             if (!switc) {
-                moveleft();
+                movedown();
             }
             if (transform.position.x >= constraintRightUp) {
                 switc = false;
