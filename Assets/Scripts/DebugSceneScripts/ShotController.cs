@@ -16,13 +16,17 @@ public class ShotController : MonoBehaviour
     private int currShots;
     private int maxShots;
 
-    Vector3 shot1pos = new Vector3(3.8f, 4.17f, 0f);
-    Vector3 shot2pos = new Vector3(4.5f, 4.17f, 0f);
-    Vector3 shot3pos = new Vector3(5.2f, 4.17f, 0f);
+    public GameObject shot1;
+    public GameObject shot2;
+    public GameObject shot3;
 
-    GameObject shot1;
-    GameObject shot2;
-    GameObject shot3;
+    // Vector3 shot1pos = new Vector3(230f, 329f, 1301f);
+    // Vector3 shot2pos = new Vector3(290f, 329f, 1301f);
+    // Vector3 shot3pos = new Vector3(350f, 329f, 1301f);
+
+    // GameObject shot1;
+    // GameObject shot2;
+    // GameObject shot3;
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +34,9 @@ public class ShotController : MonoBehaviour
         reloadText.text = "";
         maxShots = 3;
         currShots = 3;
-        shot1 = Instantiate(shot, shot1pos, shot.transform.rotation, this.transform);
-        shot2 = Instantiate(shot, shot2pos, shot.transform.rotation, this.transform);
-        shot3 = Instantiate(shot, shot3pos, shot.transform.rotation, this.transform);
+        // shot1 = Instantiate(shot, shot1pos, shot.transform.rotation, this.transform);
+        // shot2 = Instantiate(shot, shot2pos, shot.transform.rotation, this.transform);
+        // shot3 = Instantiate(shot, shot3pos, shot.transform.rotation, this.transform);
         bugScripts = bugParentObject.GetComponentsInChildren<moveBug>();
     }
 
