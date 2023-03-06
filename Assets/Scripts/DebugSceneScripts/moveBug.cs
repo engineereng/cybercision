@@ -36,17 +36,32 @@ public class moveBug : MonoBehaviour
 
     private void OnMouseDown() {
         if (isShootable) {
-            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 10);
+            // gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 10);
             
             scoreObject.AddCount();
-            StartCoroutine(timearg(seconds));
+            // StartCoroutine(timearg(seconds));
+            HideAndShow(seconds);
         }
+    }
+
+    private void HideAndShow(float delay)
+    {
+        gameObject.SetActive(false);
+
+        // Call Show after delay seconds
+        Invoke(nameof(Show), delay);
+    }
+
+    private void Show()
+    {
+        gameObject.SetActive(true);
     }
 
     IEnumerator timearg(int secs)
     {
         yield return new WaitForSeconds(secs);
-        gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+        gameObject.SetActive(true);
+        // gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
 
     }
 
