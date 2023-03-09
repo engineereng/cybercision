@@ -6,62 +6,122 @@ using TMPro;
 
 public class ShotController : MonoBehaviour
 {
-    SpriteRenderer[] shots;
+    public GameObject shot;
+    public int reloadTime;
+    public TextMeshProUGUI reloadText;
+
     public moveBug[] bugScripts;
     public GameObject bugParentObject;
-    private int curr = 0;
-    public int seconds;
 
-    public TextMeshProUGUI shootableText;
+    private int currShots;
+    private int maxShots;
+
+    public GameObject shot1;
+    public GameObject shot2;
+    public GameObject shot3;
+
+    // Vector3 shot1pos = new Vector3(230f, 329f, 1301f);
+    // Vector3 shot2pos = new Vector3(290f, 329f, 1301f);
+    // Vector3 shot3pos = new Vector3(350f, 329f, 1301f);
+
+    // GameObject shot1;
+    // GameObject shot2;
+    // GameObject shot3;
 
     // Start is called before the first frame update
     void Start()
     {
-        shots = GetComponentsInChildren<SpriteRenderer>();
+        reloadText.text = "";
+        maxShots = 3;
+        currShots = 3;
+        // shot1 = Instantiate(shot, shot1pos, shot.transform.rotation, this.transform);
+        // shot2 = Instantiate(shot, shot2pos, shot.transform.rotation, this.transform);
+        // shot3 = Instantiate(shot, shot3pos, shot.transform.rotation, this.transform);
         bugScripts = bugParentObject.GetComponentsInChildren<moveBug>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if the iterator reaches 3 shots, bugs should not be shootable
-        if (curr == shots.Length) {
-            StartCoroutine(timearg(seconds));
-        }
         if (Input.GetMouseButtonDown(0)) {
-            if (shots[curr]) { // index out of range issue
-                shots[curr].color = Color.red;
-                curr++;
+            currShots--;
+
+            if (currShots == 0) {
+                shot1.SetActive(false);
+                shot2.SetActive(false);
+                shot3.SetActive(false);
+                Reload();
             }
-            // Debug.Log("Curr is currently " + curr);
+
+            if (currShots == 1) {
+                shot1.SetActive(true);
+                shot2.SetActive(false);
+                shot3.SetActive(false);
+            }
+
+            if (currShots == 2) {
+                shot1.SetActive(true);
+                shot2.SetActive(true);
+                shot3.SetActive(false);
+            }
+
+            if (currShots == 3) {
+                shot1.SetActive(true);
+                shot2.SetActive(true);
+                shot3.SetActive(true);
+            }
         }
+
     }
 
-    IEnumerator timearg(int secs)
-    {   
-        foreach (moveBug bug in bugScripts) {
-            bug.isShootable = false;
-            shootableText.text = "false";
-        }
-        
-        yield return new WaitForSecondsRealtime(secs);
+    void Reload() {
 
-        setYellow();
+        // StartCoroutine(timearg(reloadTime));
+
+        reloadText.text = "Reloading...";
+        setIsNotShootable();
+        Invoke(nameof(Reloading), reloadTime);
+    }
+
+    private void Reloading()
+    {
         setIsShootable();
-        
-        curr = 0;
+
+        currShots = maxShots;
+
+        reloadText.text = "";
+
+        shot1.SetActive(true);
+        shot2.SetActive(true);
+        shot3.SetActive(true);
     }
 
-    void setYellow() {
-        foreach (SpriteRenderer child in shots) {
-            child.color = Color.yellow;
-        }
+    IEnumerator timearg(int reloadTime)
+    {   
+        reloadText.text = "Reloading...";
+        setIsNotShootable();
+
+        yield return new WaitForSecondsRealtime(reloadTime);
+
+        setIsShootable();
+
+        currShots = maxShots;
+
+        shot1.SetActive(true);
+        shot2.SetActive(true);
+        shot3.SetActive(true);
+        
     }
 
     void setIsShootable() {
         foreach (moveBug bug in bugScripts) {
             bug.isShootable = true;
-            shootableText.text = "true";
         } 
+    }
+
+    void setIsNotShootable() {
+        foreach (moveBug bug in bugScripts) {
+            bug.isShootable = false;
+        }
     }
 }
