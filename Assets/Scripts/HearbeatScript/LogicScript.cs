@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 public class LogicScript : MonoBehaviour
 {
-    private int heartBPM ;
+    private int heartBPM;
+    private string prevStatus;
     public Text BPMText;
     public GameObject gameOverScreen;
     private float Timer;
@@ -19,9 +20,10 @@ public class LogicScript : MonoBehaviour
     void Start(){
         VideoManager = FindObjectOfType<VideoManager>();
         heartBPM = 60;
-        Timer = 60f;
+        Timer = 30f;
         started = false;
         FindObjectOfType<AudioManager>().Play("Theme");
+        prevStatus = "Healthy";
     }
 
     void Update(){
@@ -44,7 +46,10 @@ public class LogicScript : MonoBehaviour
                 TimerText.text = "TIME: " + Timer.ToString("0");
                 BPMText.text = "Beat Per Minute: " + heartBPM.ToString("0");
             }
-            if(VideoManager.checkOver()){
+            if(VideoManager.checkOver() && statusChanged()){
+                VideoManager.Pause();
+                Debug.Log("checked");
+                print("change animation");  
                 if(status() == "Dying"){
                     VideoManager.Dying();
                 }
@@ -54,6 +59,8 @@ public class LogicScript : MonoBehaviour
                 else{
                     VideoManager.Healthy();
                 }
+                Debug.Log("changed!!");
+                VideoManager.Play();
             }
         }
         else {
@@ -116,5 +123,13 @@ public class LogicScript : MonoBehaviour
 
     public bool getStarted(){
         return started;
+    }
+
+    public bool statusChanged(){
+        if(status() != prevStatus){
+            prevStatus = status();
+            return true;
+        }
+        return false;
     }
 }
