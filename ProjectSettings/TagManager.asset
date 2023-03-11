@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Reverse
+  - Circle
+  - Square
+  - Logic
+  - Edge
+  - Node
   layers:
   - Default
   - TransparentFX
