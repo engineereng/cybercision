@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 public class CyberDialogueScript : MonoBehaviour
 {
+
+    [SerializeField]
+    public CharacterInformation[] characters;
     
     [SerializeField]
     public TextAsset defaultDialogueScript;
@@ -22,6 +25,9 @@ public class CyberDialogueScript : MonoBehaviour
     private Dictionary<string, int> labels;
 
     private DialogueBoxController dialogueBoxController;
+
+    [SerializeField]
+    public CharacterSheetController speakerSheetController;
 
     private List<string> choices;
 
@@ -46,7 +52,13 @@ public class CyberDialogueScript : MonoBehaviour
         {
             LoadScript(defaultDialogueScript);
         }
-        
+
+        if(speakerSheetController == null)
+        {
+            Debug.LogWarning("No speaker sheet controller set!");
+        }
+
+
     }
 
     private void Update()
@@ -215,6 +227,33 @@ public class CyberDialogueScript : MonoBehaviour
             }
 
             return true;
+        }
+        else if (parts[0].Equals("speaker"))
+        {
+            string newSpeakerScriptName = parts[1];
+
+            CharacterInformation selected = null;
+
+            foreach(CharacterInformation ci in characters)
+            {
+                if (ci.ScriptReferenceName.Equals(newSpeakerScriptName))
+                {
+                    selected = ci;
+                    break;
+                }
+            }
+
+            if(selected == null)
+            {
+                Debug.LogWarning("Could not switch speaker to " + newSpeakerScriptName + ", did you add their character information to the dialogue script?");
+            }
+            else
+            {
+                speakerSheetController.SetCharacter(selected);
+            }
+
+            return true;
+            
         }
 
         Debug.LogWarning("Couldn't parse dialogue command: " + command);

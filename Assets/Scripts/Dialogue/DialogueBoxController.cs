@@ -52,7 +52,7 @@ public class DialogueBoxController : MonoBehaviour
         TypedText Previous = CurrentDialogueText;
         for (int i = 0; i < CurrentOptionTexts.Length; i++)
         {
-            CurrentOptionTexts[i] = new TypedText(Previous);
+            CurrentOptionTexts[i] = new TypedText();
             Previous = CurrentOptionTexts[i];
         }
 
