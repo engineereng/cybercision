@@ -9,18 +9,10 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
-    private int Health = 5;
-    private float timer = 5f;
-    private ChargeTimer charge;
+    [SerializeField] private int health = 5; // number of clicks
+    [SerializeField] private float timer = 5f; // time in seconds until the fire expires and damages the timer
+    [SerializeField] private ChargeTimer charge;
     // Start is called before the first frame update
-    public void setHealth(int h)
-    {
-        Health = h;
-    }
-    public void setTime(float t)
-    {
-        timer = t;
-    }
     public void setCharge(ChargeTimer c)
     {
         charge = c;
@@ -31,18 +23,18 @@ public class Fire : MonoBehaviour
     }
     void OnMouseDown()
     {
-            Health = Health - 1;
-            if (Health == 0)
-            {
-                Destroy(gameObject);
-            }
+        health = health - 1;
+        if (health == 0)
+        {
+            Destroy(gameObject);
+        }
     }
     // Update is called once per frame
     void Update()
     {
         if (timer <= 0)
         {
-            charge.fireDamage();
+            charge?.fireDamage();
             Debug.Log("Fire damage!!!");
             Destroy(gameObject);
         }
