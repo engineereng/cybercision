@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class CyberDialogueScript : MonoBehaviour
 {
@@ -57,8 +59,7 @@ public class CyberDialogueScript : MonoBehaviour
         {
             Debug.LogWarning("No speaker sheet controller set!");
         }
-
-
+        
     }
 
     private void Update()
@@ -148,8 +149,12 @@ public class CyberDialogueScript : MonoBehaviour
 
             if(sceneName.Length > 0)
             {
+
+                SaveGame(sceneName);
+
                 Debug.Log("Loading scene " + sceneName);
                 SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+                
             }
             return true;
         }
@@ -309,6 +314,23 @@ public class CyberDialogueScript : MonoBehaviour
 
         Debug.LogWarning("Couldn't parse dialogue command: " + command);
         return true;
+    }
+
+    private void SaveGame(string nextScene)
+    {
+        Save save = new Save();
+
+        save.SavedChoices = rememberedChoices;
+        save.SceneToLoad = nextScene;
+
+        string path = Application.persistentDataPath + "/gamesave.save";
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(path);
+        bf.Serialize(file, save);
+        file.Close();
+
+        Debug.Log("Saved game to " + path);
     }
 
     private static string concat(string[] parts, int indexFrom)
