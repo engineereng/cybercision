@@ -102,7 +102,7 @@ public class CyberDialogueScript : MonoBehaviour
             string sanitized = line;
             if (sanitized.EndsWith("\r"))
             {
-                sanitized = line.Substring(0, line.Length - 1);//remove the trailing \n
+                sanitized = line.Substring(0, line.Length - 1);//remove the trailing \r
             }
             if(sanitized.Length > 0)
             {
