@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using UnityEngine.SceneManagement;
 
 public class CyberDialogueScript : MonoBehaviour
 {
@@ -97,6 +97,10 @@ public class CyberDialogueScript : MonoBehaviour
             string sanitized = line.Substring(0, line.Length-1);//remove the trailing \n
             if(sanitized.Length > 0)
             {
+                if (sanitized.StartsWith(";"))
+                {
+                    continue;
+                }
                 if (sanitized.EndsWith(":"))//Label
                 {
                     labels[sanitized.Substring(0, sanitized.Length - 1)] = commands.Count;//When this label is jumped to it should go to the instruction below this line so add 1
@@ -136,6 +140,17 @@ public class CyberDialogueScript : MonoBehaviour
         else if (parts[0].Equals("choice"))
         {
             choices.Add(concat(parts, 1));
+            return true;
+        }
+        else if (parts[0].Equals("load"))
+        {
+            string sceneName = concat(parts, 1);
+
+            if(sceneName.Length > 0)
+            {
+                Debug.Log("Loading scene " + sceneName);
+                SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            }
             return true;
         }
         else if (parts[0].Equals("makechoice"))
@@ -303,7 +318,7 @@ public class CyberDialogueScript : MonoBehaviour
         {
             concatted += parts[i] + " ";
         }
-        return concatted;
+        return concatted.Substring(0, concatted.Length - 1);
     }
 
 

@@ -565,6 +565,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5973303491516937904, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
+      propertyPath: defaultDialogueScript
+      value: 
+      objectReference: {fileID: 4900000, guid: 1e058605c43e3bc4da31dcae92ca898f, type: 3}
+    - target: {fileID: 5973303492447696827, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dcbae12286578c1409d10289769f1d40, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
 --- !u!224 &5973303492328053283 stripped

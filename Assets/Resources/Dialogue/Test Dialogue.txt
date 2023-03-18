@@ -1,3 +1,5 @@
+;;This is a comment and will not run as anything
+
 music play HowToTalkToCustomers
 dialogue This is some sample dialogue I guess.
 
@@ -71,3 +73,7 @@ goto finish
 finish:
 
 dialogue Anyways, I've got to go now! Bye!!
+load Test Day 2
+
+;; Note: There is a bug where if you don't put a new line at the end of the file, it bugs out
+;; Always just have one empty line at the end of the file
