@@ -173,6 +173,7 @@ public class DialogueBoxController : MonoBehaviour
 
                     if (scrollSoundSource)
                     {
+                        scrollSoundSource.pitch = 0.5f;
                         scrollSoundSource.Play();
                     }
                 }
