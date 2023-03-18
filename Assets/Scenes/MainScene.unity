@@ -815,7 +815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugButtonTarget: DebugScene
   armButtonTarget: ArmScene
-  reprogramButtonTarget: ReprogramScene
+  reprogramButtonTarget: HeartBeatScene
   chargeButtonTarget: ChargeScene
 --- !u!4 &1064882009
 Transform:
@@ -1027,9 +1027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Reprogram
-
-    chip
+  m_text: 'Heartbeat
 
     minigame'
   m_isRightToLeft: 0
@@ -1394,7 +1392,7 @@ GameObject:
   - component: {fileID: 1737140211}
   - component: {fileID: 1737140210}
   m_Layer: 5
-  m_Name: ReprogramChipButton
+  m_Name: HeartbeatButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
