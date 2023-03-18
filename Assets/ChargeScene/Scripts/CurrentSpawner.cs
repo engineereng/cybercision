@@ -84,7 +84,7 @@ public class CurrentSpawner : MonoBehaviour
         
         image.sizeDelta = new Vector2(chargePercentage, image.sizeDelta.y);
 
-        scoreText.text = chargePercentage.ToString("#.00");
+        scoreText.text = chargePercentage.ToString("#");
         chargeTime = 0.1f;
     }
 }
