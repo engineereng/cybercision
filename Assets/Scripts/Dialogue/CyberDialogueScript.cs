@@ -99,7 +99,11 @@ public class CyberDialogueScript : MonoBehaviour
             {
                 continue;
             }
-            string sanitized = line.Substring(0, line.Length-1);//remove the trailing \n
+            string sanitized = line;
+            if (sanitized.EndsWith("\r"))
+            {
+                sanitized = line.Substring(0, line.Length - 1);//remove the trailing \n
+            }
             if(sanitized.Length > 0)
             {
                 if (sanitized.StartsWith(";"))
