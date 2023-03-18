@@ -1,3 +1,4 @@
+music play HowToTalkToCustomers
 dialogue This is some sample dialogue I guess.
 
 choice This is the first choice
@@ -9,15 +10,18 @@ remember test-choice-one
 branch choiceOneA;choiceOneB;choiceOneC
 
 choiceOneA:
+music play DoYouHaveArms
 speaker test2
 dialogue You selected my first choice! Now I look like mickey mouse!
 goto next
 
 choiceOneB:
+music play OurFavoriteAddict
 dialogue You selected my second choice!
 goto next
 
 choiceOneC:
+music play PartyAtTheApocolypse
 dialogue You selected my third choice!
 goto next
 
@@ -29,6 +33,8 @@ choice Three
 makechoice Make another choice and I'll show you I can remember stuff!
 
 branch choiceTwoA;choiceTwoB;choiceTwoC
+
+music stop
 
 choiceTwoA:
 dialogue You selected my first choice!

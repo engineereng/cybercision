@@ -22,7 +22,12 @@ public class DialogueBoxController : MonoBehaviour
     [SerializeField]
     public int SelectedOption;
 
+    [SerializeReference]
+    public AudioClip[] music;
+
     private bool WaitingForInput;
+
+    public AudioSource musicSource;
 
     // Start is called before the first frame update
     void Start()

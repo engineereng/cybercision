@@ -255,6 +255,42 @@ public class CyberDialogueScript : MonoBehaviour
             return true;
             
         }
+        else if (parts[0].Equals("music"))
+        {
+
+            if (parts[1].Equals("play"))
+            {
+                string musicName = parts[2];
+
+                AudioClip audioClip = null;
+
+                foreach (AudioClip ac in dialogueBoxController.music)
+                {
+                    if (ac.name.Equals(musicName))
+                    {
+                        audioClip = ac;
+                        break;
+                    }
+                }
+
+                if (audioClip)
+                {
+                    dialogueBoxController.musicSource.clip = audioClip;
+                    dialogueBoxController.musicSource.loop = true;
+                    dialogueBoxController.musicSource.Play();
+                    Debug.Log("Playing music " + audioClip.name);
+                }
+                else
+                {
+                    Debug.LogWarning("Couldn't find music named " + musicName + ", have you added it to the music load list?");
+                }
+            }else if (parts[1].Equals("stop"))
+            {
+                dialogueBoxController.musicSource.Stop();
+            }
+
+            return true;
+        }
 
         Debug.LogWarning("Couldn't parse dialogue command: " + command);
         return true;
