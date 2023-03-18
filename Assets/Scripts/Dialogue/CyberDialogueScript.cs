@@ -95,6 +95,10 @@ public class CyberDialogueScript : MonoBehaviour
 
         foreach(string line in textAsset.text.Split("\n"))
         {
+            if(line.Length == 0)
+            {
+                continue;
+            }
             string sanitized = line.Substring(0, line.Length-1);//remove the trailing \n
             if(sanitized.Length > 0)
             {
