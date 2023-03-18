@@ -64,6 +64,11 @@ public class TypedText
         TimeAccumulator = 0;
     }
 
+    public void ForceFinish()
+    {
+        CurrentIndex = CurrentText.Length;
+    }
+
     public void Update(float Delta)
     {
 

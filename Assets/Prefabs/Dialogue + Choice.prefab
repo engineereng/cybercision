@@ -325,6 +325,10 @@ MonoBehaviour:
   - {fileID: 2409390694800673907}
   - {fileID: 1620017470898775303}
   - {fileID: 3508203043902067965}
+  OptionTextButtons:
+  - {fileID: 7685703608271607873}
+  - {fileID: 8974189141831137131}
+  - {fileID: 9214326116087381809}
 --- !u!114 &2409390694654181146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +344,8 @@ MonoBehaviour:
   CurrentText: 
   CurrentOptions: []
   SelectedOption: 0
+  music: []
+  musicSource: {fileID: 0}
 --- !u!114 &2409390694654181145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,9 +358,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269c13684c73899479329893025f2c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characters: []
   defaultDialogueScript: {fileID: 4900000, guid: e23529e18d827f3468ebb3baf2804eb8, type: 3}
   commands: []
   index: 0
+  speakerSheetController: {fileID: 0}
 --- !u!1 &2409390694800673917
 GameObject:
   m_ObjectHideFlags: 0

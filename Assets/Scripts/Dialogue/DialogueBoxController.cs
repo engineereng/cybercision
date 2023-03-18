@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueBoxController : MonoBehaviour
 {
@@ -24,11 +25,14 @@ public class DialogueBoxController : MonoBehaviour
 
     [SerializeReference]
     public AudioClip[] music;
-
+    
     private bool WaitingForInput;
 
     public AudioSource musicSource;
 
+    [SerializeField]
+    public AudioSource scrollSoundSource, selectSoundSource;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +66,10 @@ public class DialogueBoxController : MonoBehaviour
         }
 
         CurrentOptions = new string[settings.OptionTexts.Length];
+        for(int i = 0; i < CurrentOptions.Length; i++)
+        {
+            CurrentOptions[i] = "";
+        }
 
         Reset();
 
@@ -74,9 +82,38 @@ public class DialogueBoxController : MonoBehaviour
         CurrentText = Dialogue;
     }
 
+    public bool IsSelectingOption()
+    {
+        foreach(string text in CurrentOptions)
+        {
+            if(text.Length > 0)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public bool IsWaitingForInput()
     {
         return WaitingForInput;
+    }
+
+    private bool IsTextFinishedTypingOut()
+    {
+        if (!CurrentDialogueText.IsFinished())
+        {
+            return false;
+        }
+        foreach(TypedText tt in CurrentOptionTexts)
+        {
+            if (!tt.IsFinished())
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     // Update is called once per frame
@@ -85,25 +122,62 @@ public class DialogueBoxController : MonoBehaviour
 
         if (IsWaitingForInput())
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {   
-
-                SelectedOption = Mathf.Max(0, SelectedOption - 1);
-            }
-
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (IsSelectingOption())
             {
-                SelectedOption = Mathf.Min(CurrentOptions.Length - 1, SelectedOption + 1);
+                scrollSoundSource.pitch = 0.8f - SelectedOption / 6f;
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+
+                    SelectedOption = Mathf.Max(0, SelectedOption - 1);
+                    if (scrollSoundSource)
+                    {
+                        scrollSoundSource.Play();
+                    }
+                }
+
+                if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    SelectedOption = Mathf.Min(CurrentOptions.Length - 1, SelectedOption + 1);
+                    if (scrollSoundSource)
+                    {
+                        scrollSoundSource.Play();
+                    }
+                }
             }
+            
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                WaitingForInput = false;
 
-                for (int i = 0; i < CurrentOptions.Length; i++)
+                if (IsTextFinishedTypingOut())
                 {
-                    CurrentOptions[i] = "";
+                    WaitingForInput = false;
+
+                    for (int i = 0; i < CurrentOptions.Length; i++)
+                    {
+                        CurrentOptions[i] = "";
+                    }
+
+                    if (selectSoundSource)
+                    {
+                        selectSoundSource.Play();
+                    }
                 }
+                else
+                {
+                    CurrentDialogueText.ForceFinish();
+                    foreach(TypedText tt in CurrentOptionTexts)
+                    {
+                        tt.ForceFinish();
+                    }
+
+                    if (scrollSoundSource)
+                    {
+                        scrollSoundSource.Play();
+                    }
+                }
+
+                
             }
 
         }
@@ -117,10 +191,11 @@ public class DialogueBoxController : MonoBehaviour
 
         for (int i = 0; i < CurrentOptionTexts.Length; i++)
         {
+            settings.OptionTexts[i].transform.parent.gameObject.SetActive(true);
             CurrentOptionTexts[i].SetText(CurrentOptions[i]);
             CurrentOptionTexts[i].Update(Delta);
             settings.OptionTexts[i].text = CurrentOptionTexts[i].GetVisibleText();
-            if(i == SelectedOption)
+            if (i == SelectedOption)
             {
                 settings.OptionTexts[i].color = new Color(1, 0, 0);
             }
@@ -128,6 +203,11 @@ public class DialogueBoxController : MonoBehaviour
             {
                 settings.OptionTexts[i].color = new Color(1, 1, 1);
             }
+        }
+
+        for (int i = 0; i < settings.OptionTextButtons.Length; i++)
+        {
+            settings.OptionTextButtons[i].SetActive(CurrentOptions[i].Length > 0);
         }
     }
 
