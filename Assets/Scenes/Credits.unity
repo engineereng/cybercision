@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -262,7 +262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 503}
+  m_AnchoredPosition: {x: 0, y: 484}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &718910218
@@ -287,193 +287,194 @@ MonoBehaviour:
       m_Calls: []
   m_text: '
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
+
+
 
     CYBERCISION
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
+
+    ** CREDITS **
+
+
+
+
+
+
 
     **
-    CREDITS **
+    LEAD **
 
-    
 
-    
-
-    
-
-    ** LEAD **
-
-    
 
     Collin Eng
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    **
-    ART **
 
-    
+
+
+
+
+
+    ** ART **
+
+
 
     Emma Nash
 
-    Elsa Wei
+    Elsa
+    Wei
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    **
-    SOUND AND MUSIC **
 
-    
 
-    
+
+
+
+
+
+
+
+
+    ** SOUND AND MUSIC **
+
+
+
+
 
     Matt Plyukhin
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
 
     **
     PROGRAMMING **
 
-    
+
 
     Collin Eng
 
     Darryl Tanzil
 
-    Michelle Wang
+    Erick Jovan Muljadi
 
-    Harry
-    Kim
+    Michelle
+    Wang
+
+    Harry Kim
 
     Tyler Hasman
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     Thanks
     for playing!
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
+
+
+
+
 
 '
   m_isRightToLeft: 0
@@ -565,7 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScrollSpeed: 150
-  ScrollFinishY: 6032
+  ScrollFinishY: 11734
   ExitSceneName: MainScene
 --- !u!1 &958508439
 GameObject:
