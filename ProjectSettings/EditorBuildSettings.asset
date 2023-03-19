@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: 31008845ac98343a6a669c9bfbb19f73
+  - enabled: 1
+    path: Assets/Scenes/Levels/Test Day.unity
+    guid: c559543bf99db4f4888c1ced899ddedc
+  - enabled: 1
+    path: Assets/Scenes/Levels/Test Day 2.unity
+    guid: fedf779b7e457ff479cb9fd2f45e41d1
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: c7f0aeef8502d704b9df765c5ae4a800
   m_configObjects: {}

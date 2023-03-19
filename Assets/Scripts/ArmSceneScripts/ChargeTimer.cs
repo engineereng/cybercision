@@ -9,6 +9,9 @@ public class ChargeTimer : MonoBehaviour
     [SerializeField] private float timeRemaining = 0f;
     public float maximumTime = 10;
     public Image sprite;
+    private bool gameEnded = false;
+    [SerializeField] private FingerController controller;
+    [SerializeField] private FireCreator fireCreator;
 
     void Start()
     {
@@ -21,9 +24,9 @@ public class ChargeTimer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (timeRemaining > 0)
+        if (timeRemaining > 0 && !gameEnded)
         {
             timeRemaining -= Time.deltaTime;
             float percent = timeRemaining / maximumTime;
@@ -36,10 +39,9 @@ public class ChargeTimer : MonoBehaviour
             }
             sprite.fillAmount = Mathf.Lerp(0, 1, percent);
         } else {
-            FingerController controller = (FingerController) GetComponentInParent(typeof(FingerController));
+            gameEnded = true;
             controller.setLost();
-            FireCreator fire = (FireCreator) GetComponentInParent(typeof(FireCreator));
-            fire.setLost();
+            fireCreator.setLost();
             Debug.Log("Time has run out!");
         }
     }
