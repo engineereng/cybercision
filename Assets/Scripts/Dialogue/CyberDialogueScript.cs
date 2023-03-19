@@ -35,6 +35,8 @@ public class CyberDialogueScript : MonoBehaviour
 
     private Dictionary<string, int> rememberedChoices;
 
+    public bool WonAllMinigames;
+    
     void Start()
     {
         commands = new List<string>();
@@ -282,6 +284,14 @@ public class CyberDialogueScript : MonoBehaviour
 
             return true;
             
+        }
+        else if (parts[0].Equals("minigame"))
+        {
+            int num = int.Parse(parts[1]);
+
+            MinigameManager.GetManager().StartMinigames(num, index);
+
+            return true;
         }
         else if (parts[0].Equals("music"))
         {

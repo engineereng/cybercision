@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Test Day 2.unity
     guid: fedf779b7e457ff479cb9fd2f45e41d1
+  - enabled: 1
+    path: Assets/Scenes/HeartBeatScene.unity
+    guid: 2d660706d76a041449cebb0185f67fd3
+  - enabled: 1
+    path: Assets/Scenes/MinigameTest.unity
+    guid: c4d8277e879f8584bb36679300916331
   m_configObjects: {}
