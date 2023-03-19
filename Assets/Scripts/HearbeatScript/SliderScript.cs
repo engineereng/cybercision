@@ -9,7 +9,7 @@ public class SliderScript : MonoBehaviour
     private float time;
     public bool alive;
     private float INCREMENT_ON_TIME = 10;
-    private float INCREMENT_SPEED = 0.25f;
+    private float INCREMENT_SPEED = 20;
     private bool missClick = false;
     private bool canClick;
 
@@ -23,7 +23,7 @@ public class SliderScript : MonoBehaviour
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         direction = 1;
-        SLIDER_SPEED = 3;  
+        SLIDER_SPEED = 180;  
         canClick = false;
         alive = true;
     }

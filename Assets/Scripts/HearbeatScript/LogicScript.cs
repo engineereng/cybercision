@@ -17,6 +17,8 @@ public class LogicScript : MonoBehaviour
     private bool started;
     public GameObject startScreen;
     public VideoManager VideoManager;
+
+    private float delay;
     void Start(){
         VideoManager = FindObjectOfType<VideoManager>();
         heartBPM = 60;
@@ -24,9 +26,11 @@ public class LogicScript : MonoBehaviour
         started = false;
         FindObjectOfType<AudioManager>().Play("Theme");
         prevStatus = "Healthy";
+        delay = 0;
     }
 
     void Update(){
+        delay += Time.deltaTime;
         if(started){
             if(isGameOver()){
                 gameOverScreen.SetActive(true);
@@ -44,9 +48,10 @@ public class LogicScript : MonoBehaviour
                 Timer -= Time.deltaTime;
                 patientStatus.text = "Patient is " + status();
                 TimerText.text = "TIME: " + Timer.ToString("0");
-                BPMText.text = "Beat Per Minute: " + heartBPM.ToString("0");
+                BPMText.text = "BEATS PER MINUTE: \n" + heartBPM.ToString("0");
             }
-            if(VideoManager.checkOver() && statusChanged()){
+            if(delay >= 2 && VideoManager.checkOver() && statusChanged()){
+                delay = 0;
                 VideoManager.Pause();
                 Debug.Log("checked");
                 print("change animation");  

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Resonance : MonoBehaviour
 {
@@ -8,14 +9,15 @@ public class Resonance : MonoBehaviour
 
     public Vector3 scale;
 
-    public SpriteRenderer resonance;
+
+    public Image resonance;
 
     public Color color;
     // Start is called before the first frame update
     
     void Start()
     {
-        speed = 40f;
+        speed = 50f;
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class Resonance : MonoBehaviour
         scale.x += speed*Time.deltaTime;
         scale.y += speed*Time.deltaTime;
         transform.localScale = scale;
-        resonance = GetComponent<SpriteRenderer>();
+        resonance = GetComponent<Image>();
         color = resonance.color;
         color.a -= 3.5f*Time.deltaTime;
         resonance.color = color;
