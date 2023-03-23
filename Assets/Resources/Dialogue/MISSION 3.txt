@@ -9,7 +9,7 @@ remember test-choice-one
 branch choiceOneA;choiceOneB;choiceOneC
 
 choiceOneA:
-speaker test2
+speaker MC
 dialogue You selected my first choice! Now I look like mickey mouse!
 goto next
 

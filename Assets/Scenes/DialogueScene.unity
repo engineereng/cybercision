@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -834,12 +834,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2409390694654181145, guid: 9b69ec0a9bb6d5d40809d06c68a03310, type: 3}
       propertyPath: characters.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2409390694654181145, guid: 9b69ec0a9bb6d5d40809d06c68a03310, type: 3}
       propertyPath: defaultDialogueScript
       value: 
-      objectReference: {fileID: 4900000, guid: e23529e18d827f3468ebb3baf2804eb8, type: 3}
+      objectReference: {fileID: 4900000, guid: 1e058605c43e3bc4da31dcae92ca898f, type: 3}
     - target: {fileID: 2409390694654181145, guid: 9b69ec0a9bb6d5d40809d06c68a03310, type: 3}
       propertyPath: speakerSheetController
       value: 
@@ -852,6 +852,14 @@ PrefabInstance:
       propertyPath: characters.Array.data[1]
       value: 
       objectReference: {fileID: 8609326579038254269, guid: 8bab12e7df22cb848abbf90c89594724, type: 3}
+    - target: {fileID: 2409390694654181145, guid: 9b69ec0a9bb6d5d40809d06c68a03310, type: 3}
+      propertyPath: characters.Array.data[2]
+      value: 
+      objectReference: {fileID: 8609326579038254269, guid: 0fb7a1afd5f7f64408957f92c596d542, type: 3}
+    - target: {fileID: 2409390694654181145, guid: 9b69ec0a9bb6d5d40809d06c68a03310, type: 3}
+      propertyPath: characters.Array.data[3]
+      value: 
+      objectReference: {fileID: 8609326579038254269, guid: ea0aa98073a3eb145b277d7cf84b9fc0, type: 3}
     - target: {fileID: 2409390694800673907, guid: 9b69ec0a9bb6d5d40809d06c68a03310, type: 3}
       propertyPath: m_VerticalAlignment
       value: 512
