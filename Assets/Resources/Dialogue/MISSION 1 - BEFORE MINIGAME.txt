@@ -326,7 +326,7 @@ speaker B
 dialogue Yeah... Uh. Not if the warrantee is expired.
 
 speaker MC
-dialogue Oh. I see. No worries then. I'll get right on it. 
+dialogue Oh. I see. No worries then. I'll fix it immediately. 
 
 speaker B
 dialogue Right now? Whoa.
@@ -343,6 +343,9 @@ dialogue It's nothing, really. I'll just get my tools and pop your hand right op
 speaker N
 choice Yes
 makechoice Proceed to Arm Servos repair?
+
+speaker MC
+dialogue Let's get to it.
 
 branch servtime
 
