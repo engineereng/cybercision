@@ -11,6 +11,9 @@ public class DialogueBoxSettings : MonoBehaviour
     [SerializeField]
     public TMP_Text[] OptionTexts;
 
+    [SerializeField]
+    public GameObject[] OptionTextButtons;
+
     public bool IsValid()
     {
         return DialogueText != null;

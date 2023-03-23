@@ -38,8 +38,14 @@ public class FingerController : MonoBehaviour
         if (alreadyChosen.Count < NUM_FINGERS)
             wiggleRandom();
         else {
-            endText.enabled = true;
+            win();
         }
+    }
+    private void win()
+    {
+        Time.timeScale = 0; // pause the game
+        endText.enabled = true;
+        // TODO move onto next scene
     }
 
     public void setLost()

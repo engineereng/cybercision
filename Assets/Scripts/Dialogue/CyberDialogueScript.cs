@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using UnityEngine.SceneManagement;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class CyberDialogueScript : MonoBehaviour
 {
@@ -57,8 +59,7 @@ public class CyberDialogueScript : MonoBehaviour
         {
             Debug.LogWarning("No speaker sheet controller set!");
         }
-
-
+        
     }
 
     private void Update()
@@ -94,9 +95,21 @@ public class CyberDialogueScript : MonoBehaviour
 
         foreach(string line in textAsset.text.Split("\n"))
         {
-            string sanitized = line.Substring(0, line.Length-1);//remove the trailing \n
+            if(line.Length == 0)
+            {
+                continue;
+            }
+            string sanitized = line;
+            if (sanitized.EndsWith("\r"))
+            {
+                sanitized = line.Substring(0, line.Length - 1);//remove the trailing \r
+            }
             if(sanitized.Length > 0)
             {
+                if (sanitized.StartsWith(";"))
+                {
+                    continue;
+                }
                 if (sanitized.EndsWith(":"))//Label
                 {
                     labels[sanitized.Substring(0, sanitized.Length - 1)] = commands.Count;//When this label is jumped to it should go to the instruction below this line so add 1
@@ -136,6 +149,21 @@ public class CyberDialogueScript : MonoBehaviour
         else if (parts[0].Equals("choice"))
         {
             choices.Add(concat(parts, 1));
+            return true;
+        }
+        else if (parts[0].Equals("load"))
+        {
+            string sceneName = concat(parts, 1);
+
+            if(sceneName.Length > 0)
+            {
+
+                SaveGame(sceneName);
+
+                Debug.Log("Loading scene " + sceneName);
+                SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+                
+            }
             return true;
         }
         else if (parts[0].Equals("makechoice"))
@@ -255,9 +283,62 @@ public class CyberDialogueScript : MonoBehaviour
             return true;
             
         }
+        else if (parts[0].Equals("music"))
+        {
+
+            if (parts[1].Equals("play"))
+            {
+                string musicName = parts[2];
+
+                AudioClip audioClip = null;
+
+                foreach (AudioClip ac in dialogueBoxController.music)
+                {
+                    if (ac.name.Equals(musicName))
+                    {
+                        audioClip = ac;
+                        break;
+                    }
+                }
+
+                if (audioClip)
+                {
+                    dialogueBoxController.musicSource.clip = audioClip;
+                    dialogueBoxController.musicSource.loop = true;
+                    dialogueBoxController.musicSource.Play();
+                    Debug.Log("Playing music " + audioClip.name);
+                }
+                else
+                {
+                    Debug.LogWarning("Couldn't find music named " + musicName + ", have you added it to the music load list?");
+                }
+            }else if (parts[1].Equals("stop"))
+            {
+                dialogueBoxController.musicSource.Stop();
+            }
+
+            return true;
+        }
 
         Debug.LogWarning("Couldn't parse dialogue command: " + command);
         return true;
+    }
+
+    private void SaveGame(string nextScene)
+    {
+        Save save = new Save();
+
+        save.SavedChoices = rememberedChoices;
+        save.SceneToLoad = nextScene;
+
+        string path = Application.persistentDataPath + "/gamesave.save";
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(path);
+        bf.Serialize(file, save);
+        file.Close();
+
+        Debug.Log("Saved game to " + path);
     }
 
     private static string concat(string[] parts, int indexFrom)
@@ -267,7 +348,7 @@ public class CyberDialogueScript : MonoBehaviour
         {
             concatted += parts[i] + " ";
         }
-        return concatted;
+        return concatted.Substring(0, concatted.Length - 1);
     }
 
 
