@@ -157,14 +157,14 @@ public class CyberDialogueScript : MonoBehaviour
         {
             string sceneName = concat(parts, 1);
 
-            if(sceneName.Length > 0)
+            if (sceneName.Length > 0)
             {
 
                 SaveGame(sceneName);
 
                 Debug.Log("Loading scene " + sceneName);
                 SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-                
+
             }
             return true;
         }
@@ -230,6 +230,29 @@ public class CyberDialogueScript : MonoBehaviour
                 Debug.Log("Couldn't recall choice " + saveName + " as we don't have it saved!");
             }
             return true;
+        }
+        else if (parts[0].Equals("branch-minigame"))
+        {
+            string[] branchLabels = parts[1].Split(";");
+
+            if(branchLabels.Length == 2)
+            {
+                string label = branchLabels[WonAllMinigames ? 0 : 1];
+
+                if (labels.ContainsKey(label))
+                {
+                    index = labels[label];
+                }
+                else
+                {
+                    Debug.LogWarning("Tried to jump to a label called " + label + " but it doesnt exist!");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("branch-minigame should always receive exactly two branches! (Win/Loss), we got " + branchLabels.Length);
+            }
+
         }
         else if (parts[0].Equals("branch"))
         {
