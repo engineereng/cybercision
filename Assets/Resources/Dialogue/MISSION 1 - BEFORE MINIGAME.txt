@@ -1,4 +1,4 @@
-music play DoYouHaveArms
+music play HowToTalkToCustomers
 
 speaker R
 dialogue Hello hello Monsoon Lows! It's looking like another rainy day today, folks, with a 97.5% chance of heavy showers from now to 11pm!
@@ -13,13 +13,13 @@ speaker MC
 dialogue Alright, enough of that.
 
 speaker N
-dialogue Your joints ache as you slam your hand against the old-tech radio on your desk. You stand up from the rock hard bed and stretch wide like cat, grunting aloud.
+dialogue Your joints ache as you slam your hand against the old-tech radio on your desk. You stand up from the rock hard bed and stretch wide like a cat, grunting aloud.
 
 speaker MC
 dialogue Looks like another day of nothing ahead of us, huh.
 
 speaker N
-dialogue You reach down and lightly pet your cat on the top of his head.
+dialogue You reach down and lightly pet your cat.
 
 speaker MC
 dialogue Right buddy?
@@ -80,43 +80,54 @@ dialogue Nice. Clean.
 speaker N
 dialogue You putter around, looking for anything to clean, then settle down in an office chair at the front desk. You power on your computer and check your E-Mail.
 
+returnToEmail:
+
 choice Scheduled Demolition Notice
 choice Renew Your Transit Pass Today!
 choice Brain Chip Hardware Issue
 makechoice Three messages stand out to you out of the hundreds of unread ones.
 
+branch choiceOneD;choiceOneE;choiceOneF
 
-branch choiceOneA;choiceOneB;choiceOneC
-
-choiceOneA:
+choiceOneD:
 dialogue Urgent! The following buildings in the Downtown sector are scheduled to be demolished by The Guardians. Please check our website for more information.
 
 speaker MC
 dialogue Looks like my old roommate is out of a home... sucks to be him.
-goto next
+goto next1
 
-choiceOneB:
+choiceOneE:
 dialogue RENEW YOUR TRANSIT PASS TODAY! PAY $140 PER MONTH FOR ACCESS TO OUR FULL RANGE OF PUBLIC TRANSIT SERVICES, OR $870 FOR OUR PREMIUM PACKAGE, WHICH INCLUDES HOVERCAR TRANSPORT AND PRIORITY AMBULANCES! HAVE A SPLENDID TRAVELLING TIME! Courtesy of Monsoon City Trans Co. all rights reserved.
 
 speaker MC
 dialogue Premium is up by $200, huh? What a scam.
-goto next
+goto next1
 
-choiceOneC:
+choiceOneF:
 dialogue Hey <player>, it's Ima, I've got some information you might be interested in, care to meet up sometime? I think we could give each-other a helping hand here, hehe >:3
 
 speaker MC
 dialogue That emoji feels a little unprofessional to use in an email to your former colleague, but whatever. I'll respond to her message later.
 
-goto next
+goto next1
 
-next:
+next1:
+
+speaker N
+
+choice Yes
+choice No
+makechoice Read more messages?
+
+branch returnToEmail;continuefromemail
+
+continuefromemail:
 
 speaker N
 dialogue The front door of your clinic creaks, then clicks twice.
 
 speaker B?
-Hiya? Are y'all open or what?
+dialogue Hiya? Are y'all open or what?
 
 speaker MC
 dialogue Yes.
@@ -124,30 +135,217 @@ dialogue Yes.
 speaker N
 dialogue The front door swings open, and a tall, tattooed woman walks inside.
 
-speaker B
+speaker B?
 dialogue Howdy! If I'm not mistaken, this is Cyber Cision Prosthetic Repair?
 
 speaker N
 
-choice 
 choice The one and only! How can I help you?
 choice Yes, this is Cybercision Prosthetic Repair.
-makechoice This is a butcher shop, actually.
+choice This is a butcher shop, actually.
+makechoice She appears to be waiting for an answer.
 remember test-choice-one
 
-branch choiceOneA;choiceOneB;choiceOneC
+branch choiceOneG;choiceOneH;choiceOneI
 
-choiceOneA:
+
+choiceOneG:
+speaker B?
+dialogue Oh! Well that's wonderful, hopefully you'll be able to help me out with a little problem I've got going on?
+
+speaker MC
+dialogue Absolutely! Please, have a seat.
+goto next2
+
+choiceOneH:
+speaker B?
+dialogue Phew! Thought I'd gone in the wrong buildin' again.
+
+speaker MC
+dialogue Again? Wha-
+
+speaker B?
+dialogue ANYWAYS! I WAS LOOKING FOR YOUR CLINIC BECAUSE I'VE GOT A PROBLEM.
+goto next2
+
+choiceOneI:
+speaker B?
+dialogue Well haw haw then. How funny of you.
+
+speaker N
+dialogue She looks down at you with devilish glint in her eye.
+
+speaker MC
+dialogue Need something?
+
+speaker B?
+dialogue Yeah. I came here cause I need... prosthetic repairs. 
+
+speaker MC
+dialogue Ok. What's the probl-
+
+speaker B?
+dialogue Too bad you're a butcher, I could really use a... hand.
+
+speaker N
+dialogue She detaches her prosthetic right hand, then uses it to wave at you. It lightly smokes from the inside.
+goto next2
+
+next2:
+
+speaker N
+dialogue The tattooed woman sits down in a chair on the opposite side of your desk. She makes it look small.
+
+speaker MC
+dialogue What's the problem?
+
+speaker B?
+dialogue My hand's on the fritz. Can't really do anything with a couple-a busted-up digits, much less work.
+
+speaker MC
+dialogue I see. What's your name?
+
 speaker B
-dialogue Oh! Well that's wonderful!
-goto next
+dialogue Bobbi. Bobbi Aguja.
 
-choiceOneB:
-dialogue Great! You're just the fella I need. 
-goto next
+speaker MC
+dialogue Welcome to the clinic, Bobbi, I'm <player>. A pleasure to meet you. Hopefully we can get your hand fixed up relatively quickly, but I'm going to ask you a few questions first, is that alright?
 
-choiceOneC:
-dialogue Well pardon me, then.
-goto next
+speaker B
+dialogue Shoot away!
 
-next:
+speaker MC
+dialogue First off... what's your profession?
+
+speaker B
+dialogue I'm part of the artsy side of the body mod industry... piercings and tattoos mostly.
+
+speaker MC
+dialogue Ah. That is unfortunate given your problem. Is your hand a replacement or an aesthetic choice?
+
+speaker B
+dialogue Replacement.
+
+speaker N
+
+choice Ask about her hand.
+choice Don't prod further.
+makechoice Her hand was a replacement and her response was brief. This piques your curiosity.
+
+branch askHand;dontaskHand
+
+askHand:
+speaker MC
+dialogue I'm sorry to hear that. How did you lose it?
+
+speaker B
+dialogue Do you really need ta know that?
+
+speaker N
+
+choice Yes
+choice No
+makechoice Bobbi stirs in her seat. She seems incredibly uncomfortable. Do you want to keep prodding?
+
+branch keepAsking;stopAsking
+
+keepAsking:
+speaker MC
+dialogue Apologies, Miss Aguja, I need to get a full profile of my patients if I'm going to repair such delicate and precise technology, I hope you understand.
+
+speaker B
+dialogue I s'pose so...
+
+speaker N
+dialogue Bobbi's leg starts bouncing. A pained expression forms on her face.
+
+speaker MC
+dialogue If you need to stop, just let me know, ok?
+
+speaker B
+dialogue Alrighty...
+
+speaker MC
+dialogue Please continue.
+
+speaker B
+dialogue I was workin' up in the Downtown sector at the time. Uh. Corpo shenanigans, stuff like that.
+
+speaker N
+dialogue Bobbi looks down at her prosthetic hands. One on the desk in front of her, the other attached to her left arm. Her eyes are mildly watery.
+
+speaker B
+dialogue The Guardians brought down a building we were doing some work in... miscommunication or somethin'... Lost my hands and team to the explosion.
+
+speaker MC
+dialogue I'm terribly sorry to hear that.
+
+speaker B
+dialogue It's all good. I uh... I'm better now. 'S been a few years, so. Yeah. No more corpo bullshit for me.
+
+speaker N
+dialogue She seems exhausted just from speaking about her injury. You can't help but feel a pang of guilt strike your chest.
+
+speaker MC
+dialogue Thank you for answering fully, I'm sorry you had to go into detail about it.
+
+speaker B
+dialogue It's alright. Don't worry about it.
+goto next4:
+
+
+stopAsking:
+
+speaker MC 
+dialogue I suppose I don't have to know. Just the nature of the injury should be fine enough.
+
+speaker B
+dialogue Lost 'em both in an explosion.
+
+speaker MC 
+dialogue I see. I'm sorry to hear that.
+
+speaker B
+dialogue Thanks, it was a while ago...
+
+
+dontaskHand:
+
+next4:
+
+speaker MC
+dialogue Continuing on, then. What's the problem with your hand, and do you mind if I have a look at it?
+
+speaker B
+dialogue I think the servos are fried? Uh, take a look yourself.
+
+speaker MC
+dialogue Fried servos? You can get that fixed at any city-sanctioned repair shop.
+
+speaker B
+dialogue Yeah... Uh. Not if the warrantee is expired.
+
+speaker MC
+dialogue Oh. I see. No worries then. I'll get right on it. 
+
+speaker B
+dialogue Right now? Whoa.
+
+speaker MC
+dialogue Yeah, right here on the counter. You're free to watch me do it, too. 
+
+speaker B
+dialogue Well that's nice of ya.
+
+speaker MC
+dialogue It's nothing, really. I'll just get my tools and pop your hand right open.
+
+speaker N
+choice Yes
+makechoice Proceed to Arm Servos repair?
+
+branch servtime
+
+minigame 1
+
+branch-minigame WinBranch;LoseBranch
