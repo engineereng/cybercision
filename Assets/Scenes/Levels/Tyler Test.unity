@@ -568,7 +568,15 @@ PrefabInstance:
     - target: {fileID: 5973303491516937904, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
       propertyPath: defaultDialogueScript
       value: 
-      objectReference: {fileID: 4900000, guid: 17cf566519d360645a892e1b499b6c61, type: 3}
+      objectReference: {fileID: 4900000, guid: 56ecf636cb8b7b145994af03c32ef169, type: 3}
+    - target: {fileID: 5973303491516937904, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
+      propertyPath: characters.Array.data[0]
+      value: 
+      objectReference: {fileID: 8609326579038254269, guid: 4af96b42866c5b3449ab6dc620d0ebc2, type: 3}
+    - target: {fileID: 5973303491516937904, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
+      propertyPath: characters.Array.data[1]
+      value: 
+      objectReference: {fileID: 8609326579038254269, guid: 2d328921561c274468365ebf3c9c5453, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
 --- !u!224 &5973303492328053283 stripped

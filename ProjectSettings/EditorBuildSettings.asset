@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ReprogramScene.unity
     guid: 8cf0a4b6f97194a69a935dec8a767101
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 31008845ac98343a6a669c9bfbb19f73
+  - enabled: 1
     path: Assets/Scenes/Levels/Test Day.unity
     guid: c559543bf99db4f4888c1ced899ddedc
   - enabled: 1
