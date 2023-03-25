@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4804303642667915200}
   - component: {fileID: 8609326579038254269}
   m_Layer: 0
-  m_Name: MC
+  m_Name: Firth (MC)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptReferenceName: MC
-  CharacterName: player
+  CharacterName: Firth
   CharacterImage: {fileID: 21300000, guid: 2a8c753c8a3c6ac4b9f616d1b81a335d, type: 3}
