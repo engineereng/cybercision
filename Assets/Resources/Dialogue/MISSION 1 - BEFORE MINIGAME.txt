@@ -136,7 +136,7 @@ speaker N
 dialogue The front door swings open, and a tall, tattooed woman walks inside.
 
 speaker B?
-dialogue Howdy! If I'm not mistaken, this is Cyber Cision Prosthetic Repair?
+dialogue Howdy! If I'm not mistaken, this is Cybercision Prosthetic Repair?
 
 speaker N
 
@@ -209,7 +209,7 @@ speaker B
 dialogue Bobbi. Bobbi Aguja.
 
 speaker MC
-dialogue Welcome to the clinic, Bobbi. I'm Firth. Hopefully we can get your hand fixed up relatively quickly, but I'm going to ask you a few questions first, is that alright?
+dialogue Welcome to the clinic, Bobbi. I'm Firth. We can get your hand fixed up relatively quickly, but I'm going to ask you a few questions first.
 
 speaker B
 dialogue Shoot away!
@@ -221,7 +221,7 @@ speaker B
 dialogue I'm part of the artsy side of the body mod industry... piercings and tattoos mostly.
 
 speaker MC
-dialogue Ah. That is unfortunate given your problem. Is your hand a replacement or an aesthetic choice?
+dialogue I see. Is your hand a replacement or an aesthetic choice?
 
 speaker B
 dialogue Replacement.
@@ -236,7 +236,7 @@ branch askHand;dontaskHand
 
 askHand:
 speaker MC
-dialogue I'm sorry to hear that. How did you lose it?
+dialogue How did you lose it?
 
 speaker B
 dialogue Do you really need ta know that?
@@ -260,13 +260,13 @@ speaker N
 dialogue Bobbi's leg starts bouncing. A pained expression forms on her face.
 
 speaker MC
-dialogue If you need to stop, just let me know, ok?
+dialogue I need to know this, Miss Aguja.
 
 speaker B
 dialogue Alrighty...
 
 speaker MC
-dialogue Please continue.
+dialogue Go on.
 
 speaker B
 dialogue I was workin' up in the Downtown sector at the time. Uh. Corpo shenanigans, stuff like that.
@@ -278,7 +278,7 @@ speaker B
 dialogue The Guardians brought down a building we were doing some work in... miscommunication or somethin'... Lost my hands and team to the explosion.
 
 speaker MC
-dialogue I'm terribly sorry to hear that.
+dialogue Sorry to hear that.
 
 speaker B
 dialogue It's all good. I uh... I'm better now. 'S been a few years, so. Yeah. No more corpo bullshit for me.
@@ -307,7 +307,7 @@ dialogue I see. I'm sorry to hear that.
 
 speaker B
 dialogue Thanks, it was a while ago...
-
+goto next4
 
 dontaskHand:
 
@@ -402,7 +402,7 @@ dialogue How much do I owe ya?
 speaker N
 dialogue Your mind goes blank for a second. You haven't had a customer in so long that you've forgotten your own prices.
 
-choice About the same as standard repair shops.
+choice Same as standard repair shops.
 choice Less than standard repair shops.
 choice Much less than standard repair shops.
 makechoice How much did a hand repair cost again?
@@ -427,7 +427,7 @@ dialogue She hands you $500.
 
 speaker B
 dialogue That I do.
-goto end
+goto TheNext
 
 
 
@@ -445,7 +445,7 @@ dialogue She hands you $400.
 
 speaker B
 dialogue There ya go.
-goto end:
+goto TheNext
 
 
 
@@ -472,19 +472,15 @@ dialogue It's nothin', really. You've basically saved my job.
 
 speaker MC
 dialogue Thank you.
-goto end
+goto TheNext
 
 
 
 
 
 
+TheNext:
 
-
-
-end:
-
-music play DoYouHaveArms
 
 speaker N
 dialogue Bobbi sits up from her seat, hand attached. She walks over to the exit with a small spring in her step.
@@ -559,7 +555,7 @@ speaker N
 dialogue Your breath leaves your body for a moment as your eyes go wide in shock.
 
 speaker MC
-Is that a threat? How do you know that.
+dialogue Is that a threat? How do you know that.
 
 speaker W?
 dialogue Hahaha! No, no. Just an observation from the janitor next door.
