@@ -41,7 +41,7 @@ dialogue You sluggishly drag yourself over to your dresser, debating on clothing
 
 speaker MC
 
-choice Dress Shirt and Lab Coat.
+choice Modern Pants and Jacket.
 choice T-Shirt and Shorts 
 choice Clown Suit
 makechoice Hmm. What should I wear?
@@ -51,7 +51,7 @@ branch choiceOneA;choiceOneB;choiceOneC
 choiceOneA:
 speaker MC
 dialogue The usual. Guess it's better than the other junk in my drawers.
-goto next
+goto nextR
 
 choiceOneB:
 dialogue Too cold for that today. Not a bad summer outfit, though. 
@@ -63,10 +63,12 @@ goto next
 
 next:
 
-dialogue Let's go for the shirt and coat this time.
+dialogue Let's go for the usual this time.
+
+nextR:
 
 speaker N
-dialogue You put on your Dress Shirt, Pants, and Lab Coat, then head downstairs.
+dialogue You put on your long shirt, modern pants, and jacket, then head downstairs.
 
 dialogue The metal walls and floor of the ground floor are nearly spotless, aside for some rust buildup near the windowsill.
 
@@ -354,11 +356,10 @@ dialogue Let's get to it.
 
 branch servtime
 
+
 minigame 1
 
 branch-minigame WinBranch;LoseBranch
-
-
 
 LoseBranch:
 speaker MC
@@ -635,3 +636,4 @@ dialogue You tuck into bed and turn on your old radio alarm. The only thing on y
 speaker N
 dialogue You elect to ignore those thoughts for now, as the room grows colder and colder by the minute. The sounds of hovercars and speedboats outside are mostly drowned out by the calming hum of heavy downpour. Listening to the ambience of the city, you eventually fall asleep.
 
+load Mission 2
