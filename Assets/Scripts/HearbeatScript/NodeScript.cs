@@ -27,15 +27,13 @@ public class NodeScript : MonoBehaviour
         gameObject.tag = "Square";
         resonance = squareResonance;
         image.sprite = squareSprite;
-        image.color = new Color(26, 54, 224, 1);
-        image.rectTransform.sizeDelta = new Vector2(0.3f, 0.3f);
+        image.rectTransform.sizeDelta = new Vector2(0.4f, 0.4f);
     }
 
     public void changeToCircle(){
         gameObject.tag = "Circle";
         resonance = circleResonance;
         image.sprite = circleSprite;
-        image.color = new Color(209f, 219f, 26f, 1);
         image.rectTransform.sizeDelta = new Vector2(0.4f, 0.4f);
     }
 }

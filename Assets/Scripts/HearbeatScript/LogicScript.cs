@@ -27,6 +27,7 @@ public class LogicScript : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Theme");
         prevStatus = "Healthy";
         delay = 0;
+        VideoManager.HeartBeat();
     }
 
     void Update(){
@@ -34,19 +35,21 @@ public class LogicScript : MonoBehaviour
         if(started){
             if(isGameOver()){
                 gameOverScreen.SetActive(true);
-                patientStatus.text = "Patient is " + status();
+                patientStatus.text = "PATIENT STATUS: " + status();
                 FindObjectOfType<AudioManager>().Mute("Theme");
                 VideoManager.Flatline();
+                // MinigameManager.GetManager().FinishMinigame(false);
             }
             else if(isWin()){
                 winnerScreen.SetActive(true);
-                patientStatus.text = "Patient is " + status();
+                patientStatus.text = "PATIENT STATUS: " + status();
                 TimerText.text = "TIME: " + Timer.ToString("0");
                 FindObjectOfType<AudioManager>().Mute("Theme");
+                // MinigameManager.GetManager().FinishMinigame(true);
             }
             else {
                 Timer -= Time.deltaTime;
-                patientStatus.text = "Patient is " + status();
+                patientStatus.text = "PATIENT STATUS: " + status();
                 TimerText.text = "TIME: " + Timer.ToString("0");
                 BPMText.text = "BEATS PER MINUTE: \n" + heartBPM.ToString("0");
             }
@@ -99,7 +102,7 @@ public class LogicScript : MonoBehaviour
 
     public bool isGameOver(){
         if(heartBPM == 0){
-            BPMText.text = "Beat Per Minute: " + heartBPM.ToString("0");
+            BPMText.text = "BEATS PER MINUTE: \n" + heartBPM.ToString("0");
             return true;
         };
         return false;
@@ -110,19 +113,19 @@ public class LogicScript : MonoBehaviour
 
     public string status(){ 
         if(heartBPM == 0){
-            return "Dead";
+            return "DEAD";
         }
         else if(heartBPM < 30){
-            return "Dying";
+            return "DYING";
         }
         else if(heartBPM < 60){
-            return "Not Well";
+            return "NOT WELL";
         }
         else if(heartBPM < 80){
-            return "Okay";
+            return "OKAY";
         }
         else {
-            return "Healthy";
+            return "HEALTHY";
         }
     }
 

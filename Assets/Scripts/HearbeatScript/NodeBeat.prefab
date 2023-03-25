@@ -80,8 +80,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circleResonance: {fileID: 5364949583738805817, guid: e1a1d5ad2c8c149d2806574989f05298, type: 3}
   squareResonance: {fileID: 6152511240732898049, guid: f8955f7101b8045c8a5e02f5ba2d3384, type: 3}
-  squareSprite: {fileID: 21300000, guid: 7c8649f151b1325459ded8d32ccb1fc2, type: 3}
-  circleSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  squareSprite: {fileID: -1546358841, guid: bc80632e3c601491499c50de7da16573, type: 3}
+  circleSprite: {fileID: -2094461031, guid: d70b33522d0ed443caf4bb010dd1f378, type: 3}
 --- !u!222 &8034130035255059752
 CanvasRenderer:
   m_ObjectHideFlags: 0

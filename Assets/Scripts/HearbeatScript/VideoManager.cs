@@ -7,7 +7,13 @@ public class VideoManager : MonoBehaviour
 {
     public VideoClip[] clips;
     public VideoPlayer BPMPlayer;
-    
+    public VideoPlayer HeartPlayer;
+
+    public VideoClip heartBeatClip;
+
+    void Start(){
+        HeartPlayer.clip = heartBeatClip;
+    }
 
     public void Healthy(){
         print("Healthy");
@@ -42,5 +48,9 @@ public class VideoManager : MonoBehaviour
     }
     public void Play(){
         BPMPlayer.Play();
+    }
+
+    public void HeartBeat(){
+        HeartPlayer.Play();
     }
 }
