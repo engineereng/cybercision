@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlitShadow: {fileID: 1990617376}
-  sceneToLoad: ChargeScene
+  sceneToLoad: Credits
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
