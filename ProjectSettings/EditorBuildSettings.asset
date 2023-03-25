@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ChargeScene.unity
     guid: 05bbb13e33f364660a4464dfe9d2c541
   - enabled: 1
-    path: Assets/Scenes/DebugScene.unity
+    path: Assets/Scenes/EasyDebugScene.unity
     guid: 92cbe85b426c9441ba885494d113661b
   - enabled: 1
     path: Assets/Scenes/ReprogramScene.unity
