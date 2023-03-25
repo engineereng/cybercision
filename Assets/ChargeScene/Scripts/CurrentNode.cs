@@ -24,8 +24,8 @@ public class CurrentNode : MonoBehaviour
     void Update()
     {
         Vector2 mousePosition = Input.mousePosition;
-
-        if(Vector2.Distance(mousePosition, transform.position) < 50 && !used)
+        
+        if(Vector2.Distance(mousePosition, Camera.main.WorldToScreenPoint(transform.position)) < 50 && !used)
         {
             Image image = GetComponent<Image>();
             image.sprite = hoveredSprite;
