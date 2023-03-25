@@ -1,0 +1,10 @@
+music play DoYouHaveArms
+
+speaker R
+dialogue GOOOOOD MORNING MONSOON LOWS! Today we've got storms-a-plenty! Prepare yourselves for mass torrential downpour, cause it looks like the Downtowners are sending us some rain AND flooding. Can I get a womp womp for the Downtowners to show how much you hate th-
+
+speaker MC 
+dialogue Allllright enough of that.
+
+speaker N
+dialogue You once again slam your hand against the old radio, turning it off. For a second you worry about breaking it, but then stop when you remember the time you dropped it down a flight of stairs.

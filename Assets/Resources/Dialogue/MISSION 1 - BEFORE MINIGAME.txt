@@ -1,0 +1,639 @@
+music play HowToTalkToCustomers
+
+speaker R
+dialogue Hello hello Monsoon Lows! It's looking like another rainy day today, folks, with a 97.5% chance of heavy showers from now to 11pm!
+
+speaker MC
+dialogue *Groan*
+
+speaker R
+dialogue Clouds today are dark and mixed with industrial smog, so watch out for acid downpour! Dig out your steel umbrellas and stay safe out ther-
+
+speaker MC
+dialogue Alright, enough of that.
+
+speaker N
+dialogue You slam your hand against the old-tech radio on your desk, turning it off. Your joints ache as you stand up from the rock hard bed and stretch wide like a cat, grunting aloud.
+
+speaker MC
+dialogue Looks like another day of nothing ahead of us, huh.
+
+speaker N
+dialogue You reach down and lightly pet your cat.
+
+speaker MC
+dialogue Right buddy?
+
+speaker N
+dialogue Your cat meows politely, then leaps off the bed and trots towards an empty food bowl.
+
+speaker MC
+dialogue *Sigh* Yeah. Yeah. Here you go.
+
+speaker N
+dialogue You fill up half of your cat's bowl, finishing the rest of the food bag.
+
+speaker MC 
+dialogue That's all for now, bud.
+
+speaker N
+dialogue You sluggishly drag yourself over to your dresser, debating on clothing choice.
+
+speaker MC
+
+choice Modern Pants and Jacket.
+choice T-Shirt and Shorts 
+choice Clown Suit
+makechoice Hmm. What should I wear?
+
+branch choiceOneA;choiceOneB;choiceOneC
+
+choiceOneA:
+speaker MC
+dialogue The usual. Guess it's better than the other junk in my drawers.
+goto nextR
+
+choiceOneB:
+dialogue Too cold for that today. Not a bad summer outfit, though. 
+goto next
+
+choiceOneC:
+dialogue Never again.
+goto next
+
+next:
+
+dialogue Let's go for the usual this time.
+
+nextR:
+
+speaker N
+dialogue You put on your long shirt, modern pants, and jacket, then head downstairs.
+
+dialogue The metal walls and floor of the ground floor are nearly spotless, aside for some rust buildup near the windowsill.
+
+dialogue Various prosthetic parts hang along the walls, some hung up on what appears to be a meat rack.
+
+dialogue You flick on the lights, turn on the "open" sign, and sanitize your workstation.
+
+speaker MC 
+dialogue Nice. Clean.
+
+speaker N
+dialogue You putter around, looking for anything to clean, then settle down in an office chair at the front desk. You power on your computer and check your E-Mail. A few hours pass as you scroll without much as a single customer.
+
+returnToEmail:
+
+choice Scheduled Demolition Notice
+choice Renew Your Transit Pass Today!
+choice Brain Chip Hardware Issue
+makechoice Three messages stand out to you out of the hundreds of unread ones.
+
+branch choiceOneD;choiceOneE;choiceOneF
+
+choiceOneD:
+dialogue Urgent! The following buildings in the Downtown sector are scheduled to be demolished by The Guardians. Please check our website for more information.
+
+speaker MC
+dialogue Looks like my old roommate is out of a home... sucks to be him.
+goto next1
+
+choiceOneE:
+dialogue RENEW YOUR TRANSIT PASS TODAY! PAY $140 PER MONTH FOR ACCESS TO OUR FULL RANGE OF PUBLIC TRANSIT SERVICES, OR $870 FOR OUR PREMIUM PACKAGE, WHICH INCLUDES HOVERCAR TRANSPORT AND PRIORITY AMBULANCES! HAVE A SPLENDID TRAVELLING TIME! Courtesy of Monsoon City Trans Co. all rights reserved.
+
+speaker MC
+dialogue Premium is up by $200, huh? What a scam.
+goto next1
+
+choiceOneF:
+dialogue Hey Firth, it's Ima, I've got some information you might be interested in, care to meet up sometime? I think we could give each-other a helping hand here, hehe >:3
+
+speaker MC
+dialogue That emoji feels a little unprofessional to use in an email to your former colleague, but whatever. I'll respond to her message later.
+
+goto next1
+
+next1:
+
+speaker N
+
+choice Yes
+choice No
+makechoice Read more messages?
+
+branch returnToEmail;continuefromemail
+
+continuefromemail:
+
+speaker N
+dialogue The front door of your clinic creaks, then clicks twice.
+
+speaker B?
+dialogue Hiya? Are y'all open or what?
+
+speaker MC
+dialogue Yes.
+
+speaker N
+dialogue The front door swings open, and a tall, tattooed woman walks inside.
+
+speaker B?
+dialogue Howdy! If I'm not mistaken, this is Cybercision Prosthetic Repair?
+
+speaker N
+
+choice The one and only! How can I help you?
+choice Yes, this is Cybercision Prosthetic Repair.
+choice This is a butcher shop, actually.
+makechoice She appears to be waiting for an answer.
+remember test-choice-one
+
+branch choiceOneG;choiceOneH;choiceOneI
+
+
+choiceOneG:
+speaker B?
+dialogue Oh! Well that's wonderful, hopefully you'll be able to help me out with a little problem I've got going on?
+
+speaker MC
+dialogue Absolutely! Please, have a seat.
+goto next2
+
+choiceOneH:
+speaker B?
+dialogue Phew! Thought I'd gone in the wrong buildin' again.
+
+speaker MC
+dialogue Again? Wha-
+
+speaker B?
+dialogue ANYWAYS! I WAS LOOKING FOR YOUR CLINIC BECAUSE I'VE GOT A PROBLEM.
+goto next2
+
+choiceOneI:
+speaker B?
+dialogue Well haw haw then. How funny of you.
+
+speaker N
+dialogue She looks down at you with devilish glint in her eye.
+
+speaker MC
+dialogue Need something?
+
+speaker B?
+dialogue Yeah. I came here cause I need... prosthetic repairs. 
+
+speaker MC
+dialogue Ok. What's the probl-
+
+speaker B?
+dialogue Too bad you're a butcher, I could really use a... hand.
+
+speaker N
+dialogue She detaches her prosthetic right hand, then uses it to wave at you. It lightly smokes from the inside.
+goto next2
+
+next2:
+
+speaker N
+dialogue The tattooed woman sits down in a chair on the opposite side of your desk. She makes it look small.
+
+speaker MC
+dialogue What's the problem?
+
+speaker B?
+dialogue My hand's on the fritz. Can't really do anything with a couple-a busted-up digits, much less work.
+
+speaker MC
+dialogue I see. What's your name?
+
+speaker B
+dialogue Bobbi. Bobbi Aguja.
+
+speaker MC
+dialogue Welcome to the clinic, Bobbi. I'm Firth. We can get your hand fixed up relatively quickly, but I'm going to ask you a few questions first.
+
+speaker B
+dialogue Shoot away!
+
+speaker MC
+dialogue First off... What's your profession?
+
+speaker B
+dialogue I'm part of the artsy side of the body mod industry... piercings and tattoos mostly.
+
+speaker MC
+dialogue I see. Is your hand a replacement or an aesthetic choice?
+
+speaker B
+dialogue Replacement.
+
+speaker N
+
+choice Ask about her hand.
+choice Don't prod further.
+makechoice Her hand was a replacement and her response was brief. This piques your curiosity.
+
+branch askHand;dontaskHand
+
+askHand:
+speaker MC
+dialogue How did you lose it?
+
+speaker B
+dialogue Do you really need ta know that?
+
+speaker N
+
+choice Yes
+choice No
+makechoice Bobbi stirs in her seat. She seems incredibly uncomfortable. Do you want to keep prodding?
+
+branch keepAsking;stopAsking
+
+keepAsking:
+speaker MC
+dialogue Apologies, Miss Aguja, I need to get a full profile of my patients if I'm going to repair such delicate and precise technology, I hope you understand.
+
+speaker B
+dialogue I s'pose so...
+
+speaker N
+dialogue Bobbi's leg starts bouncing. A pained expression forms on her face.
+
+speaker MC
+dialogue I need to know this, Miss Aguja.
+
+speaker B
+dialogue Alrighty...
+
+speaker MC
+dialogue Go on.
+
+speaker B
+dialogue I was workin' up in the Downtown sector at the time. Uh. Corpo shenanigans, stuff like that.
+
+speaker N
+dialogue Bobbi looks down at her prosthetic hands. One on the desk in front of her, the other attached to her left arm. Her eyes are mildly watery.
+
+speaker B
+dialogue The Guardians brought down a building we were doing some work in... miscommunication or somethin'... Lost my hands and team to the explosion.
+
+speaker MC
+dialogue Sorry to hear that.
+
+speaker B
+dialogue It's all good. I uh... I'm better now. 'S been a few years, so. Yeah. No more corpo bullshit for me.
+
+speaker N
+dialogue She seems exhausted just from speaking about her injury. You can't help but feel a pang of guilt strike your chest.
+
+speaker MC
+dialogue Thank you for answering fully, I'm sorry you had to go into detail about it.
+
+speaker B
+dialogue It's alright. Don't worry about it.
+goto next4
+
+
+stopAsking:
+
+speaker MC 
+dialogue I suppose I don't have to know. Just the nature of the injury should be fine enough.
+
+speaker B
+dialogue Lost 'em both in an explosion.
+
+speaker MC 
+dialogue I see. I'm sorry to hear that.
+
+speaker B
+dialogue Thanks, it was a while ago...
+goto next4
+
+dontaskHand:
+
+next4:
+
+speaker MC
+dialogue Continuing on, then. What's the problem with your hand, and do you mind if I have a look at it?
+
+speaker B
+dialogue I think the servos are fried? Uh, take a look yourself.
+
+speaker MC
+dialogue Fried servos? You can get that fixed at any city-sanctioned repair shop.
+
+speaker B
+dialogue Yeah... Uh. Not if the warranty is expired.
+
+speaker MC
+dialogue Oh. I see. No worries then. I'll fix it immediately. 
+
+speaker B
+dialogue Right now? Whoa.
+
+speaker MC
+dialogue Yeah, right here on the counter. You're free to watch me do it, too. 
+
+speaker B
+dialogue Well that's nice of ya.
+
+speaker MC
+dialogue It's nothing, really.
+
+speaker N
+dialogue You get your tools and sit down with the hand, prepared to fix it.
+
+oops:
+
+speaker N
+choice Yes
+makechoice Proceed to Arm Servos repair?
+
+speaker MC
+dialogue Let's get to it.
+
+branch servtime
+
+
+minigame 1
+
+branch-minigame WinBranch;LoseBranch
+
+LoseBranch:
+speaker MC
+dialogue I seem to have struck a wrong wire while working on it.
+
+speaker N
+dialogue The servos have been screwed up. You'll have to grab a new set and try again.
+goto oops
+
+
+WinBranch:
+music play DoYouHaveArms
+
+speaker MC
+dialogue Done.
+
+speaker N
+dialogue The servos have been replaced wonderfully. It almost looks brand-new.
+
+speaker B
+dialogue Whoa mama! Looks gorgeous!
+
+speaker MC
+dialogue Give it a try.
+
+speaker N
+dialogue You hand her the hand, and she re-attaches it to her arm stump. She turns it around, flips back and forth, tests the fingers, then smiles.
+
+speaker MC
+dialogue Feel good?
+
+speaker B
+dialogue Good's an understatement, this is better than the day I bought the darn thing.
+
+speaker MC
+dialogue I am glad to hear that.
+
+speaker B
+dialogue How much do I owe ya?
+
+speaker N
+dialogue Your mind goes blank for a second. You haven't had a customer in so long that you've forgotten your own prices.
+
+choice Same as standard repair shops.
+choice Less than standard repair shops.
+choice Much less than standard repair shops.
+makechoice How much did a hand repair cost again?
+
+speaker MC
+
+branch same1;less1;lesser1
+
+
+
+same1:
+dialogue $500. Covers the repairs and the new servos.
+
+speaker B
+dialogue 'Bout what I expected, I guess.
+
+speaker MC
+dialogue Then I assume you have enough?
+
+speaker N
+dialogue She hands you $500.
+
+speaker B
+dialogue That I do.
+goto TheNext
+
+
+
+less1:
+dialogue $400. Covers the repairs and the new servos and is still less than market price.
+
+speaker B
+dialogue Well that's mighty nice of ya.
+
+speaker MC
+dialogue Just business.
+
+speaker N
+dialogue She hands you $400.
+
+speaker B
+dialogue There ya go.
+goto TheNext
+
+
+
+lesser1:
+dialogue $250. I keep my prices affordable.
+
+speaker B
+dialogue WOW! Ok. That's more than reasonable, I feel like I'm stealin' from ya or somethin'.
+
+speaker MC
+dialogue Maybe so. But it's better than the government stealing from you.
+
+speaker B
+dialogue I 'spose. Still gonna give ya a tip though.
+
+speaker N
+dialogue She hands you $400. The price of the repair plus a huge tip. You're taken aback.
+
+speaker MC
+dialogue Are you sure you want to give me all of this?
+
+speaker B
+dialogue It's nothin', really. You've basically saved my job.
+
+speaker MC
+dialogue Thank you.
+goto TheNext
+
+
+
+
+
+
+TheNext:
+
+
+speaker N
+dialogue Bobbi sits up from her seat, hand attached. She walks over to the exit with a small spring in her step.
+
+speaker B
+dialogue I appreciate your service here t'day! Seeya later!
+
+speaker MC
+dialogue You're welcome.
+
+speaker N
+dialogue Bobbi waves, then flashes a smile before heading out the door.
+
+speaker MC
+dialogue Hm.
+
+speaker N
+dialogue You pocket the money she gave you, then pull out your computer once more, scrolling through useless message after useless message. Hours pass as you look through ads, subscription service reminders, and nonsense scams.
+
+returnToEmail2:
+
+choice Cybersurgeon's Apparatus: Buy Now!
+choice Urgent Message From ENEVIS Energy
+makechoice Only two messages interest you in any capacity.
+
+branch choiceOneX;choiceOneZ;
+
+choiceOneX:
+dialogue The Cybersurgeon's Apparatus is a multi-use tool used to repair prosthetics, its versatility and simplistic design is appreciated by Cybersurgeons worldwide. It features a plug-in spot for auxiliary power, a frighteningly long-lasting battery, and 5 different tools for prosthetic dismantling and repair; a long screwdriver that can be used while powered or unpowered, a pair of rubber tongs, a soldering tip, a teeny tiny crowbar-like tool, and a cooling fan. Buy one for only [price determined by region and current economical factors] today!
+
+speaker MC
+dialogue Already have three of them, and at a much cheaper price too.
+goto nexty
+
+choiceOneZ:
+speaker N
+dialogue Attention citizens of Monsoon Lows! We will be shutting off the power grid to your district tonight due to overflooding in our district factory. Thank you for your cooperation and understanding.
+
+speaker MC
+dialogue Third blackout night in a row... Disappointing.
+
+goto nexty
+
+nexty:
+
+speaker N
+
+choice Yes
+choice No
+makechoice Read more messages?
+
+branch returnToEmail2;continuefromemail2
+
+continuefromemail2:
+
+speaker N
+dialogue Suddenly, you hear your door slam shut. You jolt your head up in surprise only to see an older looking man standing at the other side of your desk. He's wearing a full blue jumpsuit and leans on a strangely long cane.
+
+speaker MC
+dialogue Hello. Can I help you?
+
+speaker W?
+dialogue No, you cannot.
+
+speaker MC
+dialogue Ok, so why are you h-
+
+speaker W?
+dialogue Have you ever thought about what would happen if someone were to find out you were operating without a license, young one?
+
+speaker N
+dialogue Your breath leaves your body for a moment as your eyes go wide in shock.
+
+speaker MC
+dialogue Is that a threat? How do you know that.
+
+speaker W?
+dialogue Hahaha! No, no. Just an observation from the janitor next door.
+
+speaker MC
+dialogue Janitor next door?
+
+speaker W?
+dialogue You're looking at him!
+
+speaker MC
+dialogue But there's n-
+
+speaker W
+dialogue Name's Washi. That's MISTER Washi to you, kid.
+
+speaker N
+dialogue You look the man up and down. What you thought was a cane actually appears to be a wet mop.
+
+speaker MC
+dialogue That's a-
+
+speaker W
+dialogue Convenient name for a janitor? You bet it is.
+
+speaker MC
+dialogue Actually I was going to say that it's a name I don't recognize. Are you new here?
+
+speaker W
+dialogue Been here at least twice the length that you have!
+
+speaker MC
+dialogue Why did you come here exactly?
+
+speaker W
+dialogue Moved out of my old house in the Undercity, real nasty place that is! Too many rats and mutants.
+
+speaker MC
+dialogue No. Why did you come here. To my shop.
+
+speaker N
+dialogue Mr. Washi immediately turns on his heel and walks towards the front door.
+
+speaker W
+dialogue Seeya later kiddo!
+
+speaker MC
+dialogue Wait, where are you-
+
+speaker N
+dialogue The door slams shut as loudly as when he entered. You sit in front of your desk in stunned silence. You're utterly confused and vaguely frightened. How did he know you weren't licensed... And did he say that there were mutants in the Underci-
+
+speaker N
+dialogue Your cat loudly meows from the other side of the room. You check your watch and realize that it's already dinner time.
+
+speaker MC
+dialogue Alright Hal, I'm coming.
+
+speaker N
+dialogue He meows politely in response, then bounds upstairs. You lock up the downstairs area, then head up to your living space.
+
+speaker N
+dialogue You hang out with Hal for a while, watching the news and various shows until the power abruptly cuts. 
+
+speaker MC
+dialogue Third night in a row. Let's hit the hay, Hal.
+
+speaker N
+dialogue Hal meows, then jumps onto your bed when he sees you getting ready.
+
+speaker MC
+dialogue Good boy.
+
+speaker N
+dialogue You tuck into bed and turn on your old radio alarm. The only thing on your mind is that strange old man. You wonder how he could be a janitor next door if the unit next to you is an abandoned pizza parlor with a collapsed roof.
+
+speaker N
+dialogue You elect to ignore those thoughts for now, as the room grows colder and colder by the minute. The sounds of hovercars and speedboats outside are mostly drowned out by the calming hum of heavy downpour. Listening to the ambience of the city, you eventually fall asleep.
+
+load Mission 2
