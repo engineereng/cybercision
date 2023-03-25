@@ -1,0 +1,6 @@
+dialogue Hello
+dialogue Lets play some minigames!
+
+minigame 5
+
+dialogue Welcome back!

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 31008845ac98343a6a669c9bfbb19f73
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -15,9 +18,27 @@ EditorBuildSettings:
     path: Assets/Scenes/ChargeScene.unity
     guid: 05bbb13e33f364660a4464dfe9d2c541
   - enabled: 1
-    path: Assets/Scenes/DebugScene.unity
+    path: Assets/Scenes/EasyDebugScene.unity
     guid: 92cbe85b426c9441ba885494d113661b
   - enabled: 1
     path: Assets/Scenes/ReprogramScene.unity
     guid: 8cf0a4b6f97194a69a935dec8a767101
+  - enabled: 1
+    path: Assets/Scenes/Levels/Test Day.unity
+    guid: c559543bf99db4f4888c1ced899ddedc
+  - enabled: 1
+    path: Assets/Scenes/Levels/Test Day 2.unity
+    guid: fedf779b7e457ff479cb9fd2f45e41d1
+  - enabled: 1
+    path: Assets/Scenes/HeartBeatScene.unity
+    guid: 2d660706d76a041449cebb0185f67fd3
+  - enabled: 1
+    path: Assets/Scenes/MinigameTest.unity
+    guid: c4d8277e879f8584bb36679300916331
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: c7f0aeef8502d704b9df765c5ae4a800
+  - enabled: 1
+    path: Assets/Scenes/Levels/Mission 1.unity
+    guid: e037ef7051fbf1c4d968c51148f8b11c
   m_configObjects: {}

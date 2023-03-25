@@ -1,0 +1,103 @@
+;;This is a comment and will not run as anything
+
+music play HowToTalkToCustomers
+dialogue This is some sample dialogue I guess.
+
+dialogue Minigame time!
+
+minigame ArmScene
+
+branch-minigame Win;Lose
+
+Win:
+dialogue Winner winner chicken dinner!
+goto choice-time
+
+Lose:
+
+dialogue You lost sucka!
+goto choice-time
+
+
+choice-time:
+
+choice This is the first choice
+choice This is the second choice
+choice This is the third and final choice
+makechoice Pick one of my choices and see what happens!
+remember test-choice-one
+
+branch choiceOneA;choiceOneB;choiceOneC
+
+choiceOneA:
+music play DoYouHaveArms
+speaker test2
+dialogue You selected my first choice! Now I look like mickey mouse!
+goto next
+
+choiceOneB:
+music play OurFavoriteAddict
+dialogue You selected my second choice!
+goto next
+
+choiceOneC:
+music play PartyAtTheApocolypse
+dialogue You selected my third choice!
+goto next
+
+next:
+
+choice One
+choice Two
+choice Three
+makechoice Make another choice and I'll show you I can remember stuff!
+
+branch choiceTwoA;choiceTwoB;choiceTwoC
+
+music stop
+
+choiceTwoA:
+dialogue You selected my first choice!
+goto afterRemember
+
+choiceTwoB:
+dialogue You selected my second choice!
+goto afterRemember
+
+choiceTwoC:
+dialogue You selected my third choice!
+goto afterRemember
+
+afterRemember:
+dialogue For your first choice... let me remember it quickly...
+recall test-choice-one
+
+dialogue Ah yes, I remember now...
+
+branch recallA;recallB;recallC
+
+recallA:
+dialogue You selected my first choice!
+goto finish
+
+recallB:
+dialogue You selected my second choice!
+goto finish
+
+recallC:
+dialogue You selected my third choice!
+goto finish
+
+finish:
+
+dialogue Anyways, I've got to go now! Bye!!
+load Test Day 2
+
+;; Note: There is a bug where if you don't put a new line at the end of the file, it bugs out
+;; Always just have one empty line at the end of the file
+
+;; Possible Minigames:
+;; Arm Servo      - ArmScene
+;; Charge Battery - ChargeScene
+;; De-bug         - DebugScene
+;; Heart beat     - HeartBeatScene
