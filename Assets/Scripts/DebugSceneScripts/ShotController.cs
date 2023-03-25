@@ -7,7 +7,7 @@ using TMPro;
 public class ShotController : MonoBehaviour
 {
     public GameObject shot;
-    public int reloadTime;
+    public float reloadTime;
     public TextMeshProUGUI reloadText;
 
     public moveBug[] bugScripts;
