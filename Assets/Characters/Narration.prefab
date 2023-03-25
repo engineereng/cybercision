@@ -47,3 +47,4 @@ MonoBehaviour:
   ScriptReferenceName: N
   CharacterName: 
   CharacterImage: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  DialogueColor: {r: 0, g: 0.8117647, b: 1, a: 1}

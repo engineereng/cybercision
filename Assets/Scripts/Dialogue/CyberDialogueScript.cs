@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.UI;
 
 public class CyberDialogueScript : MonoBehaviour
 {
@@ -303,6 +304,11 @@ public class CyberDialogueScript : MonoBehaviour
             else
             {
                 speakerSheetController.SetCharacter(selected);
+
+                //This is a sucky way of doing this....
+                GameObject dialogueBox = GameObject.Find("Dialogue Box Back");
+                dialogueBox.GetComponent<Image>().color = selected.DialogueColor;
+
             }
 
             return true;

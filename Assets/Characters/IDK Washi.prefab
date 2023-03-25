@@ -47,3 +47,4 @@ MonoBehaviour:
   ScriptReferenceName: W?
   CharacterName: Old Man
   CharacterImage: {fileID: 21300000, guid: ddc5652d674bb3f4f860af59dc5fbf07, type: 3}
+  DialogueColor: {r: 0, g: 0.8117647, b: 1, a: 1}
