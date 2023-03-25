@@ -12,6 +12,7 @@ public class SnapToGoal : MonoBehaviour
         if (goalEnabled && otherObject.Equals(wire) && !otherObject.GetComponent<MoveWire>().following){
             Debug.Log("Hit goal!");
             gameObject.GetComponentInParent<FingerController>().setDone();
+            gameObject.GetComponentInParent<Finger>().StopWiggle();
             // set wire to look like a wire is in it
             gameObject.GetComponent<SpriteRenderer>().color = otherObject.GetComponent<SpriteRenderer>().color;
             Destroy(otherObject);

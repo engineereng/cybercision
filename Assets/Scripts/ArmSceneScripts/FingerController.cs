@@ -18,7 +18,6 @@ public class FingerController : MonoBehaviour
     }
     void wiggleRandom()
     {
-        Color newColor = Color.green; // the color is a placeholder for wiggling animation
         // choose new wiggler out of a random one
         int indexNewWiggler = Random.Range(0, NUM_FINGERS);
         while (alreadyChosen.Contains(indexNewWiggler))
@@ -26,15 +25,14 @@ public class FingerController : MonoBehaviour
         currentChosen = indexNewWiggler;
         alreadyChosen.Add(indexNewWiggler);
         Transform randomChild = transform.GetChild(indexNewWiggler);
-        randomChild.GetChild(1).GetComponent<SnapToGoal>().goalEnabled = true;
-        SpriteRenderer renderer = randomChild.GetComponent<SpriteRenderer>();
-        renderer.color = newColor;
+        randomChild.GetChild(0).GetComponent<SnapToGoal>().goalEnabled = true;
+        Finger finger = randomChild.GetComponent<Finger>();
+        finger.SetOutline();
     }
 
     public void setDone()
     {
         // stop wiggling the current wiggler
-        transform.GetChild(currentChosen).GetComponent<SpriteRenderer>().color = Color.black;
         if (alreadyChosen.Count < NUM_FINGERS)
             wiggleRandom();
         else {
