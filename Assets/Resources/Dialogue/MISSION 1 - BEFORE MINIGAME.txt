@@ -13,7 +13,7 @@ speaker MC
 dialogue Alright, enough of that.
 
 speaker N
-dialogue Your joints ache as you slam your hand against the old-tech radio on your desk. You stand up from the rock hard bed and stretch wide like a cat, grunting aloud.
+dialogue You slam your hand against the old-tech radio on your desk, turning it off. Your joints ache as you stand up from the rock hard bed and stretch wide like a cat, grunting aloud.
 
 speaker MC
 dialogue Looks like another day of nothing ahead of us, huh.
@@ -104,7 +104,7 @@ dialogue Premium is up by $200, huh? What a scam.
 goto next1
 
 choiceOneF:
-dialogue Hey <player>, it's Ima, I've got some information you might be interested in, care to meet up sometime? I think we could give each-other a helping hand here, hehe >:3
+dialogue Hey Firth, it's Ima, I've got some information you might be interested in, care to meet up sometime? I think we could give each-other a helping hand here, hehe >:3
 
 speaker MC
 dialogue That emoji feels a little unprofessional to use in an email to your former colleague, but whatever. I'll respond to her message later.
@@ -209,7 +209,7 @@ speaker B
 dialogue Bobbi. Bobbi Aguja.
 
 speaker MC
-dialogue Welcome to the clinic, Bobbi, I'm <player>. A pleasure to meet you. Hopefully we can get your hand fixed up relatively quickly, but I'm going to ask you a few questions first, is that alright?
+dialogue Welcome to the clinic, Bobbi. I'm Firth. Hopefully we can get your hand fixed up relatively quickly, but I'm going to ask you a few questions first, is that alright?
 
 speaker B
 dialogue Shoot away!
@@ -358,7 +358,20 @@ minigame 1
 
 branch-minigame WinBranch;LoseBranch
 
+
+
+LoseBranch:
+speaker MC
+dialogue I seem to have struck a wrong wire while working on it.
+
+speaker N
+dialogue The servos have been screwed up. You'll have to grab a new set and try again.
+goto oops
+
+
 WinBranch:
+music play DoYouHaveArms
+
 speaker MC
 dialogue Done.
 
@@ -464,18 +477,14 @@ goto end
 
 
 
-LoseBranch:
-speaker MC
-dialogue I seem to have struck a wrong wire while working on it.
 
-speaker N
-dialogue The servos have been screwed up. You'll have to grab a new set and try again.
-goto oops
 
 
 
 
 end:
+
+music play DoYouHaveArms
 
 speaker N
 dialogue Bobbi sits up from her seat, hand attached. She walks over to the exit with a small spring in her step.
