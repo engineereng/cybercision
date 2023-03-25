@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 31008845ac98343a6a669c9bfbb19f73
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -21,9 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ReprogramScene.unity
     guid: 8cf0a4b6f97194a69a935dec8a767101
   - enabled: 1
-    path: Assets/Scenes/TitleScreen.unity
-    guid: 31008845ac98343a6a669c9bfbb19f73
-  - enabled: 1
     path: Assets/Scenes/Levels/Test Day.unity
     guid: c559543bf99db4f4888c1ced899ddedc
   - enabled: 1
@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: c7f0aeef8502d704b9df765c5ae4a800
+  - enabled: 1
+    path: Assets/Scenes/Levels/Mission 1.unity
+    guid: e037ef7051fbf1c4d968c51148f8b11c
   m_configObjects: {}
