@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class moveBug : MonoBehaviour
 {
+    public AudioSource bugSquashSound;
+
     public float speed = 5f;
     public double constraintLeftDown;
     public double constraintRightUp;
@@ -32,10 +34,12 @@ public class moveBug : MonoBehaviour
     {
         isShootable = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        //bugSquashSound = GetComponent<AudioSource>();
     }
 
     private void OnMouseDown() {
         if (isShootable) {
+            bugSquashSound.Play();
             scoreObject.AddCount();
             HideAndShow(respawnTime);
         }
@@ -43,6 +47,7 @@ public class moveBug : MonoBehaviour
 
     private void HideAndShow(float delay)
     {
+        
         gameObject.SetActive(false);
 
         // Call Show after delay seconds
