@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.UI;
 
 public class CyberDialogueScript : MonoBehaviour
 {
@@ -78,7 +79,7 @@ public class CyberDialogueScript : MonoBehaviour
     {
         while(index < commands.Count)
         {
-            bool executeAnother = executeOneCommand();
+            bool executeAnother = ExecuteOneCommand();
 
             if (!executeAnother)
             {
@@ -128,7 +129,7 @@ public class CyberDialogueScript : MonoBehaviour
 
     //Executes a single command.
     //Returns true if another command should be executed or if the dialogue script should pause until instructed to continue
-    bool executeOneCommand()
+    bool ExecuteOneCommand()
     {
         if (index < 0 || index >= commands.Count)
         {
@@ -157,14 +158,14 @@ public class CyberDialogueScript : MonoBehaviour
         {
             string sceneName = concat(parts, 1);
 
-            if(sceneName.Length > 0)
+            if (sceneName.Length > 0)
             {
 
                 SaveGame(sceneName);
 
                 Debug.Log("Loading scene " + sceneName);
                 SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-                
+
             }
             return true;
         }
@@ -231,6 +232,30 @@ public class CyberDialogueScript : MonoBehaviour
             }
             return true;
         }
+        else if (parts[0].Equals("branch-minigame"))
+        {
+            string[] branchLabels = parts[1].Split(";");
+
+            if(branchLabels.Length == 2)
+            {
+                string label = branchLabels[WonAllMinigames ? 0 : 1];
+
+                if (labels.ContainsKey(label))
+                {
+                    index = labels[label];
+                }
+                else
+                {
+                    Debug.LogWarning("Tried to jump to a label called " + label + " but it doesnt exist!");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("branch-minigame should always receive exactly two branches! (Win/Loss), we got " + branchLabels.Length);
+            }
+
+            return true;
+        }
         else if (parts[0].Equals("branch"))
         {
             string[] branchLabels = parts[1].Split(";");
@@ -280,6 +305,11 @@ public class CyberDialogueScript : MonoBehaviour
             else
             {
                 speakerSheetController.SetCharacter(selected);
+
+                //This is a sucky way of doing this....
+                GameObject dialogueBox = GameObject.Find("Dialogue Box Back");
+                dialogueBox.GetComponent<Image>().color = selected.DialogueColor;
+
             }
 
             return true;
@@ -287,11 +317,17 @@ public class CyberDialogueScript : MonoBehaviour
         }
         else if (parts[0].Equals("minigame"))
         {
-            int num = int.Parse(parts[1]);
 
-            MinigameManager.GetManager().StartMinigames(num, index);
+            string[] gamesToPlay = new string[parts.Length - 1];
 
-            return true;
+            for(int i = 1; i < parts.Length; i++)
+            {
+                gamesToPlay[i - 1] = parts[i];
+            }
+            
+            MinigameManager.GetManager().StartMinigames(gamesToPlay, index);
+
+            return false;
         }
         else if (parts[0].Equals("music"))
         {

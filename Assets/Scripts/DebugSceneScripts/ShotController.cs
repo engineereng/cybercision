@@ -7,7 +7,7 @@ using TMPro;
 public class ShotController : MonoBehaviour
 {
     public GameObject shot;
-    public int reloadTime;
+    public float reloadTime;
     public TextMeshProUGUI reloadText;
 
     public moveBug[] bugScripts;
@@ -19,6 +19,8 @@ public class ShotController : MonoBehaviour
     public GameObject shot1;
     public GameObject shot2;
     public GameObject shot3;
+
+    public AudioSource missSource;
 
     // Vector3 shot1pos = new Vector3(230f, 329f, 1301f);
     // Vector3 shot2pos = new Vector3(290f, 329f, 1301f);
@@ -69,6 +71,11 @@ public class ShotController : MonoBehaviour
                 shot1.SetActive(true);
                 shot2.SetActive(true);
                 shot3.SetActive(true);
+            }
+
+            if (missSource)
+            {
+                missSource.Play();
             }
         }
 

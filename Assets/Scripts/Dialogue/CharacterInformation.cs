@@ -14,4 +14,7 @@ public class CharacterInformation : MonoBehaviour
 
     [SerializeReference]
     public Sprite CharacterImage;
+
+    [SerializeField]
+    public Color DialogueColor = new Color(0, 207f / 255f, 1f);
 }

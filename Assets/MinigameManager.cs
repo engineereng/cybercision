@@ -5,10 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MinigameManager : MonoBehaviour
 {
-
-    [SerializeField]
-    public string[] Minigames;
-
+    
     private string ReturnSceneName;
     private int ReturnIndex;
 
@@ -19,6 +16,9 @@ public class MinigameManager : MonoBehaviour
     private List<string> possibleMinigames;
 
     private bool RunningMinigames;
+
+    private bool Finish = false;
+    private bool Win = false;
 
     public static MinigameManager GetManager()
     {
@@ -31,14 +31,7 @@ public class MinigameManager : MonoBehaviour
             Debug.Log("Created minigame manager...");
 
             manager = gameObject.GetComponent<MinigameManager>();
-            //This is hard coded which is shitty but fine for now
-            manager.Minigames = new string[]
-            {
-                "ArmScene",
-                "ChargeScene",
-                "DebugScene",
-                "HeartBeatScene"
-            };
+           
 
             manager.RunningMinigames = false;
             SceneManager.sceneLoaded += manager.OnSceneLoaded;
@@ -46,17 +39,53 @@ public class MinigameManager : MonoBehaviour
         }
         return manager;
     }
-    
 
-    public void StartMinigames(int NumberOfGames, int ReturnIndex)
+    //Allow developers to skip minigames
+#if UNITY_EDITOR
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            FinishMinigame(true);
+        }
+        else if(Input.GetKeyDown(KeyCode.F4))
+        {
+            FinishMinigame(false);
+        }
+    }
+
+#endif
+
+    private void LateUpdate()
+    {
+        if (Finish)
+        {
+            Finish = false;
+            WonAllGames &= Win;
+            NumberOfGamesLeft--;
+            if (NumberOfGamesLeft <= 0)
+            {
+                Debug.Log("Minigames finished, returning to whence we came");
+                ReturnToDialogue();
+            }
+            else
+            {
+                Debug.Log("Minigame finished, playing " + NumberOfGamesLeft + " more minigames...");
+                StartRandomMinigame();
+            }
+        }
+    }
+
+    public void StartMinigames(string[] minigamesToPlay, int ReturnIndex)
     {
         RunningMinigames = true;
-        NumberOfGamesLeft = NumberOfGames;
+        NumberOfGamesLeft = minigamesToPlay.Length;
         this.ReturnSceneName = SceneManager.GetActiveScene().name;
         this.ReturnIndex = ReturnIndex;
         WonAllGames = true;
         possibleMinigames = new List<string>();
-        foreach (string minigameSceneName in Minigames)
+        foreach (string minigameSceneName in minigamesToPlay)
         {
             possibleMinigames.Add(minigameSceneName);
         }
@@ -65,30 +94,15 @@ public class MinigameManager : MonoBehaviour
 
     public void FinishMinigame(bool Win)
     {
-        WonAllGames &= Win;
-        NumberOfGamesLeft--;
-        if(NumberOfGamesLeft <= 0)
+        if (RunningMinigames)
         {
-            Debug.Log("Minigames finished, returning to whence we came");
-            ReturnToDialogue();
-        }
-        else
-        {
-            Debug.Log("Minigame finished, playing " + NumberOfGamesLeft + " more minigames...");
-            StartRandomMinigame();
+            Finish = true;
+            this.Win = Win;
         }
     }
 
     private void StartRandomMinigame()
     {
-        if(possibleMinigames.Count > 0)
-        {
-            foreach (string minigameSceneName in Minigames)
-            {
-                possibleMinigames.Add(minigameSceneName);
-            }
-        }
-
         int randomIndex = Random.Range(0, possibleMinigames.Count - 1);
 
         string randomGame = possibleMinigames[randomIndex];

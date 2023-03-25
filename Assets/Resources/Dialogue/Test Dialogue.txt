@@ -3,6 +3,24 @@
 music play HowToTalkToCustomers
 dialogue This is some sample dialogue I guess.
 
+dialogue Minigame time!
+
+minigame ArmScene
+
+branch-minigame Win;Lose
+
+Win:
+dialogue Winner winner chicken dinner!
+goto choice-time
+
+Lose:
+
+dialogue You lost sucka!
+goto choice-time
+
+
+choice-time:
+
 choice This is the first choice
 choice This is the second choice
 choice This is the third and final choice
@@ -77,3 +95,9 @@ load Test Day 2
 
 ;; Note: There is a bug where if you don't put a new line at the end of the file, it bugs out
 ;; Always just have one empty line at the end of the file
+
+;; Possible Minigames:
+;; Arm Servo      - ArmScene
+;; Charge Battery - ChargeScene
+;; De-bug         - DebugScene
+;; Heart beat     - HeartBeatScene

@@ -25,6 +25,9 @@ public class DialogueBoxController : MonoBehaviour
 
     [SerializeReference]
     public AudioClip[] music;
+
+    [SerializeReference]
+    public AudioClip[] soundEffects;
     
     private bool WaitingForInput;
 
@@ -32,7 +35,10 @@ public class DialogueBoxController : MonoBehaviour
 
     [SerializeField]
     public AudioSource scrollSoundSource, selectSoundSource;
-    
+
+    [SerializeField]
+    public AudioSource soundEffectSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +82,20 @@ public class DialogueBoxController : MonoBehaviour
         WaitingForInput = false;
     }
 
+    public void PlaySoundEffect(string name)
+    {
+        foreach(AudioClip ac in soundEffects)
+        {
+            if (ac.name.Equals(name))
+            {
+                soundEffectSource.clip = ac;
+                soundEffectSource.Play();
+                return;
+            }
+        }
+        Debug.LogWarning("Couldn't find sound effect " + name + " to play!! Did you forget to add it to the load list?");
+    }
+
     public void ShowDialogue(string Dialogue, bool AwaitInput = true)
     {
         WaitingForInput = AwaitInput;
@@ -93,6 +113,18 @@ public class DialogueBoxController : MonoBehaviour
         }
 
         return false;
+    }
+
+    private int GetMaxDialogueOption()
+    {
+        for(int i = 0; i < CurrentOptions.Length; i++)
+        {
+            if(CurrentOptions[i].Length == 0)
+            {
+                return i;
+            }
+        }
+        return CurrentOptions.Length;
     }
 
     public bool IsWaitingForInput()
@@ -137,14 +169,16 @@ public class DialogueBoxController : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    SelectedOption = Mathf.Min(CurrentOptions.Length - 1, SelectedOption + 1);
+                    SelectedOption = Mathf.Min(GetMaxDialogueOption() - 1, SelectedOption + 1);
                     if (scrollSoundSource)
                     {
                         scrollSoundSource.Play();
                     }
                 }
             }
-            
+
+            SelectedOption = Mathf.Max(0, SelectedOption);
+            SelectedOption = Mathf.Min(GetMaxDialogueOption() - 1, SelectedOption);
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
