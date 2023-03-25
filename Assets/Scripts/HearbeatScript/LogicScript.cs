@@ -38,14 +38,14 @@ public class LogicScript : MonoBehaviour
                 patientStatus.text = "PATIENT STATUS: " + status();
                 FindObjectOfType<AudioManager>().Mute("Theme");
                 VideoManager.Flatline();
-                // MinigameManager.GetManager().FinishMinigame(false);
+                MinigameManager.GetManager().FinishMinigame(false);
             }
             else if(isWin()){
                 winnerScreen.SetActive(true);
                 patientStatus.text = "PATIENT STATUS: " + status();
                 TimerText.text = "TIME: " + Timer.ToString("0");
                 FindObjectOfType<AudioManager>().Mute("Theme");
-                // MinigameManager.GetManager().FinishMinigame(true);
+                MinigameManager.GetManager().FinishMinigame(true);
             }
             else {
                 Timer -= Time.deltaTime;
