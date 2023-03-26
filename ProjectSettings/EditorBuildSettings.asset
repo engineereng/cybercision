@@ -18,9 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ChargeScene.unity
     guid: 05bbb13e33f364660a4464dfe9d2c541
   - enabled: 1
-    path: Assets/Scenes/EasyDebugScene.unity
-    guid: 92cbe85b426c9441ba885494d113661b
-  - enabled: 1
     path: Assets/Scenes/ReprogramScene.unity
     guid: 8cf0a4b6f97194a69a935dec8a767101
   - enabled: 1
@@ -41,4 +38,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Mission 1.unity
     guid: e037ef7051fbf1c4d968c51148f8b11c
+  - enabled: 1
+    path: Assets/Scenes/RapidFireDebugScene.unity
+    guid: e9ca7c5af5444314b8061f536bda847d
+  - enabled: 1
+    path: Assets/Scenes/EasyDebugScene.unity
+    guid: 720c106e0ddcaee49acccc1d671fa591
+  - enabled: 1
+    path: Assets/Scenes/MediumDebugScene.unity
+    guid: c2690889e963b094ea8c52774128d126
   m_configObjects: {}
