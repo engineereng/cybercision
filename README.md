@@ -4,16 +4,25 @@ A puzzle/minigame game with visual novel elements and story. The player will use
 This demo includes 4 missions, with branching outcomes depending on your performance in the surgery minigames.
 
 ## Team members
-Collin Eng (team lead)
-Darryl Tanzil
-Emma Nash
-Elsa Wei
-Erick Jovan Muljadi
-Harry Kim
-Tyler Hasman
-Matt Plyukhin
-Michelle Wang
-Zoe Khan
+- Collin Eng (team lead)
+
+- Darryl Tanzil
+
+- Emma Nash
+
+- Elsa Wei
+
+- Erick Jovan Muljadi
+
+- Harry Kim
+
+- Tyler Hasman
+
+- Matt Plyukhin
+
+- Michelle Wang
+
+- Zoe Khan
 
 ## How to play
 - Use the keyboard and mouse for most interactions
