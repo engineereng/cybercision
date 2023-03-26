@@ -8,10 +8,14 @@ public class SliderScript : MonoBehaviour
     private int direction;
     private float time;
     public bool alive;
-    private float INCREMENT_ON_TIME = 10;
-    private float INCREMENT_SPEED = 0.25f;
+    private float INCREMENT_ON_TIME = 5;
+    private float INCREMENT_SPEED = 3;
     private bool missClick = false;
     private bool canClick;
+
+    public Camera cam;
+
+    public VideoManager VideoManager;
 
     public LogicScript logic;
 
@@ -23,13 +27,16 @@ public class SliderScript : MonoBehaviour
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         direction = 1;
-        SLIDER_SPEED = 3;  
+        SLIDER_SPEED = 40;
         canClick = false;
         alive = true;
     }
 
     // Update is called once per frame
-    void Update()
+
+ 
+
+    void FixedUpdate()
     {
         if(logic.getStarted()){
             if(alive && !logic.isWin()){
@@ -38,7 +45,7 @@ public class SliderScript : MonoBehaviour
                     SLIDER_SPEED += INCREMENT_SPEED;
                     time = 0;
                 }
-                sliderBody.velocity = Vector2.right * SLIDER_SPEED * direction;
+                sliderBody.velocity = Vector2.right * SLIDER_SPEED * direction * Screen.width / 300;
             }
             else sliderBody.velocity *= 0;
         }
@@ -81,6 +88,7 @@ public class SliderScript : MonoBehaviour
                     circle = Node.gameObject.GetComponent<NodeScript>();
                     logic.increaseBPM();
                     FindObjectOfType<AudioManager>().Play("Circle");
+                    VideoManager.HeartBeat();   
                     circle.spawnResonance();
                 }
                 else if (Input.GetMouseButton(1)) {

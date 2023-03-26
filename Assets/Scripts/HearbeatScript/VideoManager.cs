@@ -7,22 +7,27 @@ public class VideoManager : MonoBehaviour
 {
     public VideoClip[] clips;
     public VideoPlayer BPMPlayer;
+    public VideoPlayer HeartPlayer;
+
+    public VideoClip heartBeatClip;
+
+    void Start(){
+        HeartPlayer.clip = heartBeatClip;
+    }
+
     public void Healthy(){
         print("Healthy");
-        BPMPlayer.clip = clips[0];
         BPMPlayer.playbackSpeed = 1f;
         BPMPlayer.SetDirectAudioVolume(0, 0.1f);
     }
     public void NotWell(){
         print("Not Well");
-        BPMPlayer.clip = clips[0];
-        BPMPlayer.playbackSpeed = 1.2f;
+        BPMPlayer.playbackSpeed = 1.5f;
         BPMPlayer.SetDirectAudioVolume(0, 0.3f);
     }
     public void Dying(){
         print("Dying");
-        BPMPlayer.clip = clips[0];
-        BPMPlayer.playbackSpeed = 1.4f;
+        BPMPlayer.playbackSpeed = 2f;
         BPMPlayer.SetDirectAudioVolume(0, 0.5f);
     }
     public void Flatline(){
@@ -36,5 +41,16 @@ public class VideoManager : MonoBehaviour
             return false;
        }
        return true;
+    }
+
+    public void Pause(){
+        BPMPlayer.Pause();
+    }
+    public void Play(){
+        BPMPlayer.Play();
+    }
+
+    public void HeartBeat(){
+        HeartPlayer.Play();
     }
 }

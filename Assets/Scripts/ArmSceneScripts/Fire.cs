@@ -19,7 +19,7 @@ public class Fire : MonoBehaviour
     }
     void Start()
     {
-        
+        FindObjectOfType<AudioManager>().Play("Flame");
     }
     void OnMouseDown()
     {
