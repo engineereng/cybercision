@@ -666,5 +666,5 @@ speaker N
 dialogue Whatever it is, it's strange. You resolve to figure it out tomorrow when he comes around again, and decide to head to bed early.
 
 
-load Mission 2
+load Mission 3
 
