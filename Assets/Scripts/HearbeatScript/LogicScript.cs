@@ -19,6 +19,9 @@ public class LogicScript : MonoBehaviour
     public VideoManager VideoManager;
 
     private float delay;
+
+    private float over;
+
     void Start(){
         VideoManager = FindObjectOfType<VideoManager>();
         heartBPM = 60;
@@ -34,18 +37,24 @@ public class LogicScript : MonoBehaviour
         delay += Time.deltaTime;
         if(started){
             if(isGameOver()){
+                over += Time.deltaTime;
                 gameOverScreen.SetActive(true);
                 patientStatus.text = "PATIENT STATUS: " + status();
                 FindObjectOfType<AudioManager>().Mute("Theme");
                 VideoManager.Flatline();
-                MinigameManager.GetManager().FinishMinigame(false);
+                if(over > 3){
+                    MinigameManager.GetManager().FinishMinigame(false);
+                }
             }
             else if(isWin()){
+                over += Time.deltaTime;
                 winnerScreen.SetActive(true);
                 patientStatus.text = "PATIENT STATUS: " + status();
                 TimerText.text = "TIME: " + Timer.ToString("0");
                 FindObjectOfType<AudioManager>().Mute("Theme");
-                MinigameManager.GetManager().FinishMinigame(true);
+                if(over > 3){
+                    MinigameManager.GetManager().FinishMinigame(true);
+                }
             }
             else {
                 Timer -= Time.deltaTime;
