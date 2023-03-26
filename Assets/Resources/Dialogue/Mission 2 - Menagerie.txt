@@ -665,6 +665,10 @@ right:
 speaker N
 dialogue Whatever it is, it's strange. You resolve to figure it out tomorrow when he comes around again, and decide to head to bed early.
 
+dialogue E N D   O F   D A Y   2
+
+choice Yes
+makechoice Proceed to Day 3?
 
 load Mission 3
 

@@ -666,4 +666,9 @@ dialogue You tuck into bed and turn on your old radio alarm. The only thing on y
 speaker N
 dialogue You elect to ignore those thoughts for now, as the room grows colder and colder by the minute. The sounds of hovercars and speedboats outside are mostly drowned out by the calming hum of heavy downpour. Listening to the ambience of the city, you eventually fall asleep.
 
+dialogue E N D   O F   D A Y   1
+
+choice Yes
+makechoice Proceed to Day 2?
+
 load Mission 2
