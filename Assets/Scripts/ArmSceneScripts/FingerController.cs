@@ -28,7 +28,7 @@ public class FingerController : MonoBehaviour
         Transform randomChild = transform.GetChild(indexNewWiggler);
         randomChild.GetChild(0).GetComponent<SnapToGoal>().goalEnabled = true;
         Finger finger = randomChild.GetComponent<Finger>();
-        finger.SetOutline();
+        finger.StartWiggle();
     }
 
     public void setDone()

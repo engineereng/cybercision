@@ -8,26 +8,21 @@ public class Finger : MonoBehaviour
     Sprite outlineSprite;
     [SerializeField]
     Sprite noOutlineSprite;
+    // AnimateFire wiggleAnimation;
     [SerializeField]
     Sprite[] wiggleAnimation;
-    
+    bool backwards;
+    bool animatingEnabled;
+    int index = 0;
+
     SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetNoOutline();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // wiggle
-    }
-
-    public void SetOutline()
-    {
-        spriteRenderer.sprite = outlineSprite;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        backwards = false;
     }
 
     public void SetNoOutline()
@@ -37,11 +32,35 @@ public class Finger : MonoBehaviour
 
     public void StartWiggle()
     {
-        // TODO
+        animatingEnabled = true;
+        StartCoroutine(Animate());
     }
 
     public void StopWiggle()
     {
-
+        StopAllCoroutines();
+        animatingEnabled = false;
+        spriteRenderer.sprite = outlineSprite;
     }
+
+    IEnumerator Animate()
+    {
+        if (animatingEnabled) {
+            for (;;) {
+                if (backwards)
+                index--;
+                else 
+                    index++;
+                if (index >= wiggleAnimation.Length) {
+                    backwards = true;
+                } else if (index < 0) {
+                    backwards = false;
+                } else {
+                    spriteRenderer.sprite = wiggleAnimation[index];       
+                }
+                yield return new WaitForSeconds(.125f);
+            }
+        }
+    }
+    
 }
