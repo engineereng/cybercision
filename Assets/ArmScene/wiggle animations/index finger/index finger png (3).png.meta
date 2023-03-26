@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7696cb16eab0942c0a5e65c506c86e46
+guid: af6f14377cfa044038bf5ceae0d0fdc0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -115,7 +115,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: index finger png (3)_0
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 24
+        width: 100
+        height: 486
+      alignment: 9
+      pivot: {x: 0.24368897, y: 0.4976028}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a4464813ee5421388053766b65b16d
+      internalID: 990051829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +147,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      index finger png (3)_0: 990051829
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
