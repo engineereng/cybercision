@@ -115,7 +115,7 @@ speaker N
 dialogue Bobbi gives you a thumbs up, then walks out the door. You turn your attention to the hand and servos on the desk in front of you.
 
 
-oops:
+oops11:
 
 speaker N
 choice Yes
@@ -127,18 +127,18 @@ dialogue Time to do it again.
 
 minigame ArmScene
 
-branch-minigame WinBranch;LoseBranch
+branch-minigame WinBranch1;LoseBranch1
 
-LoseBranch:
+LoseBranch1:
 speaker MC
 dialogue I almost screwed that up completely, I need to be more careful.
 
 speaker N
 dialogue You continue on, but try to be more precise this time.
-goto oops
+goto oops11
 
 
-WinBranch:
+WinBranch1:
 
 music play DoYouHaveArms
 
@@ -443,7 +443,7 @@ speaker N
 dialogue You boot up your computer and connect it to the leg in preparation.
 
 
-oops:
+oops10:
 
 speaker N
 choice Yes
@@ -455,15 +455,15 @@ dialogue Time to squash some bugs.
 
 minigame EasyDebugScene
 
-branch-minigame WinBranch;LoseBranch
+branch-minigame WinBranch2;LoseBranch2
 
-LoseBranch:
+LoseBranch2:
 speaker MC
 dialogue Just a couple missed bugs, let's try again.
-goto oops
+goto oops10
 
 
-WinBranch:
+WinBranch2:
 
 speaker N
 dialogue The leg's processes look relatively cleared of bugs. There's no telling if they'll come back when the leg is fully powered on again, though.
@@ -484,16 +484,16 @@ makechoice Proceed to Battery Charge?
 
 minigame ChargeScene
 
-branch-minigame WinBranch2;LoseBranch2
+branch-minigame WinBranch3;LoseBranch3
 
-LoseBranch2:
+LoseBranch3:
 
 speaker MC
 dialogue The battery didn't charge properly. I'll have to drain it and try again.
 goto oops2
 
 
-WinBranch2:
+WinBranch3:
 
 speaker N
 dialogue You insert the battery into Hal's leg. Looks like the circuits are working as normal.
@@ -537,14 +537,14 @@ dialogue You just need to focus. Focus. Focus.
 
 minigame MediumDebugScene
 
-branch-minigame WinBranch3;LoseBranch3
+branch-minigame WinBranch4;LoseBranch4
 
-LoseBranch3:
+LoseBranch4:
 speaker MC
 dialogue The bugs never end... Why are there always more?
 goto oops3
 
-WinBranch3:
+WinBranch4:
 
 music play DoYouHaveArms
 
