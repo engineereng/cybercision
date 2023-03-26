@@ -347,3 +347,4 @@ dialogue However it goes from here is yet to be known, but with Hal by your side
 
 dialogue The End.
 
+load Credits
