@@ -57,7 +57,7 @@ void Update()
 
     // Load the TitleScreen when the chargePercentage reaches 100%
     if (chargePercentage >= 100.0f) {
-        SceneManager.LoadScene("TitleScreen");
+            MinigameManager.GetManager().FinishMinigame(true);
     }
 
     float time = Time.time * 1.35f;

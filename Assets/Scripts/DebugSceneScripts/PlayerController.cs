@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         count = 0;
-        scoreToWin = 5;
         SetCountText();
         winText.text = "";
         bugScripts = bugParentObject.GetComponentsInChildren<moveBug>();
@@ -38,6 +37,7 @@ public class PlayerController : MonoBehaviour
         {
             StopCoroutine("LoseTime");
             countdownText.text = "Times Up!";
+            MinigameManager.GetManager().FinishMinigame(false);
             EndGame();
         }
 
@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
         if (count >= scoreToWin)
         {
             winText.text = "You Win!";
+            MinigameManager.GetManager().FinishMinigame(true);
             EndGame();
         }
     }

@@ -17,6 +17,9 @@ public class MinigameManager : MonoBehaviour
 
     private bool RunningMinigames;
 
+    private bool Finish = false;
+    private bool Win = false;
+
     public static MinigameManager GetManager()
     {
         MinigameManager manager = GameObject.FindObjectOfType<MinigameManager>();
@@ -54,6 +57,26 @@ public class MinigameManager : MonoBehaviour
 
 #endif
 
+    private void LateUpdate()
+    {
+        if (Finish)
+        {
+            Finish = false;
+            WonAllGames &= Win;
+            NumberOfGamesLeft--;
+            if (NumberOfGamesLeft <= 0)
+            {
+                Debug.Log("Minigames finished, returning to whence we came");
+                ReturnToDialogue();
+            }
+            else
+            {
+                Debug.Log("Minigame finished, playing " + NumberOfGamesLeft + " more minigames...");
+                StartRandomMinigame();
+            }
+        }
+    }
+
     public void StartMinigames(string[] minigamesToPlay, int ReturnIndex)
     {
         RunningMinigames = true;
@@ -71,17 +94,10 @@ public class MinigameManager : MonoBehaviour
 
     public void FinishMinigame(bool Win)
     {
-        WonAllGames &= Win;
-        NumberOfGamesLeft--;
-        if(NumberOfGamesLeft <= 0)
+        if (RunningMinigames)
         {
-            Debug.Log("Minigames finished, returning to whence we came");
-            ReturnToDialogue();
-        }
-        else
-        {
-            Debug.Log("Minigame finished, playing " + NumberOfGamesLeft + " more minigames...");
-            StartRandomMinigame();
+            Finish = true;
+            this.Win = Win;
         }
     }
 
