@@ -1,0 +1,670 @@
+music play DoYouHaveArms
+
+speaker R
+dialogue GOOOOOD MORNING MONSOON LOWS! Today we've got storms-a-plenty! Prepare yourselves for mass torrential downpour, cause it looks like the Downtowners are sending us some rain AND flooding. Can I get a womp womp for the Downtowners to show how much you hate th-
+
+speaker MC 
+dialogue Allllright enough of that.
+
+speaker N
+dialogue You once again slam your hand against the old radio, turning it off. For a second you worry about breaking it, but then stop when you remember the time you dropped it down a flight of stairs.
+
+speaker MC
+dialogue Morning, Halloran.
+
+speaker N
+dialogue Hal meows, then stretches out, awaiting your aid.
+
+speaker MC
+dialogue Here you go, buddy.
+
+speaker N
+dialogue You reach over to a small workdesk on the side of your bedroom, picking up a teeny prosthetic leg. You walk back over to Hal and attach it to the stump on his back leg.
+
+speaker MC
+dialogue Better?
+
+speaker N
+dialogue Hal responds to your caring words by leaping off the bed and running to his food bowl. You pick up a bag of cat food, only to realize that you ran out.
+
+speaker MC
+dialogue Dammit. I forgot to buy more.
+
+speaker N
+dialogue You give Hal a scratch on the head, then equip your standard outfit.
+
+speaker MC
+dialogue Gonna head to the store to get you some food, buddy.
+
+speaker N
+dialogue You walk down the stairs and go to head out the front door. You only take a single step outside before you bump headfirst into someone.
+
+speaker MC
+dialogue Whoa! Hello?
+
+speaker B
+dialogue Oh! My mistake, sorry 'bout that!
+
+speaker MC
+dialogue Miss Aguja. What are you doing here?
+
+speaker B
+dialogue Ah! Well I felt like I left in a bit of a hurry yesterday, hah. I wanted to give ya my thanks!
+
+speaker MC
+dialogue You're welcome.
+
+speaker B
+dialogue The repairs ya did are workin' better than my hand ever has! It's makin' my job a whole lot easier, I tell ya that.
+
+speaker MC 
+dialogue That's good to hear. Make sure to keep the joints oiled if you want it to work at full capacity for longer.
+
+speaker B
+dialogue Oh! Sure, yeah.
+
+speaker N
+dialogue Bobbi scratches her chin. Then pops off her left hand.
+
+speaker B
+dialogue I actually liked the work ya did on my hand so much that uh, I want'cha to do my left.
+
+speaker MC
+dialogue Oh. I see. The shop isn't technically open right now, but I suppose I can make an exception.
+
+speaker B
+dialogue Great! Can ya do it as soon as possible?
+
+speaker N
+dialogue You feel like you were supposed to do something, but the prospect of more money outweighs those thoughts.
+
+speaker MC
+dialogue Sure. Have a seat, I will get to work.
+
+speaker B
+dialogue Thank ya! I also brought this for ya.
+
+speaker N
+dialogue Bobbi holds out her hand as well as a box of fresh servos. You pick them up and place them on your desk. The servos look new.
+
+speaker MC
+dialogue Thank you, that will compensate for a lot of the cost.
+
+speaker N
+dialogue You remember that you were supposed to buy cat food for Hal. Your eyes go wide as an idea sparks.
+
+speaker MC
+dialogue Actually, instead of paying, could you just go out to the nearest corner store and pick up a bag of cat food for me? That should cover everything.
+
+speaker N
+dialogue You walk over and bring her an empty bag of the food you normally buy.
+
+speaker B
+dialogue You got a li'l kitty?
+
+speaker MC 
+dialogue Yes. His name is Halloran. Hal for short.
+
+speaker B
+dialogue You got a deal! I'll go buy ya another one of these, but I wanna see your li'l guy when I get back here.
+
+speaker MC
+dialogue Works for me.
+
+speaker N
+dialogue Bobbi gives you a thumbs up, then walks out the door. You turn your attention to the hand and servos on the desk in front of you.
+
+
+oops:
+
+speaker N
+choice Yes
+makechoice Proceed to Arm Servos repair?
+
+speaker MC
+dialogue Time to do it again.
+
+
+minigame ArmScene
+
+branch-minigame WinBranch;LoseBranch
+
+LoseBranch:
+speaker MC
+dialogue I almost screwed that up completely, I need to be more careful.
+
+speaker N
+dialogue You continue on, but try to be more precise this time.
+goto oops
+
+
+WinBranch:
+
+music play DoYouHaveArms
+
+speaker MC
+dialogue And there it is.
+
+speaker N
+dialogue Bobbi's left hand seems perfectly repaired. After a quick oiling, it moves exactly as her right hand does.
+
+dialogue You putter around the room for a while, wondering when Bobbi will get back. Eventually, you elect to check your messages again.
+
+
+
+readagain:
+
+choice Privacy Update
+choice Meol Madness! You won't believe what they put in your food.
+choice Undercity Crime Hits All-Time Low
+makechoice Three messages pique your interest. Two of them are news articles sent by former coworkers.
+
+branch mail1;mail2;mail3
+
+mail1:
+dialogue "Attention all users. Chatty Net - An Enevis Social App - is recieving a new update today regarding its privacy policy." 
+
+dialogue "We believe in a safer, more comfortable future, and it is for that reason that we at Enevis have elected to install new state of the art chat scanning bots to protect everything countrywide. We thank you for your cooperation."
+
+speaker N
+dialogue You pick up your mobile phone and immediately erase Chatty Net from it. Better safe than sorry.
+
+speaker MC
+dialogue Ugh. I'd just started to gain a following.
+goto readmore
+
+
+mail2:
+dialogue "NEW INFO ON GALNATRONICS FOOD PROCESSING SURFACED? SOME PEOPLE JOKE THAT THEIR FAMOUS MEOL IS MADE OF HUMAN MEAT, BUT THE TRUTH IS FAR WORSE! CHECK OUT THE FULL ARTICLE AT REALTRUTHNEWS.NET TO FIND OUT MORE."
+
+speaker MC
+dialogue I hate to buy into that sort of stuff, but you never really know what's going on when those guys are involved.
+
+speaker N
+dialogue You look down at Bobbi's hand. A Galnatronics logo is brightly visible on the left thumb.
+
+speaker MC
+dialogue Food, prosthetics, they do everything around here nowadays. Hm. Makes me wonder what sort of things they could get away with.
+goto readmore
+
+
+mail3:
+dialogue "Crime in the Undercity has hit an all time low as of this week, with a crimes per capita lower than that of the Downtown sector. Downtowners and corporate leaders are utterly puzzled by these new developments, and are electing to obstain from any comments."
+
+dialogue "It seems like the Undercity has gone from a place that's known for its violent crimes has gone to become a place known for its lack of them. Could this be the beginning of a new era for the Undercity populous? Find out more at MonsoonNews.org."
+
+dialogue You think about your favourite colleague from your old job, and how she lives in the Undercity now.
+
+speaker MC
+dialogue When Ima moved down there, I thought she was a little bit mad for saying that it was better than anywhere else in the city. I guess I was wrong.
+
+dialogue It's strange, though. Who would've thought that a district built from tangled ruins underneath our city would become better than the corporate hub of the west coast.
+goto readmore
+
+
+readmore:
+
+speaker N
+
+choice Yes
+choice No
+makechoice Read more messages?
+
+branch readagain;continue
+
+continue:
+
+music play OurFavoriteAddict
+
+speaker N
+dialogue Just like yesterday, you are suddenly shocked by the sound of the front door slamming shut.
+
+speaker W
+dialogue Hello again!
+
+speaker N
+dialogue Mr. Washi's sudden appearance startles you. He's dressed in the exact same way as yesterday, even down to the wet mop being used as a cane.
+
+speaker MC
+dialogue Ah. Mr. Washi, welcome.
+
+speaker N
+dialogue The word "please leave" resounds and repeats through your head.
+
+speaker W
+dialogue Hey kiddo! Got an answer for my question from yesterday yet?
+
+speaker MC
+dialogue You asked me like three different questions. Which one are you-
+
+speaker W
+dialogue Nice hand you got here!
+
+speaker N
+dialogue Mr. Washi picks up Bobbi's hand, then shakes it around. He turns it back and forth, then examines the joints.
+
+speaker MC
+dialogue That's not yours. Put it down.
+
+speaker W
+dialogue The work you've done on it is quite good!
+
+speaker N
+dialogue Mr. Washi tosses the hand into the air, then catches it while grinning from ear to ear.
+
+speaker W 
+dialogue How much did it cost for this fine hand to be repaired?
+
+speaker MC
+dialogue Uh. The owner brought her own servos, so it was almost free.
+
+speaker W
+dialogue Really? Well that's interesting.
+
+speaker MC
+dialogue How so?
+
+speaker W
+dialogue Because I don't believe you!
+
+speaker N
+dialogue Mr. Washi grins, then puts Bobbi's hand back on the table with a loud thud.
+
+speaker MC
+dialogue Would it kill you to not be so rough with a customer's prosthetic?
+
+speaker N
+dialogue Mr. Washi chuckles and raises an eyebrow.
+
+speaker W
+dialogue No. But what would you do if I said yes.
+
+speaker MC
+dialogue I. What-
+
+speaker W
+dialogue About what I expected from a kid like you. So many words to say but nothing to back them up.
+
+speaker N
+dialogue A thump resounds from outside, and Mr. Washi turns to look out the window. The front door swings open and Bobbi walks in with a full bag of cat food.
+
+speaker B
+dialogue Heya! I'm back with the-
+
+speaker N
+dialogue Bobbi stops when she sees Mr. Washi standing at the desk.
+
+speaker B
+dialogue Why hiya there! I'm Bobbi. Are you friend of Firth's?
+
+speaker MC
+dialogue I have no clue who-
+
+speaker W 
+dialogue Yes! My name is Washi, good to meet you young lady.
+
+speker B
+dialogue Well it's good to meet you too, Washi.
+
+speaker W
+dialogue Firth and I were just having a conversation about the little hand on their desk.
+
+speaker B
+dialogue Oh, that's mine!
+
+speaker N
+dialogue Bobbi locks eyes with your cold, dead stare.
+
+speaker B
+dialogue Is she finished?
+
+speaker MC
+dialogue Yes. Just fine.
+
+speaker N
+dialogue Bobbi exchanges the cat food for her hand, then slots it onto the stump.
+
+speaker MC
+dialogue How does it feel?
+
+speaker B
+dialogue As amazin' as the right one. Thanks again!
+
+speaker MC
+dialogue You're welcome.
+
+speaker N
+dialogue You take the bag of cat food off the table, then bring out Hal's bowl and pour it in.
+
+dialogue An excited meow is heard from upstairs, and Hal comes sprinting down right towards his food. He gobbles it up happily.
+
+speaker MC
+dialogue That's Hal. He's my roommate.
+
+speaker B
+dialogue OH MA GAWD! Aren't you the cutest li'l thing!
+
+speaker N
+dialogue Bobbi pushes past Mr. Washi and begins petting Hal with her newly fixed hands.
+
+speaker MC
+dialogue How much was the food?
+
+speaker B
+dialogue A helluva lot less than paying for a full hand, I'll tell ya that much. 
+
+speaker W
+dialogue Food in exchange for a hand? A worthy enough trade.
+
+speaker B
+dialogue You're tellin' me! I feel I darn did rip 'em off with a deal like that.
+
+speaker W
+dialogue Hmm. I see.
+
+speaker N
+dialogue Hal spins round for a better petting angle and steps into his water bowl. It splashes all over Bobbi's face and the floor around her.
+
+speaker B
+dialogue Bleh! Eugh! Gross.
+
+speaker MC
+dialogue Here. Use this.
+
+speaker N
+dialogue You hand Bobbi a hand towel and then walk over to Hal.
+
+speaker MC
+dialogue You're a silly little guy, you know that?
+
+speaker N
+dialogue Hal meows, then flops over. His prosthetic leg starts to freak out and flail in different directions.
+
+dialogue You quickly stop the leg from moving, then forcefully detach it. Water drips from the sockets.
+
+speaker MC
+dialogue Aw buddy come on, you bugged it up again.
+
+speaker B
+dialogue Poor li'l guy...  I didn't notice his leg!
+
+speaker MC
+dialogue I saw him crawling around the streets without a leg around... eight months ago. He gave me the whole cat-eyes look and I couldn't say no. Brought him inside and adopted him full stop.
+
+speaker B
+dialogue That's real sweet of ya...
+
+speaker W
+dialogue I have never seen a leg for cats. Where did you get such a thing?
+
+speaker N
+dialogue You hold up Hal's leg for Mr. Washi to see.
+
+speaker MC
+dialogue Made and designed it myself.
+
+speaker W
+dialogue Really?
+
+speaker N
+dialogue Bobbi and Mr. Washi take a look at the leg while you prepare your tools. 
+
+speaker B
+dialogue This looks very... uh. Intricate?
+
+speaker MC
+dialogue Took a lot of work to get those parts to be as small as they are.
+
+speaker N
+dialogue Mr. Washi smiles, looking you in the eye.
+
+speaker W
+dialogue You must be a very skilled cybersurgeon, I wonder how someone like you ended up in a place like this-
+
+speaker MC
+dialogue None of your concern.
+
+speaker N
+dialogue You yank the leg out of Mr. Washi's hands, then place it down on your work desk.
+
+speaker MC
+dialogue If you'll excuse me, I'm going to get to work now.
+
+speaker W
+dialogue I would like to watch your process. Give you a little critique!
+
+speaker N
+dialogue Mr. Washi smiles and looks on attentively, his presence here annoys you, but you stomach it for now. Bobbi goes over and has a seat on her usual chair.
+
+speaker MC
+dialogue First I have to debug it, then I have to switch the battery, and then I'll likely have to debug it again.
+
+speaker N
+dialogue You boot up your computer and connect it to the leg in preparation.
+
+
+oops:
+
+speaker N
+choice Yes
+makechoice Proceed to Debugging?
+
+speaker MC
+dialogue Time to squash some bugs.
+
+
+minigame EasyDebugScene
+
+branch-minigame WinBranch;LoseBranch
+
+LoseBranch:
+speaker MC
+dialogue Just a couple missed bugs, let's try again.
+goto oops
+
+
+WinBranch:
+
+speaker N
+dialogue The leg's processes look relatively cleared of bugs. There's no telling if they'll come back when the leg is fully powered on again, though.
+
+speaker MC
+dialogue Alright. Now for the battery.
+
+speaker N
+dialogue You bring out your battery charging equipment alongside a new empty battery.
+
+
+oops2:
+
+speaker N
+choice Yes
+makechoice Proceed to Battery Charge?
+
+
+minigame ChargeScene
+
+branch-minigame WinBranch2;LoseBranch2
+
+LoseBranch2:
+
+speaker MC
+dialogue The battery didn't charge properly. I'll have to drain it and try again.
+goto oops2
+
+
+WinBranch2:
+
+speaker N
+dialogue You insert the battery into Hal's leg. Looks like the circuits are working as normal.
+
+speaker MC
+dialogue Now that the battery is charged, I can go finish debugging the leg.
+
+speaker W
+dialogue You are very thourough, young one.
+
+speaker MC
+dialogue With a job like this, you have to be.
+
+speaker B
+dialogue I'd bet so, otherwise someone could get hurt!
+
+speaker N
+dialogue Your head tilts down and your eyes narrow. Flashes of a long line come into your thoughts. Screaming of a family. The piercing screech of a heart monitor. 
+
+dialogue You shake your head, dispelling the flashback, then look up at your computer.
+
+speaker MC
+dialogue Yeah...
+
+speaker B
+dialogue You good there?
+
+speaker MC
+dialogue Yes. Everything is alright. I just need to focus. 
+
+
+
+oops3:
+
+speaker N
+choice Yes
+makechoice Proceed to Debugging?
+
+speaker N
+dialogue You just need to focus. Focus. Focus.
+
+minigame MediumDebugScene
+
+branch-minigame WinBranch3;LoseBranch3
+
+LoseBranch3:
+speaker MC
+dialogue The bugs never end... why are there always more?
+goto oops3
+
+WinBranch3:
+
+music play DoYouHaveArms
+
+speaker MC
+dialogue Done.
+
+speaker N
+dialogue You yank the cord out of the leg, then walk over and quickly re-attach it to Hal.
+
+speaker B
+dialogue Is it workin'?
+
+speaker N
+dialogue You give Hal a pat on the head, then tilt him back onto his feet. He moves around, then meows and runs upstairs.
+
+speaker W
+dialogue Safe to say that it worked.
+
+speaker MC
+dialogue Yes.
+
+speaker N
+dialogue You stare at the two people that had been watching you debug for a couple of hours. Despite how great it feels to have people in here, you're starting to get tired, and it's starting to grow awkward.
+
+speaker MC
+dialogue Thank you for stopping by. I'm going to close up the shop, now.
+
+speaker N
+dialogue Bobbi looks at you with a quizzical stare, but starts to pack up her stuff anyways.
+
+speaker W
+dialogue I seem to have gotten a better view of you now, Firth.
+
+speaker MC
+dialogue That's nice.
+
+speaker W
+dialogue See you tomorrow, kiddo.
+
+speaker MC
+dialogue Tomorrow? Wait what do you m-
+
+speaker N
+dialogue Before you can finish your sentence, Mr. Washi is already out the door.
+
+speaker B
+dialogue Sooooo.
+
+speaker MC
+dialogue So?
+
+speaker B
+dialogue You ain't got no connection to that guy, do ya?
+
+speaker MC
+dialogue Not even a little. I have no clue what his deal is.
+
+speaker B
+dialogue What a weird fella.
+
+speaker MC
+dialogue Yeah. He works next door, apparently.
+
+speaker B
+dialogue Ain't the building next door entirely caved in?
+
+speaker MC
+dialogue Yeah.
+
+speaker B
+dialogue Weird.
+
+speaker N
+dialogue You and Bobbi stand there in awkward silence.
+
+speaker B
+dialogue I'm gonna go now.
+
+speaker MC 
+dialogue Cool. See you sometime.
+
+speaker N
+dialogue Bobbi gives you a thumbs up and walks out the door.
+
+speaker MC
+dialogue Gonna see him tomorrow, huh? Hm.
+
+speaker N
+dialogue You ponder Mr. Washi's words from the past 2 days. 
+
+
+wrong:
+
+choice He's a spy
+choice He's crazy
+choice He's just some lonely old guy trying to have fun
+makechoice What is his deal, anyways? Why does he keep visiting you?
+
+branch spy;crazy;lonely
+
+spy:
+speaker N
+dialogue Can't be. Who would send a spy after you? You had already lost enough after your license was revoked.
+goto wrong
+
+crazy:
+speaker N
+dialogue Maybe. But he seems to know a lot about you. It feels more deliberate than random.
+goto wrong
+
+lonely:
+speaker N
+dialogue Of the three, that's probably the best answer. Likely just some old man that did background research to joke around and mess with you.
+goto right
+
+right:
+
+speaker N
+dialogue Whatever it is, it's strange. You resolve to figure it out tomorrow when he comes around again, and decide to head to bed early.
+
+
+load Mission 2
+

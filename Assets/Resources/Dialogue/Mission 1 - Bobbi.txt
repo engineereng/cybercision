@@ -92,21 +92,21 @@ makechoice Three messages stand out to you out of the hundreds of unread ones.
 branch choiceOneD;choiceOneE;choiceOneF
 
 choiceOneD:
-dialogue Urgent! The following buildings in the Downtown sector are scheduled to be demolished by The Guardians. Please check our website for more information.
+dialogue "Urgent! The following buildings in the Downtown sector are scheduled to be demolished by The Guardians. Please check our website for more information."
 
 speaker MC
 dialogue Looks like my old roommate is out of a home... sucks to be him.
 goto next1
 
 choiceOneE:
-dialogue RENEW YOUR TRANSIT PASS TODAY! PAY $140 PER MONTH FOR ACCESS TO OUR FULL RANGE OF PUBLIC TRANSIT SERVICES, OR $870 FOR OUR PREMIUM PACKAGE, WHICH INCLUDES HOVERCAR TRANSPORT AND PRIORITY AMBULANCES! HAVE A SPLENDID TRAVELLING TIME! Courtesy of Monsoon City Trans Co. all rights reserved.
+dialogue "RENEW YOUR TRANSIT PASS TODAY! PAY $140 PER MONTH FOR ACCESS TO OUR FULL RANGE OF PUBLIC TRANSIT SERVICES, OR $870 FOR OUR PREMIUM PACKAGE, WHICH INCLUDES HOVERCAR TRANSPORT AND PRIORITY AMBULANCES! HAVE A SPLENDID TRAVELLING TIME! Courtesy of Monsoon City Trans Co. all rights reserved."
 
 speaker MC
 dialogue Premium is up by $200, huh? What a scam.
 goto next1
 
 choiceOneF:
-dialogue Hey Firth, it's Ima, I've got some information you might be interested in, care to meet up sometime? I think we could give each-other a helping hand here, hehe >:3
+dialogue "Hey Firth, it's Ima, I've got some information you might be interested in, care to meet up sometime? I think we could give each-other a helping hand here, hehe >:3 "
 
 speaker MC
 dialogue That emoji feels a little unprofessional to use in an email to your former colleague, but whatever. I'll respond to her message later.
@@ -357,7 +357,7 @@ dialogue Let's get to it.
 branch servtime
 
 
-minigame 1
+minigame ArmScene
 
 branch-minigame WinBranch;LoseBranch
 
@@ -371,7 +371,7 @@ goto oops
 
 
 WinBranch:
-music play DoYouHaveArms
+music play HowToTalkToCustomers
 
 speaker MC
 dialogue Done.
@@ -381,6 +381,34 @@ dialogue The servos have been replaced wonderfully. It almost looks brand-new.
 
 speaker B
 dialogue Whoa mama! Looks gorgeous!
+
+speaker MC
+dialogue Needs a new charge, too. Then you can put it on.
+
+oops2:
+
+speaker N
+choice Yes
+makechoice Proceed to Battery Charge?
+
+minigame ChargeScene
+
+branch-minigame WinBranch2;LoseBranch2
+
+
+LoseBranch2:
+
+speaker MC
+dialogue The battery didn't charge properly. I'll have to drain it and try again.
+goto oops2
+
+
+WinBranch2:
+
+music play DoYouHaveArms 
+
+speaker N
+dialogue With the battery charged, Bobbi's hand is now fully functional. You feel strangely proud of your handiwork.
 
 speaker MC
 dialogue Give it a try.
@@ -510,7 +538,9 @@ makechoice Only two messages interest you in any capacity.
 branch choiceOneX;choiceOneZ;
 
 choiceOneX:
-dialogue The Cybersurgeon's Apparatus is a multi-use tool used to repair prosthetics, its versatility and simplistic design is appreciated by Cybersurgeons worldwide. It features a plug-in spot for auxiliary power, a frighteningly long-lasting battery, and 5 different tools for prosthetic dismantling and repair; a long screwdriver that can be used while powered or unpowered, a pair of rubber tongs, a soldering tip, a teeny tiny crowbar-like tool, and a cooling fan. Buy one for only [price determined by region and current economical factors] today!
+dialogue "The Cybersurgeon's Apparatus is a multi-use tool used to repair prosthetics, its versatility and simplistic design is appreciated by Cybersurgeons worldwide."
+
+dialogue "It features a plug-in spot for auxiliary power, a frighteningly long-lasting battery, and 5 different tools for prosthetic dismantling and repair; a long screwdriver that can be used while powered or unpowered, a pair of rubber tongs, a soldering tip, a teeny tiny crowbar-like tool, and a cooling fan. Buy one for only [price determined by region and current economical factors] today!"
 
 speaker MC
 dialogue Already have three of them, and at a much cheaper price too.
@@ -518,7 +548,7 @@ goto nexty
 
 choiceOneZ:
 speaker N
-dialogue Attention citizens of Monsoon Lows! We will be shutting off the power grid to your district tonight due to overflooding in our district factory. Thank you for your cooperation and understanding.
+dialogue "Attention citizens of Monsoon Lows! We will be shutting off the power grid to your district tonight due to overflooding in our district factory. Thank you for your cooperation and understanding."
 
 speaker MC
 dialogue Third blackout night in a row... Disappointing.

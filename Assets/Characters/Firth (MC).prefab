@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScriptReferenceName: MC
   CharacterName: Firth
-  CharacterImage: {fileID: 21300000, guid: 2a8c753c8a3c6ac4b9f616d1b81a335d, type: 3}
+  CharacterImage: {fileID: 21300000, guid: fb385f1c545e1024894e6b608aa3244d, type: 3}
   DialogueColor: {r: 0.20478818, g: 0.59890884, b: 0.735849, a: 1}

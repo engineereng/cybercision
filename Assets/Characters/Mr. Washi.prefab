@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScriptReferenceName: W
   CharacterName: Mr. Washi
-  CharacterImage: {fileID: 21300000, guid: ddc5652d674bb3f4f860af59dc5fbf07, type: 3}
+  CharacterImage: {fileID: 21300000, guid: 65acb1dbe148b6140b45b15c791341f8, type: 3}
   DialogueColor: {r: 0, g: 0.3632307, b: 1, a: 1}

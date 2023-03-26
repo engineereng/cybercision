@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScriptReferenceName: R
   CharacterName: Radio
-  CharacterImage: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  CharacterImage: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   DialogueColor: {r: 0, g: 1, b: 0.9392102, a: 1}
