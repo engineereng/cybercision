@@ -32,6 +32,7 @@ public class MoveWire : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && ((Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).magnitude <= offset))
         {
+            FindObjectOfType<AudioManager>().Play("SelectPipe");
             following = true;
         }
         if (Input.GetMouseButtonUp(0) && ((Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).magnitude <= offset))

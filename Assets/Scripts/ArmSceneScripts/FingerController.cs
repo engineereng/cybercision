@@ -15,6 +15,7 @@ public class FingerController : MonoBehaviour
     void Start()
     {
         wiggleRandom();
+        FindObjectOfType<AudioManager>().Play("Theme");
     }
     void wiggleRandom()
     {

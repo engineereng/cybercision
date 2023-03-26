@@ -23,6 +23,7 @@ public class SnapToGoal : MonoBehaviour
             // set wire to look like a wire is in it
             spriteRender.enabled = true;
             spriteRender.color = otherObject.GetComponent<SpriteRenderer>().color;
+            FindObjectOfType<AudioManager>().Play("PlacePipe");
             Destroy(otherObject);
         }
     }
