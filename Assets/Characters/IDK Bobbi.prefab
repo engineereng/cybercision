@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScriptReferenceName: B?
   CharacterName: Tattooed Woman
-  CharacterImage: {fileID: 21300000, guid: 4d4ef89e3c9e81f4ea6a15bad5ea5aed, type: 3}
-  DialogueColor: {r: 0, g: 0.8117647, b: 1, a: 1}
+  CharacterImage: {fileID: 21300000, guid: f913d786e393d5544a000394b1891d3a, type: 3}
+  DialogueColor: {r: 1, g: 0.6834848, b: 0, a: 1}

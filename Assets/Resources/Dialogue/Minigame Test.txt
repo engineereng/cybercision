@@ -1,6 +1,6 @@
 dialogue Hello
 dialogue Lets play some minigames!
 
-minigame 5
+minigame ChargeScene
 
 dialogue Welcome back!

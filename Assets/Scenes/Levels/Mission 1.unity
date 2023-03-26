@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -572,7 +572,7 @@ PrefabInstance:
     - target: {fileID: 5973303491516937904, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
       propertyPath: defaultDialogueScript
       value: 
-      objectReference: {fileID: 4900000, guid: 1e058605c43e3bc4da31dcae92ca898f, type: 3}
+      objectReference: {fileID: 4900000, guid: 2d4c4ad0c92fc4442ada301bc8a3d469, type: 3}
     - target: {fileID: 5973303491516937904, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
       propertyPath: characters.Array.data[0]
       value: 
@@ -601,6 +601,14 @@ PrefabInstance:
       propertyPath: characters.Array.data[6]
       value: 
       objectReference: {fileID: 8609326579038254269, guid: 268a0bf7723901c41a242fb2725c43fd, type: 3}
+    - target: {fileID: 5973303491516937904, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
+      propertyPath: characters.Array.data[7]
+      value: 
+      objectReference: {fileID: 8609326579038254269, guid: a33fd2884e6aed3408cd3b32fe6c0a4f, type: 3}
+    - target: {fileID: 5973303491516937904, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
+      propertyPath: characters.Array.data[8]
+      value: 
+      objectReference: {fileID: 8609326579038254269, guid: d64f9135e84c63f49971bfef34c84690, type: 3}
     - target: {fileID: 5973303492456536071, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
       propertyPath: m_Color.b
       value: 1

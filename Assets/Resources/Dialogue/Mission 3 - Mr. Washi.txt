@@ -1,0 +1,347 @@
+music play HowToTalkToCustomers
+
+speaker R
+dialogue Gooooood morning once again Monsoon Lows! Today is an especially strange-
+
+speaker N
+dialogue You silently turn off your radio alarm, then get out of bed immediately.
+
+dialogue You get dressed into your standard outfit as Hal continues to sleep soundly at the foot of your bed.
+
+dialogue You walk downstairs without so much as a lick of food, and immediately open your shop for the day.
+
+dialogue You don't feel hungry enough to eat. You only want to wait for Mr. Washi to show up.
+
+dialogue You wait in near silence for what feels like hours. Lightning cracks outside and rain pummels your roof. It's incredibly stormy out there.
+
+dialogue Regardless of who this guy is, the fact that he knows about your lack of license is greatly troubling, lonely old man or not.
+
+dialogue Maybe it's the business of the last few days getting to you, but it feels like your thoughts are racing more than normal.
+
+dialogue Your body grows tense as you await the old janitor to enter through your door.
+
+dialogue Something creaks. You jump as lightning strikes outside your window. That seemed dangerously close.
+
+dialogue You look outside at what the lightning had arced to. You gasp. 
+
+music play TimeToCut
+
+dialogue Mr. Washi lies flat against the street. His chest smokes with black smog.
+
+dialogue You run outside and heft him over your shoulder. He feels very light for a man as tall as he is.
+
+dialogue You bring him inside and throw him down on your rarely used operating table.
+
+dialogue You bring your ear to his chest while holding his wrist. No pulse.
+
+dialogue You curse, then cut open his shirt with surgical shears.
+
+dialogue A metal device juts out from the left side of his chest. It smokes violently into the room.
+
+dialogue You pull out a small fire extinguisher and use it to stop the smoke.
+
+dialogue You plug in a heart monitoring device alongside an IED. The piercing screech of the flatline noise evokes a flash of painful memories in your head.
+
+dialogue You shake it off, breathe in, then shock his chest.
+
+dialogue Again. Again. Again.
+
+dialogue His heart begins to beat faintly. If you keep up with CPR, you think you'll be able to save him.
+
+
+tryagain:
+
+speaker N
+choice Yes
+makechoice Proceed to Heart Rhythm?
+
+
+minigame HeartBeatScene
+
+branch-minigame WinBranch;LoseBranch
+
+LoseBranch:
+
+speaker N
+dialogue The screech of the monitor rings out. You shock his chest again, and his heart starts once more. You have to keep trying.
+goto tryagain
+
+WinBranch:
+
+music play TimeToCut
+
+speaker N
+dialogue His heart is pumping, but his heart pumping device is fried. You quickly repair a broken piece and then turn it back on. His heart beats at an irregular rhythm.
+
+dialogue You plug his pacemaker into your computer. It's time to squash some bugs.
+
+
+
+tryagain2:
+
+speaker N
+choice Yes
+makechoice Proceed to Debugging?
+
+
+minigame MediumDebugScene
+
+branch-minigame WinBranch2;LoseBranch2
+
+LoseBranch2:
+
+speaker N
+dialogue The bugs are faster than you thought. You can do this, just calm down and try again.
+goto tryagain2
+
+
+WinBranch2:
+
+music play TimeToCut
+
+speaker N
+dialogue The bugs are endless. The electrical shock from the bolt must have severely screwed everything up.
+
+dialogue Only a couple more bugs to squash.
+
+tryagain3:
+
+speaker N
+choice Yes
+makechoice Proceed to Debugging?
+
+dialogue One last time.
+
+minigame RapidFireDebugScene
+
+branch-minigame WinBranch3;LoseBranch3
+
+LoseBranch3:
+
+speaker N
+dialogue The bugs are faster than you thought, but you did the last one and you can do it again.
+goto tryagain3
+
+
+WinBranch3:
+
+music play TimeToCut
+
+dialogue With the bugs cleared, his heart pumping device is fully functional. You only need to get it in rhythm with his heart.
+
+
+tryagain4:
+
+speaker N
+choice Yes
+makechoice Proceed to Heart Rhythm?
+
+
+minigame HeartBeatScene
+
+branch-minigame WinBranch4;LoseBranch4
+
+LoseBranch4:
+
+speaker N
+dialogue The screech of the monitor rings out. You shock his chest again, and his heart starts once more. You're on the verge now, you have to keep trying.
+goto tryagain4
+
+
+WinBranch4:
+
+play music OurFavouriteAddict
+
+dialogue His heart and cybernetics fall in sync. The monitor shows it beating slow and steady. 
+
+dialgue You exhale deeply. Your head is spinning, and you feel like you've been holding your breath this whole time.
+
+dialogue Flashes of the flatlining monitor resound through your head.
+
+dialogue You sit down as your head pounds. 
+
+dialogue Minutes pass as you watch Mr. Washi slowly come back to consciousness.
+
+dialogue His heartbeat picks up a little and he begins to stir.
+
+speaker W
+dialogue Hello?
+
+speaker MC
+dialogue Hi.
+
+speaker W
+dialogue Did you..?
+
+speaker N
+dialogue Mr Washi looks at his cybernetic chest augmentation, then back up at you. You nod.
+
+speaker W
+dialogue Thank you.
+
+speaker MC
+dialogue An ambulance will be here soon. I may have restarted your heart but you're not out of the fire just yet.
+
+speaker W
+dialogue I see.
+
+speaker MC
+dialogue While I've got you here though. I've got a question.
+
+speaker W
+dialogue Very well. You get one question.
+
+speaker N
+
+choice Who are you?
+choice Why have you been watching me?
+choice Are you really a janitor?
+makechoice You only get one question.
+
+branch who;why;janitor
+
+
+who:
+speaker W
+dialogue I am a member of the medical board for Galnatronics.
+
+speaker MC
+dialogue Are you now?
+
+speaker W
+dialogue Yes. I was supposed to evaluate your performance at your place of work.
+
+speaker MC
+dialogue Why?
+
+speaker W
+dialogue They were thinking of reinstating you. Something about bygones be bygones.
+
+speaker MC
+dialogue I see.
+goto nexty
+
+
+why:
+speaker W
+dialogue I am supposed to be evaluating you. The incident that got your medical license revoked has been under review.
+
+speaker MC
+dialogue Why?
+
+speaker W
+dialogue They were thinking about reinstating you.
+
+speaker MC
+dialogue What makes them think I want to go back?
+
+speaker W
+dialogue I do not know, really.
+
+speaker MC
+dialogue I see.
+goto nexty
+
+
+janitor: 
+speaker W
+dialogue Obviously not. I am a board member who is supposed to evaluate you.
+
+speaker MC
+dialogue You didn't really try to hide how suspicious you are.
+
+speaker W
+dialogue Stealth is not my priority here. I just have to see if you are worthy of reinstating.
+
+speaker MC
+dialogue You could've been nicer.
+
+speaker W
+dialogue Yes. I did not want to be nicer, though.
+
+speaker N
+dialogue You exhale a small giggle.
+goto nexty
+
+
+nexty:
+
+speaker MC
+dialogue So what happens now?
+
+speaker W
+dialogue Well, you showed promise when I saw your prosthetic feline leg yesterday.
+
+speaker N
+dialogue He tilts his head up off the table to look at you.
+
+speaker W
+dialogue But now that you've saved my life, I supposed I owe you one. Plus, that was a good show of progress.
+
+speaker MC
+dialogue So you know about-
+
+speaker W
+dialogue Yes.
+
+speaker MC
+dialogue If only I had the skills I have now back when that happened.
+
+speaker W
+dialogue Do not linger in the past, kiddo.
+
+speaker N
+dialogue He leans up off the table to a sitting position.
+
+speaker W
+dialogue If you are going to survive out here, you have to look to the future.
+
+dialogue Look how far you've come already! You have a fresh new start away from everything. God. I wish I had the same drive to stand back up as you.
+
+speaker MC
+dialogue Thank you. Genuinely.
+
+speaker N
+dialogue A hover ambulance floats down outside, landing next to that ever present front door.
+
+dialogue Medical staff rush in, and you prepare Mr. Washi to slide onto a stretcher.
+
+dialogue The medics thank you for your work, and begin to wheel him out the door.
+
+dialogue Mr. Washi hold up his hand for them to stop, then beckons you closer.
+
+speaker W
+dialogue We need more people like you, kiddo. It's not often we get people with empathy these days.
+
+dialogue It's all numbers and maths. Taking the human part out of the practice of medicine.
+
+dialogue Consider it. I can reinstate you.
+
+speaker MC
+dialogue I will. Thank you.
+
+speaker N
+dialogue The medics roll him out the door and into the hover ambulance.
+
+dialogue It takes off into the stormy afternoon sky, leaving you in silence.
+
+dialogue You take the time to ponder your choices. The people you've met around Monsoon Lows, the calmness of your nights at home, you finding and saving Hal on a day like today.
+
+dialogue But you also miss the cushyness of your old apartment, the sound of quiet rain and gentle snow. The coworkers you loved and loved to hate.
+
+dialogue You deliberate for a while, but eventually you have made a decision.
+
+choice Return to your old life.
+choice Keep starting anew.
+makechoice Your choice.
+
+dialogue The choice is made.
+
+dialogue Your choice.
+
+dialogue From here your life will go on. Filled with potential, friends, and allies. In this dark and stormy city, maybe you can make a difference.
+
+dialogue However it goes from here is yet to be known, but with Hal by your side, you hope... no. You know, that everything will be just fine.
+
+dialogue The End.
+
