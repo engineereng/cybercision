@@ -151,11 +151,12 @@ goto tryagain4
 
 WinBranch4:
 
+speaker N
 play music OurFavouriteAddict
 
 dialogue His heart and cybernetics fall in sync. The monitor shows it beating slow and steady. 
 
-dialgue You exhale deeply. Your head is spinning, and you feel like you've been holding your breath this whole time.
+dialogue You exhale deeply. Your head is spinning, and you feel like you've been holding your breath this whole time.
 
 dialogue Flashes of the flatlining monitor resound through your head.
 
