@@ -19,7 +19,7 @@ speaker MC
 dialogue Here you go, buddy.
 
 speaker N
-dialogue You reach over to a small workdesk on the side of your bedroom, picking up a teeny prosthetic leg. You walk back over to Hal and attach it to the stump on his back leg.
+dialogue You reach over to a small work desk on the side of your bedroom, picking up a teeny prosthetic leg. You walk back over to Hal and attach it to the stump on his back leg.
 
 speaker MC
 dialogue Better?
@@ -162,7 +162,7 @@ makechoice Three messages pique your interest. Two of them are news articles sen
 branch mail1;mail2;mail3
 
 mail1:
-dialogue "Attention all users. Chatty Net - An Enevis Social App - is recieving a new update today regarding its privacy policy." 
+dialogue "Attention all users. Chatty Net - An Enevis Social App - is receiving a new update today regarding its privacy policy." 
 
 dialogue "We believe in a safer, more comfortable future, and it is for that reason that we at Enevis have elected to install new state of the art chat scanning bots to protect everything countrywide. We thank you for your cooperation."
 
@@ -189,9 +189,9 @@ goto readmore
 
 
 mail3:
-dialogue "Crime in the Undercity has hit an all time low as of this week, with a crimes per capita lower than that of the Downtown sector. Downtowners and corporate leaders are utterly puzzled by these new developments, and are electing to obstain from any comments."
+dialogue "Crime in the Undercity has hit an all time low as of this week, with a crimes per capita lower than that of the Downtown sector. Downtowners and corporate leaders are utterly puzzled by these new developments, and are electing to abstain from any comments."
 
-dialogue "It seems like the Undercity has gone from a place that's known for its violent crimes has gone to become a place known for its lack of them. Could this be the beginning of a new era for the Undercity populous? Find out more at MonsoonNews.org."
+dialogue "It seems like the Undercity has gone from a place that's known for its violent crimes has gone to become a place known for its lack of them. Could this be the beginning of a new era for the Undercity populace? Find out more at MonsoonNews.org."
 
 dialogue You think about your favourite colleague from your old job, and how she lives in the Undercity now.
 
@@ -295,7 +295,7 @@ speaker N
 dialogue Bobbi stops when she sees Mr. Washi standing at the desk.
 
 speaker B
-dialogue Why hiya there! I'm Bobbi. Are you friend of Firth's?
+dialogue Why hiya there! I'm Bobbi. Are you a friend of Firth's?
 
 speaker MC
 dialogue I have no clue who-
@@ -502,7 +502,7 @@ speaker MC
 dialogue Now that the battery is charged, I can go finish debugging the leg.
 
 speaker W
-dialogue You are very thourough, young one.
+dialogue You are very thorough, young one.
 
 speaker MC
 dialogue With a job like this, you have to be.
@@ -541,7 +541,7 @@ branch-minigame WinBranch3;LoseBranch3
 
 LoseBranch3:
 speaker MC
-dialogue The bugs never end... why are there always more?
+dialogue The bugs never end... Why are there always more?
 goto oops3
 
 WinBranch3:
