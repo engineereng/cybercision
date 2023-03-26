@@ -586,7 +586,7 @@ speaker N
 dialogue Your breath leaves your body for a moment as your eyes go wide in shock.
 
 speaker MC
-dialogue Is that a threat? How do you know that.
+dialogue Is that a threat? How do you know that?
 
 speaker W?
 dialogue Hahaha! No, no. Just an observation from the janitor next door.
@@ -625,7 +625,7 @@ speaker W
 dialogue Moved out of my old house in the Undercity, real nasty place that is! Too many rats and mutants.
 
 speaker MC
-dialogue No. Why did you come here. To my shop.
+dialogue No. Why did you come here? To my shop.
 
 speaker N
 dialogue Mr. Washi immediately turns on his heel and walks towards the front door.
@@ -661,7 +661,7 @@ speaker MC
 dialogue Good boy.
 
 speaker N
-dialogue You tuck into bed and turn on your old radio alarm. The only thing on your mind is that strange old man. You wonder how he could be a janitor next door if the unit next to you is an abandoned pizza parlor with a collapsed roof.
+dialogue You tuck into bed and turn on your old radio alarm. The only thing on your mind is that strange old man. You wonder how he could be a janitor next door if the unit next to you is an abandoned pizza parlour with a collapsed roof.
 
 speaker N
 dialogue You elect to ignore those thoughts for now, as the room grows colder and colder by the minute. The sounds of hovercars and speedboats outside are mostly drowned out by the calming hum of heavy downpour. Listening to the ambience of the city, you eventually fall asleep.

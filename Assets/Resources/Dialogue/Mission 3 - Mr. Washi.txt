@@ -180,7 +180,7 @@ speaker W
 dialogue Thank you.
 
 speaker MC
-dialogue An ambulence will be here soon. I may have restarted your heart but you're not out of the fire just yet.
+dialogue An ambulance will be here soon. I may have restarted your heart but you're not out of the fire just yet.
 
 speaker W
 dialogue I see.
@@ -224,7 +224,7 @@ goto nexty
 
 why:
 speaker W
-dialogue I am supposed to be evauluating you. The incident that got your medical license revoked has been under review.
+dialogue I am supposed to be evaluating you. The incident that got your medical license revoked has been under review.
 
 speaker MC
 dialogue Why?
@@ -302,7 +302,7 @@ speaker MC
 dialogue Thank you. Genuinely.
 
 speaker N
-dialogue An hover ambulence floats down outside, landing next to that ever present front door.
+dialogue A hover ambulance floats down outside, landing next to that ever present front door.
 
 dialogue Medical staff rush in, and you prepare Mr. Washi to slide onto a stretcher.
 
@@ -313,7 +313,7 @@ dialogue Mr. Washi hold up his hand for them to stop, then beckons you closer.
 speaker W
 dialogue We need more people like you, kiddo. It's not often we get people with empathy these days.
 
-dialogue It's all numbers and math. Taking the human part out of the practice of medicine.
+dialogue It's all numbers and maths. Taking the human part out of the practice of medicine.
 
 dialogue Consider it. I can reinstate you.
 
@@ -321,7 +321,7 @@ speaker MC
 dialogue I will. Thank you.
 
 speaker N
-dialogue The medics roll him out the door and into the hover ambulence.
+dialogue The medics roll him out the door and into the hover ambulance.
 
 dialogue It takes off into the stormy afternoon sky, leaving you in silence.
 
