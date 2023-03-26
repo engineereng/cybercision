@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ChargeTimer : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ChargeTimer : MonoBehaviour
     public float maximumTime = 10;
     public Image sprite;
     private bool gameEnded = false;
+    [SerializeField] private TMP_Text text;
     [SerializeField] private FingerController controller;
     [SerializeField] private FireCreator fireCreator;
 
@@ -30,14 +32,8 @@ public class ChargeTimer : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
             float percent = timeRemaining / maximumTime;
-            if (percent < 0.25f) {
-                sprite.color = Color.red;
-            } else if (percent < 0.50f) {
-                sprite.color = Color.yellow;
-            } else {
-                sprite.color = Color.green;
-            }
             sprite.fillAmount = Mathf.Lerp(0, 1, percent);
+            text.text = string.Format("{0:N0}", timeRemaining);
         } else {
             gameEnded = true;
             controller.setLost();

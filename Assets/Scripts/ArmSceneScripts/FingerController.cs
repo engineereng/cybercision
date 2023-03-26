@@ -15,10 +15,10 @@ public class FingerController : MonoBehaviour
     void Start()
     {
         wiggleRandom();
+        FindObjectOfType<AudioManager>().Play("Theme");
     }
     void wiggleRandom()
     {
-        Color newColor = Color.green; // the color is a placeholder for wiggling animation
         // choose new wiggler out of a random one
         int indexNewWiggler = Random.Range(0, NUM_FINGERS);
         while (alreadyChosen.Contains(indexNewWiggler))
@@ -26,15 +26,14 @@ public class FingerController : MonoBehaviour
         currentChosen = indexNewWiggler;
         alreadyChosen.Add(indexNewWiggler);
         Transform randomChild = transform.GetChild(indexNewWiggler);
-        randomChild.GetChild(1).GetComponent<SnapToGoal>().goalEnabled = true;
-        SpriteRenderer renderer = randomChild.GetComponent<SpriteRenderer>();
-        renderer.color = newColor;
+        randomChild.GetChild(0).GetComponent<SnapToGoal>().goalEnabled = true;
+        Finger finger = randomChild.GetComponent<Finger>();
+        finger.SetOutline();
     }
 
     public void setDone()
     {
         // stop wiggling the current wiggler
-        transform.GetChild(currentChosen).GetComponent<SpriteRenderer>().color = Color.black;
         if (alreadyChosen.Count < NUM_FINGERS)
             wiggleRandom();
         else {
@@ -43,24 +42,25 @@ public class FingerController : MonoBehaviour
     }
     private void win()
     {
-        Time.timeScale = 0; // pause the game
         endText.enabled = true;
+        MinigameManager.GetManager().FinishMinigame(true);
         // TODO move onto next scene
     }
 
     public void setLost()
     {
-        endText.text = "You lost. Press R to restart the demo.";
+        endText.text = "You lost.";
         endText.enabled = true;
+        MinigameManager.GetManager().FinishMinigame(false);
     }
 
-    // TODO remove this temporary scene reloader for this prototype
-    void OnGUI()
-    {
-        Event m_Event = Event.current;
-        if (Event.current.Equals(Event.KeyboardEvent(KeyCode.R.ToString()))) {
-            Debug.Log("Pressed R to reload");
-            SceneManager.LoadScene("ArmScene");
-        }
-    }
+    // temporary scene reloader for this prototype
+    // void OnGUI()
+    // {
+    //     Event m_Event = Event.current;
+    //     if (Event.current.Equals(Event.KeyboardEvent(KeyCode.R.ToString()))) {
+    //         Debug.Log("Pressed R to reload");
+    //         SceneManager.LoadScene("ArmScene");
+    //     }
+    // }
 }

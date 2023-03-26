@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5750854345140351110}
   - component: {fileID: 5750854345140351109}
   - component: {fileID: 5750854345140351128}
+  - component: {fileID: 8400998928827888594}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5750854345140351108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.459, y: 0.894, z: -9.881252}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: -3.608, y: 1.107, z: -9.881252}
+  m_LocalScale: {x: 0.17958, y: 0.17958, z: 0.5986}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,8 +46,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.554334, y: 4.254384, z: 1}
+  m_Center: {x: 0.00000008297784, y: 0.024286618, z: 0}
 --- !u!212 &5750854345140351109
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -88,7 +89,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 1365792418, guid: 131ad64733fea45058b33699857f5a14, type: 3}
   m_Color: {r: 1, g: 0.65647805, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,5 +112,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4c5d822fab1f64d96d06181ef45de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 5
+  health: 5
   timer: 5
+  charge: {fileID: 0}
+--- !u!114 &8400998928827888594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5750854345140351108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ab805d87abd43f5850c3525767dcd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 1365792418, guid: 131ad64733fea45058b33699857f5a14, type: 3}
+  - {fileID: 1758596079, guid: 66cccaff70c674f40bf0615d6e531ed3, type: 3}
+  - {fileID: 375414934, guid: 278a931704ffa496390b1c85336fad43, type: 3}
+  - {fileID: 503353247, guid: a4b143a5ac82b4d9cb3e4a1ec5a52b7f, type: 3}
+  - {fileID: 1523733523, guid: 31378385410e2450da1e7de9d1220e5d, type: 3}
+  - {fileID: -1572084654, guid: f7eb585fec83d4b489a27a2addb7715e, type: 3}
