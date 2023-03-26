@@ -127,6 +127,7 @@ WinBranch3:
 
 music play TimeToCut
 
+speaker N
 dialogue With the bugs cleared, his heart pumping device is fully functional. You only need to get it in rhythm with his heart.
 
 
