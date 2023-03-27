@@ -1,7 +1,14 @@
 # Cybercision
 A puzzle/minigame game with visual novel elements and story. The player will use their logical and finesse skills to perform cybernetic surgery on a grab bag of wacky patients and customers to experience the daily life of Firth in the rain drenched cyberpunk setting of Monsoon City.
 
-This demo includes 4 missions, with branching outcomes depending on your performance in the surgery minigames.
+This demo includes 3 missions, with branching outcomes depending on your performance in the surgery minigames.
+
+CONSULT with patients
+![Bobbi NPC](https://user-images.githubusercontent.com/38707101/227893169-90502029-ae2c-46b6-b4b0-4ed6c064090a.png)
+
+PERFORM SURGERY
+![arm servo](https://user-images.githubusercontent.com/38707101/227893287-d6f566c9-48c7-445b-b7db-11dffec76094.png)
+![debugging](https://user-images.githubusercontent.com/38707101/227893371-e1f5fff4-70cf-4d83-9ed9-1b2c59b1ab68.png)
 
 ## Team members
 - Collin Eng (team lead)
