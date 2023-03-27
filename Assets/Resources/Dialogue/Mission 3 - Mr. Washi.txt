@@ -151,7 +151,7 @@ goto tryagain4
 WinBranch4:
 
 play music OurFavouriteAddict
-
+speaker N
 dialogue His heart and cybernetics fall in sync. The monitor shows it beating slow and steady. 
 
 dialgue You exhale deeply. Your head is spinning, and you feel like you've been holding your breath this whole time.
@@ -344,3 +344,5 @@ dialogue From here your life will go on. Filled with potential, friends, and all
 dialogue However it goes from here is yet to be known, but with Hal by your side, you hope... no. You know, that everything will be just fine.
 
 dialogue T H E   E N D
+
+load Credits
