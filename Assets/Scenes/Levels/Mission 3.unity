@@ -572,7 +572,7 @@ PrefabInstance:
     - target: {fileID: 5973303491516937904, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
       propertyPath: defaultDialogueScript
       value: 
-      objectReference: {fileID: 4900000, guid: 1e058605c43e3bc4da31dcae92ca898f, type: 3}
+      objectReference: {fileID: 4900000, guid: 453d76eb7e2ef704b80b15b2646830c2, type: 3}
     - target: {fileID: 5973303491516937904, guid: 231acfbca98c6904d860b709538c34ce, type: 3}
       propertyPath: characters.Array.data[0]
       value: 
