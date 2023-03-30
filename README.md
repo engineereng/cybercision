@@ -1,14 +1,24 @@
 # Cybercision
 A puzzle/minigame game with visual novel elements and story. The player will use their logical and finesse skills to perform cybernetic surgery on a grab bag of wacky patients and customers to experience the daily life of Firth in the rain drenched cyberpunk setting of Monsoon City.
 
-This demo includes 3 missions, with branching outcomes depending on your performance in the surgery minigames.
+This demo includes 3 days of gameplay, with branching outcomes depending on your performance in the surgery minigames.
 
+![Background (updated)](https://user-images.githubusercontent.com/38707101/228959550-60549faf-be62-426b-92f5-0e133a637b7a.jpeg)
+
+
+## Trailer
+Click the preview to watch the full trailer!
+
+[![Cybercisiontrailer](https://user-images.githubusercontent.com/38707101/228961175-21f3fb4d-a65d-4901-ab31-899fbc890b5f.gif)](https://youtu.be/Jm9CNRt4ads)
+
+## Features
 CONSULT with patients
-![Bobbi NPC](https://user-images.githubusercontent.com/38707101/227893169-90502029-ae2c-46b6-b4b0-4ed6c064090a.png)
+[![output_trimmed_enhanced_reduced](https://user-images.githubusercontent.com/38707101/228957880-41809446-3a4c-4efa-bdf7-2933db1d2cfd.gif)]()
+
 
 PERFORM SURGERY
-![arm servo](https://user-images.githubusercontent.com/38707101/227893287-d6f566c9-48c7-445b-b7db-11dffec76094.png)
-![debugging](https://user-images.githubusercontent.com/38707101/227893371-e1f5fff4-70cf-4d83-9ed9-1b2c59b1ab68.png)
+![surgery](https://user-images.githubusercontent.com/38707101/228958544-9014edc3-aaa0-4aa3-b329-5b8d892b58ea.gif)
+
 
 ## Team members
 - Collin Eng (team lead)
