@@ -33,11 +33,11 @@ PERFORM SURGERY
 
 - Harry Kim
 
-- Tyler Hasman
-
 - Matt Plyukhin - [Spotify](https://open.spotify.com/artist/4b7wNptmHZ7b4jAl5YYGU7?si=W1waA-_FTHqd-KCvA35g0Q)
 
 - Michelle Wang - [GitHub](https://github.com/skyleapa)
+
+- Tyler Hasman
 
 - Zoe Khan
 
