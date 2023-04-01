@@ -21,23 +21,23 @@ PERFORM SURGERY
 
 
 ## Team members
-- Collin Eng (team lead)
+- Collin Eng (team lead) - [GitHub](https://github.com/engineereng), [Itch.io](https://engineereng.itch.io/)
 
-- Darryl Tanzil
+- Darryl Tanzil - [Website](https://www.darrylt.me/)
 
 - Emma Nash
 
 - Elsa Wei
 
-- Erick Jovan Muljadi
+- Erick Jovan Muljadi - [Itch.io](https://erickj.itch.io/)
 
 - Harry Kim
 
 - Tyler Hasman
 
-- Matt Plyukhin
+- Matt Plyukhin - [Spotify](https://open.spotify.com/artist/4b7wNptmHZ7b4jAl5YYGU7?si=W1waA-_FTHqd-KCvA35g0Q)
 
-- Michelle Wang
+- Michelle Wang - [GitHub](https://github.com/skyleapa)
 
 - Zoe Khan
 
